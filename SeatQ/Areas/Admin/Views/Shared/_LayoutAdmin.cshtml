@@ -1,0 +1,157 @@
+﻿@using SeatQ.Areas.Admin.Models;
+@{
+    MenuListModel menu = new SeatQ.Helpers.MenuHelper().GetMenu();
+    string selectedMenu = ViewBag.selectedMenu ?? "Metrics";
+    menu.selectedMenu = menu.Menus.FirstOrDefault(m => m.Name.ToLower() == selectedMenu.ToLower());
+
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SeatQ</title>
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+
+    <!-- styles -->
+    <link rel="stylesheet" type="text/css" href="~/Content/assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/Content/assets/bootstrap/css/bootstrap-select.min.css">
+    <link rel="stylesheet" type="text/css" href="~/Content/assets/css/app.css">
+    <link rel="stylesheet" type="text/css" href="~/Content/assets/css/custom.css">
+    <!-- scripts -->
+    <script type="text/javascript" src="~/Content/assets/js/jquery.js"></script>
+    <script type="text/javascript" src="~/Content/assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="~/Content/assets/bootstrap/js/bootstrap-select.js"></script>
+    <script type="~/Content/text/javascript" src="~/Content/assets/js/app.js"></script>
+    @Scripts.Render("~/bundles/ko")
+    @Scripts.Render("~/bundles/jqueryui")
+    <script src="~/Scripts/utility.js"></script>
+    <script src="~/Scripts/jquery.cookie.js"></script>
+    <script src="~/Scripts/notify.min.js"></script>
+    <script src="~/Scripts/moment.min.js"></script>
+
+    <script>
+        var rcid = "@ViewBag.rcid";
+        var webserviceURL = "@ViewBag.CoreApiEndpoint";
+        var webserviceCoreURL = "@ViewBag.CORE_API_URL";
+
+        $.ajaxSetup({
+            statusCode: {
+                401: function (jqxhr, textStatus, errorThrown) {
+                    alert(textStatus + ": " + jqxhr.responseJSON.Message)
+                    window.location.href = "/";
+                }
+            }
+        })
+
+    </script>
+ 
+    @if (ViewBag.User.RoleName != "User" && ViewBag.User.RoleName != "Regional Manager")
+    {
+        @Scripts.Render("~/scripts/header");
+    }
+
+    <style>
+        #logo h1 {
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body class="updated_new">
+    @*<div class="loader">
+            <div class="loader_txt_wrap">
+                <div class="loader_txt"></div>
+                <span class="lode">Loading....</span>
+            </div>
+        </div>*@
+    <div id="wrapper">
+        <div class="header-container" id="header-container">
+            <header id="header" class="container">
+                <div class="logo-time">
+                    <div id="logo">
+                        <h1><a href="#" title="Logo">Welcome <span class="username">@ViewBag.User.BusinessName</span></a></h1>
+                        <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button"><span class="menu-icon"></span></a>
+                    </div><!--end of logo-time-->
+
+                    <div class="time" id="time">
+                        <span class="time-icon"></span>
+                    </div><!--end of time-->
+                </div><!--end of logo-time-->
+
+                <div class="header-table">
+                    <span class="bg-gray bg-only"></span>
+                    <table class="table" id="tableSummary">
+                        <thead>
+                            <tr>
+                                <th>Waiting</th>
+                                <th>Seated</th>
+                                <th class="align-right">Table size</th>
+                                <th>1-4</th>
+                                <th>5-6</th>
+                                <th>7-8</th>
+                                <th>9+</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td rowspan="2"><span class="medium-text color-white" data-bind="text: Waiting"></span></td>
+                                <td rowspan="2"><span class="medium-text color-white" data-bind="text: TotalSeated"></span></td>
+                                <td class="align-right"><span class="smallest-text color-halfwhite">Inline</span></td>
+                                <td data-bind="text: C1_4Inline"></td>
+                                <td data-bind="text: C5_6Inline"></td>
+                                <td data-bind="text: C7_8Inline"></td>
+                                <td data-bind="text: C9PlusInline"></td>
+                            </tr>
+                            <tr>
+                                <td class="align-right"><span class="smallest-text color-halfwhite">Turntime</span></td>
+                                <td data-bind="text: C1_4Turnline"></td>
+                                <td data-bind="text: C5_6Turnline"></td>
+                                <td data-bind="text: C7_8Turnline"></td>
+                                <td data-bind="text: C9PlusTurnline"></td>
+                            </tr>
+                        </tbody>
+                    </table><!-- end of table -->
+                </div><!--end of header-table-->
+                @*<a href="/reservation/loyalty" class="logout" title="QTimes" style="right: 75px">Switch to QTimes&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|</a>*@
+                @if (ViewBag.User.RoleName == "Administrator" || ViewBag.User.RoleName == "Regional Manager")
+                {
+                    <a href="@Url.Action("index", "AccountInfo", new { area = "Admin" })" class="settings" title="Settings">Settings</a>
+                }
+                <a href="@Url.Action("logoff", "Account", new { area = "" })" class="logout" title="Logout">Logout</a>
+                @*<a href="#" class="btn btn-primary add-new-btn" data-toggle="modal" data-target="#add-waitlist" id="addList"><span class="add-icon"></span>Add New</a>*@
+            </header><!--end of header-->
+        </div><!--end of header-container-->
+        @Scripts.Render("~/scripts/table-summary")
+        <div class="content-wrapper" id="content-wrapper">
+            @Html.Partial("_PartialMenu", menu)
+            @RenderBody()
+        </div>
+    </div>
+
+    <script>
+        (function () {
+            function checkTime(i) {
+                return (i < 10) ? "0" + i : i;
+            }
+
+            function startTime() {
+                var today = new Date(),
+                    h = checkTime(today.getHours()),
+                    m = checkTime(today.getMinutes()),
+                    s = checkTime(today.getSeconds());
+                var ampm = h >= 12 ? 'pm' : 'am';
+                h = h % 12;
+                h = h ? h : 12;
+                document.getElementById('time').innerHTML = '<span class="time-icon"></span> ' + h + ":" + m + ":" + s + ' ' + ampm;
+                t = setTimeout(function () {
+                    startTime()
+                }, 500);
+            }
+            startTime();
+        })();
+    </script>
+</body>
+</html>

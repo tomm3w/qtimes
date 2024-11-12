@@ -1,0 +1,36 @@
+﻿@{
+    ViewBag.Title = "QTimes";
+    Layout = "~/Areas/m/Views/Shared/_Layout.cshtml";
+}
+<div class="thankyou">
+    <div class="container__center">
+        <div class="imgHolder">
+            <svg class="tump_svg" xmlns="http://www.w3.org/2000/svg" width="99" height="93" viewBox="0 0 99 93">
+                <defs>
+                    <style>
+                        .prefix__cls-1 {
+                            fill: #2bb277
+                        }
+                    </style>
+                </defs>
+                <g id="prefix__like-size" transform="translate(-8 -9.5)">
+                    <g id="prefix__Icon-Like" transform="translate(8 9.5)">
+                        <path id="prefix__Fill-4_2_" d="M14.6-471.5c0-6.613-4.767-10-12-10h-21a58.867 58.867 0 0 0 2-15c0-17.98-4.66-22-9-22-2.893 0-5.107.14-8 2-.827.413-.793 1.173-1 2l-4 17c-3.307 8.887-11.18 16.833-18 22v44a17.559 17.559 0 0 1 8 2c3.307 1.653 6.073 4 10 4h30c6.2 0 11-5.66 11-10a6.452 6.452 0 0 0 0-2c3.927-1.447 6-4.28 6-8a11.957 11.957 0 0 0-1-5c2.273-1.653 5-4.693 5-8a8.091 8.091 0 0 0-2-5 10.124 10.124 0 0 0 4-8zm-6 0c0 3.927-4.38 5.14-5 7-.62 2.067 3 2.28 3 6 0 3.927-5.38 4.14-6 6-.827 2.273 2 3.28 2 7-.62 3.1-6.173 3.76-7 5-.827 1.447 1 1.693 1 5 0 1.86-2.52 4-5 4h-29c-2.273 0-5.313-1.553-8-3a37.381 37.381 0 0 0-8-3v-33c7.647-5.787 17.073-14.253 21-25a2.336 2.336 0 0 1 1-1l3-15c1.033-.413 1.347-1 3-1 .62 0 3 4.22 3 16a51.767 51.767 0 0 1-2 15h-1a3 3 0 0 0-3 3 3 3 0 0 0 3 3h28c3.1 0 6 1.52 6 4z" class="prefix__cls-1" transform="translate(84.4 518.5)" />
+                        <path id="prefix__Fill-6_2_" d="M-45-425.5h-19a5.762 5.762 0 0 1-6-6v-44a5.762 5.762 0 0 1 6-6h19a5.762 5.762 0 0 1 6 6v44a5.762 5.762 0 0 1-6 6zm-19-50v44h19v-44zm-6-43" class="prefix__cls-1" transform="translate(70 518.5)" />
+                    </g>
+                </g>
+            </svg>
+        </div>
+        <p><span class="green-txt">Thank You!</span></p>
+        <p>
+            Thanks for choosing us, a
+            confirmation text will be sent to with
+            details of your reserve date.
+        </p>
+        <p><span class="green-txt">Your pass url - <a id="pass" download></a></span></p>
+    </div>
+</div>
+<script>
+    var id = '@ViewBag.id';
+</script>
+<script src="~/Scripts/app/reservation/m/thankyou.js"></script>

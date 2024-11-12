@@ -1,0 +1,113 @@
+﻿<div class="content-wrapper">
+
+    @Html.Partial("_PartialMenu")
+
+    <section class="content-header">
+        <div class="content_header_left">
+            <h2 class="uppercase">MESSAGES</h2>
+        </div>
+        <div class="content_header_right">
+            <a href="#" class="btn btn-primary add-new-reserve blue_right_btn" data-toggle="modal" data-target="#add-new-reserve_id">
+                <span class="svg_add-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15">
+                        <path id="prefix__add_icon" d="M6 15V9H0V6h6V0h3v6h6v3H9v6z" style="fill:#fff" />
+                    </svg>
+                </span>ADD RULES
+            </a>
+        </div>
+    </section>
+
+    <section class="content-body clearfix">
+        <div class="content-table custom-table-responsive">
+            <table class="table">
+                <thead>
+                    <tr class="shadow-bottom">
+                        <th width="20%">RULES</th>
+                        <th>TEXT</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody data-bind="foreach: ReservationMessages">
+                    <tr>
+                        <td>
+                            <p class="time_show_msg">
+                                <svg class="grn_mg" xmlns="http://www.w3.org/2000/svg" width="23" height="23" viewBox="0 0 23 23">
+                                    <g id="prefix__iconfinder__message_2560342" transform="translate(-.5 -.5)">
+                                        <path id="prefix__Path_303" d="M19.7.5H4.3A3.8 3.8 0 0 0 .5 4.3v15.4a3.8 3.8 0 0 0 3.8 3.8h15.4a3.8 3.8 0 0 0 3.8-3.8V4.3A3.8 3.8 0 0 0 19.7.5zM12 17a4.484 4.484 0 0 1-1.1-.1 4.6 4.6 0 0 1-3 1.2 1.949 1.949 0 0 1-.8-.1l-.6-.3-.1-.1a.758.758 0 0 1-.2-.4c0-.2.1-.3.3-.4a2.345 2.345 0 0 0 1.1-1.1A5.181 5.181 0 0 1 5 11.4c0-3.1 3.1-5.6 7-5.6s7 2.5 7 5.6-3.1 5.6-7 5.6z" data-name="Path 303" style="fill:#2bb277" />
+                                    </g>
+                                </svg>
+                                <span data-bind="text: Rules"></span>
+                            </p>
+                        </td>
+                        <td><p data-bind="text: Message"></p></td>
+                        <td><a class="edit-msg" data-bind="click: function(){$root.EditMessageRule(this)}">Edit</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+</div>
+
+<div class="modal fade new_rule" id="add-new-reserve_id" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title uppercase" id="myModalLabel" data-bind="text: Mode() + ' RULE'"></h4>
+            </div><!-- end of modal-header -->
+            <div class="modal-body">
+                <form action="#" class="theme-black-form">
+                    <div class="form_first">
+                        <div class="form-group res_fr_1 select_opt">
+                            <!-- <label>Name:</label> -->
+                            <label>Message Type</label>
+                            <select class="selectpicker" data-bind="value: MessageType" id-="MessageType">
+                                <option value="Auto">Auto Message</option>
+                                <option value="Schedule">Schedule Message</option>
+                            </select>
+                            <p class="noticep">
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Send an automatic response using a certain parameter<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ex.30 minutes - Before - Time In
+                            </p>
+                        </div>
+                    </div>
+                    <div class="form-group form_third select_opt">
+                        <label>Parameter</label>
+                        <div class="parameter_slct_wrap">
+                            <div class="parameter_slct">
+                                <input type="text" placeholder="0" data-bind="value: Value">
+                            </div>
+                            <div class="parameter_slct">
+                                <select class="selectpicker" data-bind="value: ValueType" id="ValueType">
+                                    <option value="Minutes">Minutes</option>
+                                    <option value="Hours">Hours</option>
+                                </select>
+                            </div>
+                            <div class="parameter_slct">
+                                <select class="selectpicker" data-bind="value: BeforeAfter" id="BeforeAfter">
+                                    <option value="Before">Before</option>
+                                    <option value="After">After</option>
+                                </select>
+                            </div>
+                            <div class="parameter_slct">
+                                <select class="selectpicker" data-bind="value: InOut" id="InOut">
+                                    <option value="TimeIn">Time In</option>
+                                    <option value="TimeOut">Time Out</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group form_fourth">
+                        <label>Message</label>
+                        <textarea name="comments" cols="30" rows="5" class="form-control" placeholder="Compose your message..." data-bind="value: Message"></textarea>
+                    </div>
+                </form><!-- end of theme-black-form -->
+            </div><!-- end of modal-body -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-bind="click: AddMessageRule, text: Mode() + ' RULE'">
+                </button>
+                <button type="button" class="btn btn-default close-popup" data-dismiss="modal">Cancel</button>
+            </div><!-- end of modal-footer -->
+        </div><!-- end of modal-content -->
+    </div><!-- end of modal-dialog -->
+</div>
+<script src="~/Scripts/app/reservation/message.js"></script>

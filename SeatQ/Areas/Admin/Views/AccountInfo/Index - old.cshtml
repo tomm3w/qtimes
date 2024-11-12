@@ -1,0 +1,67 @@
+﻿@{
+    ViewBag.Title = "Account Info";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin_old.cshtml";
+}
+<script>
+    $("#divWaitlist").remove()
+</script>
+
+<form class="form-horizontal" id="restaurant-box">
+    <div class="form-group">
+        <ul class="menu pull-left">
+            <li><a href="@Url.Action("Index", "Restaurant", new { area="Admin"})" class="link-gray">Business Setup</a></li>
+            <li><a href="#" class="link-gray active">Account Setup</a></li>
+            <li><a href="@Url.Action("Index", "Preferences", new { area = "Admin" })" class="link-gray">Preferences</a></li>
+            <li><a href="@Url.Action("Index", "Tables", new { area = "Admin" })" class="link-gray">Tables</a></li>
+        </ul>
+        <input type="button" value="Add Changes" class="button green pull-right" data-bind="click:Update" />
+    </div>
+    @* ACCOUNT SETUP  *@
+    <div>
+        <div class="form-group">
+            <label for="inputEmail" class="col-xs-2">Username</label>
+            <div class="col-xs-10">
+                <input type="text" data-bind="value:UserName" disabled/>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-xs-2">Email Address</label>
+            <div class="col-xs-10">
+                <input type="text" data-bind="value:Email" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-xs-2">Current Password</label>
+            <div class="col-xs-10">
+                <input type="password" data-bind="value:CurrentPassword" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-xs-2">New Password</label>
+            <div class="col-xs-10">
+                <input type="password" data-bind="value:NewPassword" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-xs-2">Confirm Password</label>
+            <div class="col-xs-10">
+                <input type="password" data-bind="value:ConfirmNewPassword" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="radio pull-left">
+                <input type="radio" name="enabled" value="true" data-bind="checked:isActive" />
+                Active
+            </label>
+            <label class="radio pull-left">
+                <input type="radio" name="enabled" value="false" data-bind="checked:isActive" />
+                Blocked
+            </label>
+        </div>
+        <div class="form-group">
+            <a data-bind="click:Delete" class="link-gray">Delete Account</a>
+        </div>
+    </div>
+</form>
+@*<script src="~/Scripts/app/accountinfo.js"></script>*@
+@Scripts.Render("~/scripts/accountinfo")

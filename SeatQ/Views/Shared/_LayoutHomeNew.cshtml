@@ -1,0 +1,32 @@
+﻿@{
+    string baseUrl = Request.Url.GetLeftPart(UriPartial.Authority);
+}
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>SeatQ</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link href="~/Content/assets/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/assets/bootstrap/css/bootstrap-select.min.css" rel="stylesheet" />
+    <link href="~/Content/assets/bootstrap/css/style.css" rel="stylesheet" />
+    <link href="~/Content/assets/css/animate.css" rel="stylesheet" />
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryui")
+    @Scripts.Render("~/bundles/jqueryval")
+    <script src="~/Scripts/utility.js"></script>
+    <link rel="shortcut icon" type="image/x-icon" href="https://daks2k3a4ib2z.cloudfront.net/55c2d33e9337b47665416a8b/55efaf4831274b657d2626c7_seatq-favicon%402x.png">
+    <link rel="apple-touch-icon" href="https://daks2k3a4ib2z.cloudfront.net/55c2d33e9337b47665416a8b/55efaf4e0726da0c29fb6b44_seatq-webclip%402x.png">
+    <script src='https://www.google.com/recaptcha/api.js'></script>
+</head>
+<body class="qtimes_body seatq_body">
+    @RenderBody()
+    <script src="~/Scripts/notify.min.js"></script>
+    <script src="~/Content/assets/js/wow.js"></script>
+    <script>
+        new WOW().init();
+    </script>
+</body>
+</html>

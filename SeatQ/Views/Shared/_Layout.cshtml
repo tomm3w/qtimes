@@ -1,0 +1,105 @@
+﻿@{
+    string baseUrl = Request.Url.GetLeftPart(UriPartial.Authority);
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>SeatQ</title>
+    <link rel="shortcut icon" href="~/Images/favicon.ico" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="~/Content/dashboard.css" />
+    @Styles.Render("~/Content/css")
+    @Styles.Render("~/Content/themes/base/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryui")
+    @Scripts.Render("~/bundles/jqueryval")
+    <link rel="stylesheet" href="~/Content/jquery.fancybox.css" />
+    <script src="~/Scripts/jquery-migrate-1.2.1.min.js"></script>
+    <script src="~/Scripts/utility.js"></script>
+    <link href="~/Content/jquery.slider.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery.jcarousel.min.js"></script>
+    <script src="~/Scripts/jquery.fancybox.pack.js"></script>
+    <script src="~/Scripts/notify.min.js"></script>
+     <script src='https://www.google.com/recaptcha/api.js'></script>
+    <script type="text/javascript">
+
+    jQuery(document).ready(function () {
+        jQuery('#mycarousel').jcarousel();
+
+        $(".fancybox").fancybox({
+            afterLoad: function () {
+                this.title = $(this.element).next('.newTitle').html();
+            },
+            helpers: {
+                title: {
+                    type: 'inside'
+                }
+            }
+        });
+
+        $("#btnSignin").click(function () {
+            window.location.href = "@Url.Action("Login", "Account")";
+        });
+        $("#btnSignup").click(function () {
+            window.location.href = "@Url.Action("Register", "Account")";
+        });
+    });
+
+
+
+    </script>
+    <!-- UserVoice JavaScript SDK (only needed once on a page) -->
+    <script>(function () { var uv = document.createElement('script'); uv.type = 'text/javascript'; uv.async = true; uv.src = '//widget.uservoice.com/XtyRT3pxuPzeaZf5y3pthg.js'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(uv, s) })()</script>
+
+    <!-- A tab to launch the Classic Widget -->
+    <script>
+        UserVoice = window.UserVoice || [];
+        UserVoice.push(['showTab', 'classic_widget', {
+            mode: 'full',
+            primary_color: '#cc6d00',
+            link_color: '#007dbf',
+            default_mode: 'support',
+            forum_id: 247354,
+            tab_label: 'Feedback & Support',
+            tab_color: '#cc6d00',
+            tab_position: 'middle-right',
+            tab_inverted: false
+        }]);
+    </script>
+</head>
+<body class="public">
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand pull-left logo-public" href="/">Project name</a>
+                
+            </div>
+            <div class="navbar-collapse collapse pull-right">
+                <span class="txt-green">Call Us</span> +1970 306-7315
+                <input type="button" value="SIGN IN" class="button green wauto" id="btnSignin"/>
+                <input type="button" value="SIGN UP" class="button darkgray wauto" id="btnSignup" />
+            </div>
+            <!--/.navbar-collapse -->
+        </div>
+    </div>
+
+
+    <div class="row">
+        @RenderSection("featured", required: false)
+        @RenderBody()
+    </div>
+
+    @* <script type="text/javascript"
+        src="https://www.pubble.co/resources/javascript/QAInit.js">
+        </script>
+        <script type="text/javascript">
+            var lpQA = lpQA({
+                appID: "2795",
+                genQ: "false",
+                identifier: "entry2202"
+            });
+        </script>*@
+</body>
+</html>

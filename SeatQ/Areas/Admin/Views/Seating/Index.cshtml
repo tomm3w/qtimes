@@ -1,0 +1,122 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+<style>
+    .modal-content {
+        background: #f8f8f8;
+        border: 1px solid #cfcfcf;
+    }
+
+    .btn-font {
+        font-family: Roboto;
+        font-size: 15px;
+        font-weight: 500;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.2;
+        letter-spacing: normal;
+    }
+
+    .assign {
+        color: #ffffff;
+        height: 44px;
+        text-align: center;
+    }
+
+    .cancel, .cancel:hover {
+        background: #f8f8f8;
+        opacity: 0.5;
+        color: #2a2f3a;
+        text-align: center;
+    }
+
+    .title {
+        text-align: left;
+        color: #2a2f3a;
+        opacity: 0.5;
+    }
+
+    .list-prop {
+        background: #f8f8f8;
+        border: none;
+        border-bottom: 1px solid rgba(42, 47, 58, 0.2);
+        margin-bottom: 1px;
+    }
+
+    .updated_new .content-header {
+        padding: 13px 17px;
+    }
+</style>
+
+<section class="content-header">
+    <h2 class="uppercase">Seating</h2>
+</section>
+
+<section class="content-body">
+    <div class="content-table normal-table custom-table-responsive-xs">
+        <table class="table table-striped">
+            <thead>
+                <tr class="shadow-bottom">
+                    <th width="20%">Table Number</th>
+                    <th width="13%">Table Type</th>
+                    <th width="10%">Max Seating</th>
+                    <th width="12%">Average Seating</th>
+                    <th width="20%">Assigned To</th>
+                    <th width="9%"></th>
+                    <th width="8%"></th>
+                    <th width="8%"></th>
+                </tr>
+            </thead>
+            <tbody data-bind="foreach: TableStatus">
+                <tr>
+                    <td data-bind="text: TableNumber"></td>
+                    <td data-bind="text: TableType"></td>
+                    <td data-bind="text: MaxSeating"></td>
+                    <td data-bind="text: AvgTime"></td>
+                    <td><a href="#" data-bind="text: UserName, click:function(){$root.AssignTable(this)}"></a></td>
+                    <td>
+                        <div class="pull-right popup-dotall">
+                            <ol class="list-unstyled" data-bind="html: Status"></ol>
+                        </div>
+                    </td>
+                    <td><span data-bind="text: Avg, attr:{class:AvgClass}"></span></td>
+                    <td><!-- ko if: displayClose --><a href="#" data-bind="click:function(){$root.CloseTable(TableId())}">Open</a><!-- /ko --></td>
+                </tr>
+            </tbody>
+        </table><!-- end of table -->
+    </div><!-- end of content-table -->
+
+</section><!-- end of content-body -->
+
+<div class="modal fade" id="add-waitlist" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header btn-font">
+                <span class="title">ASSIGN TO</span> <span style="float: right " data-bind="text: SelectedTableName"></span>
+            </div>
+
+            <div class="modal-body">
+                <ul class="list-group list-group-flush">
+                    <!--ko foreach: Staffs -->
+                    <li class="list-group-item list-prop">
+                        <label class="radio-inline">
+                            <input type="radio" name="staff" data-bind="checkedValue: UserId">
+                            <span data-bind="text: UserName() + '  (' + Title() + ')'"></span>
+                        </label>
+                    </li>
+                    <!--/ko-->
+                </ul>
+            </div><!-- end of modal-body -->
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary btn-font assign" data-bind="click: Assign" id="btnAdd"><span id="btnSubmit">Assign</span></button>
+                <button type="button" class="btn btn-default btn-font cancel" data-dismiss="modal">Cancel</button>
+            </div><!-- end of modal-footer -->
+
+        </div><!-- end of modal-content -->
+    </div><!-- end of modal-dialog -->
+</div>
+
+@*<script src="~/Scripts/app/seating.js"></script>*@
+@Scripts.Render("~/scripts/seating")

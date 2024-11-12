@@ -1,0 +1,74 @@
+﻿<style>
+    .updated_new .header-container .account {
+        position: absolute;
+        right: 140px;
+        top: 8px;
+        color: rgba(255, 255, 255, .5);
+        text-decoration: none;
+    }
+    .account:after {
+        content: "";
+        position: absolute;
+        border-right: 1px solid rgba(255, 255, 255, .5);
+        height: 100%;
+        right: -8px;
+    }
+</style>
+<div class="header-container">
+    <header id="header" class="container">
+        <div class="logo-time">
+            <div id="logo">
+                <h1>
+                    <a href="#" title="Logo" id="businessName">
+                    </a>
+                </h1>
+                <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button"><span class="menu-icon"></span></a>
+            </div><!--end of logo-time-->
+            <div class="time" id="time">
+            </div>
+        </div><!--end of logo-time-->
+
+        <div class="header-table">
+            <span class="bg-gray bg-only"></span>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th class="center_no">TOTAL SPOTS</th>
+                        <th class="center_no">AVAILABLE</th>
+                        <th class="center_no">Waiting</th>
+                        <th class="center_no">IN PLACE</th>
+                        @*<th class="align-right">SIZE</th>
+                        <th>1-4</th>
+                        <th>5-6</th>
+                        <th>7-8</th>
+                        <th>9+</th>*@
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="center_no" rowspan="2"><span class="medium-text color-white" id="totalSpots">0</span></td>
+                        <td class="center_no" rowspan="2"><span class="medium-text color-white" id="available">0</span></td>
+                        <td class="center_no" rowspan="2"><span class="medium-text color-white" id="waiting">0</span></td>
+                        <td class="center_no" rowspan="2"><span class="medium-text color-white" id="inPlace">0</span></td>
+                        @*<td class="align-right"><span class="smallest-text color-halfwhite">Inline</span></td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>0</td>
+                        <td>0</td>*@
+                    </tr>
+                    <tr>
+                        @*<td class="align-right"><span class="smallest-text color-halfwhite">Turnline</span></td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>*@
+                    </tr>
+                </tbody>
+            </table><!-- end of table -->
+        </div><!--end of header-table-->
+        <a href="/concert/accounts" class="account" title="Account">Account</a>
+        <a href="/admin/settings/account" class="settings" title="Settings">Settings</a>
+        <a href="@Url.Action("logoff", "Account", new { area = "" })" class="logout">Logout</a>
+    </header><!--end of header-->
+</div><!--end of header-container-->
+<script src="~/Scripts/app/reservation/header.js"></script>

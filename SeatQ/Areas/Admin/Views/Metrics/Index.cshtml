@@ -1,0 +1,166 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<style>
+    .mertics_col li {
+        margin-bottom: 17px;
+    }
+
+    .popover {
+        position: absolute;
+        top: 5%;
+        left: 35%;
+        z-index: 9999;
+        width: 370px;
+        padding: 25px;
+        text-align: left;
+        background-color: #fff;
+        border: 1px solid #acafb4;
+        border-radius: 6px;
+    }
+
+        .popover .close {
+            background: #e5e6ea;
+            border-radius: 22px;
+            color: #888;
+            height: 44px;
+            line-height: 44px;
+            position: absolute;
+            right: -16px;
+            top: -16px;
+            text-align: center;
+            width: 44px;
+            opacity: 1;
+        }
+
+        .popover ul, .popover li {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .popover.radiolist li {
+            border-bottom: 1px solid #e5e6ea;
+            line-height: normal;
+            padding: 10px 5px;
+        }
+
+            .popover.radiolist li label {
+                font-weight: normal;
+            }
+
+        .popover li input {
+            background-color: #f9f9fc;
+        }
+
+        .popover li input, .popover li select, .popover li textarea {
+            height: 40px;
+            padding-left: 5%;
+            width: 100%;
+        }
+
+    button, input, optgroup, select, textarea {
+        border: 1px solid #dcdee2 !important;
+        color: #888 !important;
+        border-radius: 5px;
+        height: 30px;
+        font: inherit;
+        margin: 0;
+    }
+
+    .popover li input, .popover li select, .popover li textarea {
+        height: 40px;
+        padding-left: 5%;
+        width: 100%;
+    }
+
+        .popover li input[type=button] {
+            color: #fff !important;
+        }
+
+</style>
+<section class="content-header">
+    <div class="content_header_left">
+        <h2 class="uppercase">METRICS</h2>
+    </div>
+    <div class="content_header_right">
+        <ul class="date_to select_opt">
+            <li onclick="ShowCustom()">
+                <svg class="svg_clander" xmlns="http://www.w3.org/2000/svg" width="18" height="20" viewBox="0 0 18 20">
+                    <path id="prefix__iconfinder_calendar_3671721" d="M1 4a2.006 2.006 0 0 1 2-2h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2zm2 2v12h14V6zm2-6h2v2H5zm8 0h2v2h-2zM5 9h2v2H5zm0 4h2v2H5zm4-4h2v2H9zm0 4h2v2H9zm4-4h2v2h-2zm0 4h2v2h-2z" transform="translate(-1)" style="fill:#94979c" />
+                </svg>
+            </li>
+            <li>
+                <select class="form-control selectpicker" id="select_onday" data-bind="event: {change: LoadQuery}">
+                    <option value="Today">Today</option>
+                    <option value="Week">This Week</option>
+                    <option value="Month">This Month</option>
+                    <option value="YTD">This Year</option>
+                </select>
+            </li>
+        </ul>
+    </div>
+</section>
+
+<section class="content-body clearfix">
+    <div class="mertics_col">
+        <ul>
+            <li>
+                <div class="box_mertics_col">
+                    <p>Average Wait Time</p>
+                    <h3 data-bind="text: AverageWaitTime() + ' mins'">0 min</h3>
+                </div>
+            </li>
+            <li>
+                <div class="box_mertics_col">
+                    <p>NO. OF SEATED</p>
+                    <h3 data-bind="text: Seated">0</h3>
+                </div>
+            </li>
+            <li>
+                <div class="box_mertics_col">
+                    <p>NO SHOW</p>
+                    <h3 data-bind="text: NoShow">0</h3>
+                </div>
+            </li>
+            <li>
+                <div class="box_mertics_col">
+                    <p>PROMOTIONS/COUPONS</p>
+                    <h3 data-bind="text: Promotions">0</h3>
+                </div>
+            </li>
+            <li>
+                <div class="box_mertics_col">
+                    <p>NEW GUEST</p>
+                    <h3 data-bind="text: Guest">0</h3>
+                </div>
+            </li>
+            <li>
+                <div class="box_mertics_col">
+                    <p>GROUP SIZE</p>
+                    <h3 data-bind="text: GroupSize">0</h3>
+                </div>
+            </li>
+        </ul>
+    </div>
+</section>
+
+@* Custom Filter *@
+<div class="popover radiolist" style="width:240px;display:none" id="divCustom">
+    <a href="#" class="close" onclick="ClearAll()">X</a>
+    <ul>
+        <li>
+            <label>FROM</label>
+            <input type="date" id="Fromdatepicker" class="calendar" data-bind="value: StartDate">
+        </li>
+        <li>
+            <label>TO</label>
+            <input type="date" id="Todatepicker" class="calendar" data-bind="value: EndDate">
+        </li>
+        <li><input type="button" value="SEARCH" class="button green" data-bind="click:function(){ LoadCustomQuery(true)}" /></li>
+    </ul>
+</div>
+<script src="~/Scripts/app/metrices.js"></script>
+@*@Scripts.Render("~/scripts/metrices")*@

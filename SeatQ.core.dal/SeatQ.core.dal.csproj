@@ -1,0 +1,370 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E7DE306E-74FD-4F3F-ABEA-60A122E53791}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SeatQ.core.dal</RootNamespace>
+    <AssemblyName>SeatQ.core.dal</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="HastyAPI, Version=1.0.11.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\HastyAPI.1.0.11.0\lib\net40\HastyAPI.dll</HintPath>
+    </Reference>
+    <Reference Include="HastyAPI.Nexmo">
+      <HintPath>..\packages\HastyAPI.Nexmo.1.0.0.2\lib\net40\HastyAPI.Nexmo.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.5.0.6\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.1.2\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.1.2\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Enums\BusinessTypeEnum.cs" />
+    <Compile Include="Enums\StaffTypeEnum.cs" />
+    <Compile Include="Infrastructure\Repositories\AccountInfoRepository.cs" />
+    <Compile Include="Infrastructure\Repositories\IAccountInfoRepository.cs" />
+    <Compile Include="Infrastructure\Repositories\IMessageRepository.cs" />
+    <Compile Include="Models\BusinessDetail.cs">
+      <DependentUpon>DataAccess.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\BusinessType.cs">
+      <DependentUpon>DataAccess.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Concert.cs">
+      <DependentUpon>DataAccess.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ConcertGuest.cs">
+      <DependentUpon>DataAccess.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ConcertMessageRule.cs">
+      <DependentUpon>DataAccess.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ConcertReservation.cs">
+      <DependentUpon>DataAccess.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ConcertReservationMessage.cs">
+      <DependentUpon>DataAccess.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ConcertSeating.cs">
+      <DependentUpon>DataAccess.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ConcertSeatLock.cs">
+      <DependentUpon>DataAccess.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetLoyalty_Result.cs">
+      <DependentUpon>DataAccess.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetTableSummary_Result.cs">
+      <DependentUpon>DataAccess.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetTablesWithSeating_Result.cs">
+      <DependentUpon>DataAccess.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetTimeSlots_Result.cs">
+      <DependentUpon>DataAccess.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetWaitListFromGuestReply_Result.cs">
+      <DependentUpon>DataAccess.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetWaitList_Result.cs">
+      <DependentUpon>DataAccess.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GuestMessage.cs">
+      <DependentUpon>DataAccess.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\LoyaltyMessage.cs">
+      <DependentUpon>DataAccess.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Reservation.cs">
+      <DependentUpon>DataAccess.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ReservationBusiness.cs">
+      <DependentUpon>DataAccess.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ReservationGuest.cs">
+      <DependentUpon>DataAccess.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ReservationMessage.cs">
+      <DependentUpon>DataAccess.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ReservationMessageRule.cs">
+      <DependentUpon>DataAccess.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RestaurantClosedDay.cs">
+      <DependentUpon>DataAccess.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\StaffType.cs">
+      <DependentUpon>DataAccess.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TableType.cs">
+      <DependentUpon>DataAccess.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\UsersInRestaurant.cs">
+      <DependentUpon>DataAccess.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Repositories\BusinessDetailRepo.cs" />
+    <Compile Include="Repositories\BusinessTypeRepo.cs" />
+    <Compile Include="Repositories\ConcertGuestRepo.cs" />
+    <Compile Include="Repositories\ConcertMessageRuleRepo.cs" />
+    <Compile Include="Repositories\ConcertRepo.cs" />
+    <Compile Include="Repositories\ConcertReservationMessageRepo.cs" />
+    <Compile Include="Repositories\ConcertReservationRepo.cs" />
+    <Compile Include="Repositories\ConcertSeatingRepo.cs" />
+    <Compile Include="Repositories\ConcertSeatLockRepo.cs" />
+    <Compile Include="Repositories\GuestMessageRepo.cs" />
+    <Compile Include="Repositories\IBusinessDetailRepo.cs" />
+    <Compile Include="Repositories\IBusinessTypeRepo.cs" />
+    <Compile Include="Repositories\IConcertGuestRepo.cs" />
+    <Compile Include="Repositories\IConcertMessageRuleRepo.cs" />
+    <Compile Include="Repositories\IConcertRepo.cs" />
+    <Compile Include="Repositories\IConcertReservationMessageRepo.cs" />
+    <Compile Include="Repositories\IConcertReservationRepo.cs" />
+    <Compile Include="Repositories\IConcertSeatingRepo.cs" />
+    <Compile Include="Repositories\IConcertSeatLockRepo.cs" />
+    <Compile Include="Repositories\IGuestMessageRepo.cs" />
+    <Compile Include="Repositories\IReservationBusinessRepo.cs" />
+    <Compile Include="Repositories\IReservationGuestRepo.cs" />
+    <Compile Include="Repositories\IReservationMessageRepo.cs" />
+    <Compile Include="Repositories\IReservationMessageRule.cs" />
+    <Compile Include="Repositories\IReservationRepo.cs" />
+    <Compile Include="Repositories\IRestaurantTableRepo.cs" />
+    <Compile Include="Repositories\IStaffTypeRepo.cs" />
+    <Compile Include="Repositories\IVisitMessageSentRepo.cs" />
+    <Compile Include="Repositories\IRestaurantRepo.cs" />
+    <Compile Include="Repositories\ILoyaltyMessageRepo.cs" />
+    <Compile Include="Repositories\IUserRepo.cs" />
+    <Compile Include="Repositories\IUsersInRestaurantRepo.cs" />
+    <Compile Include="Repositories\ReservationBusinessRepo.cs" />
+    <Compile Include="Repositories\ReservationGuestRepo.cs" />
+    <Compile Include="Repositories\ReservationMessageRepo.cs" />
+    <Compile Include="Repositories\ReservationMessageRuleRepo.cs" />
+    <Compile Include="Repositories\ReservationRepo.cs" />
+    <Compile Include="Repositories\RestaurantRepo.cs" />
+    <Compile Include="Repositories\RestaurantTableRepo.cs" />
+    <Compile Include="Repositories\StaffTypeRepo.cs" />
+    <Compile Include="Repositories\UserRepo.cs" />
+    <Compile Include="Repositories\GetGuestTypeRepo.cs" />
+    <Compile Include="Repositories\GuestInfoRepo.cs" />
+    <Compile Include="Repositories\IGetGuestTypeRepo.cs" />
+    <Compile Include="Repositories\IGuestInfoRepo.cs" />
+    <Compile Include="Repositories\IReadyMessageRepo.cs" />
+    <Compile Include="Infrastructure\Repositories\IWaitListRepository.cs" />
+    <Compile Include="Repositories\IRestaurantChainRepo.cs" />
+    <Compile Include="Repositories\IUserInfoRepo.cs" />
+    <Compile Include="Repositories\IVisitMessageRepo.cs" />
+    <Compile Include="Repositories\IWaitListRepo.cs" />
+    <Compile Include="Repositories\ReadyMessageRepo.cs" />
+    <Compile Include="Models\DataAccess.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataAccess.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DataAccess.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataAccess.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DataAccess.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataAccess.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DeliveryStatu.cs">
+      <DependentUpon>DataAccess.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ExternalLogin.cs" />
+    <Compile Include="Models\GeneralModel.cs" />
+    <Compile Include="Models\GetHostess_Result.cs">
+      <DependentUpon>DataAccess.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetReturnGuest_Result.cs">
+      <DependentUpon>DataAccess.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetSeatedMessageList_Result.cs">
+      <DependentUpon>DataAccess.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetVisitedMessageList_Result.cs">
+      <DependentUpon>DataAccess.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetWaitListFromReply_Result.cs">
+      <DependentUpon>DataAccess.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GuestInfo.cs">
+      <DependentUpon>DataAccess.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GuestType.cs">
+      <DependentUpon>DataAccess.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\LocalPasswordModel.cs" />
+    <Compile Include="Models\LoginModel.cs" />
+    <Compile Include="Models\MessageModel.cs" />
+    <Compile Include="Models\MessageReply.cs">
+      <DependentUpon>DataAccess.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MessageReplyType.cs">
+      <DependentUpon>DataAccess.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Infrastructure\Repositories\MessageRepository.cs" />
+    <Compile Include="Models\MessageSent.cs">
+      <DependentUpon>DataAccess.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MetricsModel.cs" />
+    <Compile Include="Models\PagingModel.cs" />
+    <Compile Include="Models\PlanType.cs">
+      <DependentUpon>DataAccess.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ReadyMessage.cs">
+      <DependentUpon>DataAccess.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RegisterExternalLoginModel.cs" />
+    <Compile Include="Models\Restaurant.cs">
+      <DependentUpon>DataAccess.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RestaurantChain.cs">
+      <DependentUpon>DataAccess.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RestaurantInfoModel.cs" />
+    <Compile Include="Models\RestaurantTable.cs">
+      <DependentUpon>DataAccess.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SeatedMessageSent.cs">
+      <DependentUpon>DataAccess.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SendVisitMessage_Result.cs" />
+    <Compile Include="Models\SMSModel.cs" />
+    <Compile Include="Models\UserInfo.cs">
+      <DependentUpon>DataAccess.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\UserProfile.cs">
+      <DependentUpon>DataAccess.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\UsersContext.cs" />
+    <Compile Include="Models\VisitMessage.cs">
+      <DependentUpon>DataAccess.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VisitMessageSent.cs">
+      <DependentUpon>DataAccess.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\WaitList.cs">
+      <DependentUpon>DataAccess.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\WaitListModel.cs" />
+    <Compile Include="Infrastructure\Repositories\WaitListRepository.cs" />
+    <Compile Include="Models\WebApplication.cs" />
+    <Compile Include="Models\WebApplicationUser.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\RestaurantChainRepo.cs" />
+    <Compile Include="Repositories\UserInfoRepo.cs" />
+    <Compile Include="Repositories\UsersInRestaurantRepo.cs" />
+    <Compile Include="Repositories\VisitMessageRepo.cs" />
+    <Compile Include="Repositories\LoyaltyMessageRepo.cs" />
+    <Compile Include="Repositories\VisitMessageSentRepo.cs" />
+    <Compile Include="Repositories\WaitListRepo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\.editorconfig">
+      <Link>.editorconfig</Link>
+    </None>
+    <None Include="App.config" />
+    <EntityDeploy Include="Models\DataAccess.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>DataAccess.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Models\DataAccess.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DataAccess.edmx</DependentUpon>
+      <LastGenOutput>DataAccess.Context.cs</LastGenOutput>
+    </None>
+    <None Include="Models\DataAccess.edmx.diagram">
+      <DependentUpon>DataAccess.edmx</DependentUpon>
+    </None>
+    <None Include="Models\DataAccess.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DataAccess.edmx</DependentUpon>
+      <LastGenOutput>DataAccess.cs</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\dws-core\Authentication\Authentication.csproj">
+      <Project>{73261392-01ec-4cf3-bc8a-8ab5a3803f6d}</Project>
+      <Name>Authentication</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\dws-core\common.api\common.api.csproj">
+      <Project>{5209b5ac-d29f-4b8a-bd2d-d990a007916a}</Project>
+      <Name>common.api</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\dws-core\common.dal\common.dal.csproj">
+      <Project>{1ec726d2-49bd-4ab2-b918-244696a2531f}</Project>
+      <Name>common.dal</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\dws-core\Core\Core.csproj">
+      <Project>{01979990-7378-457d-bdfc-779c38ac6166}</Project>
+      <Name>Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,102 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+<style>
+    .updated_new .content-header {
+        padding: 13px 17px;
+    }
+</style>
+
+<section class="content-header">
+    <h2 class="uppercase">Loyalty</h2>
+</section>
+<section class="content-body">
+    <div class="content-table normal-table custom-table-responsive-xs">
+        <table class="table table-striped">
+            <thead>
+                <tr class="shadow-bottom">
+                    <th width="55%">Name</th>
+                    <th width="9%">Total</th>
+                    <th width="9%">Week</th>
+                    <th width="9%">Month</th>
+                    <th width="9%">Year</th>
+                    <th width="9%"></th>
+                </tr>
+            </thead>
+            <tbody data-bind="foreach: businesses, as: 'business'">
+                <tr>
+                    <td>
+                        <div class="name-block">
+                            <p class="name" data-bind="text: GuestName"></p>
+                            <span class="visit-info" data-bind="text: LastVisit">Last Visit: September 04, 2015</span>
+                        </div>
+                    </td>
+                    <td data-bind="text: Total"></td>
+                    <td data-bind="text: Week"></td>
+                    <td data-bind="text: Month"></td>
+                    <td data-bind="text: Year"></td>
+                    <td>
+                        <!-- ko if: IsUnReadMessage -->
+                        <span style="cursor:pointer" class="small-text color-blue" data-bind="text: UnReadMessageCount, click:function(){$root.ShowMsg(GuestId(),GuestName(),UnReadMessageCount())}"></span>
+                        <!-- /ko -->
+                        <!-- ko ifnot: IsUnReadMessage -->
+                        <a href="#" title="Message" data-bind="click:function(){$root.ShowMsg(GuestId(),GuestName(),UnReadMessageCount())}"><span class="small-message"></span></a>
+                        <!-- /ko -->
+                        @*<a href="#" title="Message" data-bind="click: SendMessage"><span class="small-message"></span></a>*@
+                    </td>
+                </tr>
+            </tbody>
+        </table><!-- end of table -->
+    </div><!-- end of content-table -->
+
+    <nav class="pull-right">
+        <ul class="pagination" data-bind="with: pagingdata">
+            <li><a href="#" aria-label="Previous" data-bind="click: function () { GoToPage(Page()-1) }, visible: HasPrev()"><span aria-hidden="true">&laquo;</span></a></li>
+            <!-- ko foreach: new Array(TotalPages()) -->
+            <li data-bind="attr: { class: ($parent.Page() == $index() + 1 ? 'active' : '') }"><a href=" #" data-bind="click: function () { $parent.GoToPage($index() + 1) }, text: $index() + 1"><span class="sr-only">(current)</span></a></li>
+            <!-- /ko -->
+            <li><a data-bind="click: function () { GoToPage(Page()+1) }, visible: HasNext()" href="#"><span aria-hidden="true">»</span></a></li>
+        </ul>
+    </nav>
+</section><!-- end of content-body -->
+<!-- Chat section -->
+<span class="chat-overlay"></span>
+<div class="chat-box">
+    <div class="chat-header">
+        <h2 class="chat-title" data-bind="text:GuestName"></h2>
+        <a href="javascript:;" class="chat-close" onclick="ClearAll()"><span></span></a>
+    </div><!--end of chat-header -->
+
+    <ul class="chat-msgs" data-bind="foreach: GuestMessages">
+        <!-- ko if: MessageFrom -->
+        <li class="chat-details from-msg">
+            <div class="from-details clearfix">
+                <h3 class="pull-left color-green" data-bind="text:GuestName"></h3>
+                <span class="pull-right" data-bind="text:MessageTime"></span>
+            </div>
+            <div class="chat-content" data-bind="text:Message">
+            </div>
+        </li>
+        <!-- /ko -->
+        <!-- ko ifnot: MessageFrom -->
+        <li class="chat-details own-msg">
+            <div class="own-details clearfix">
+                <h3 class="pull-right">You</h3>
+                <span clas="pull-left" data-bind="text:MessageTime"></span>
+            </div>
+            <div class="chat-content" data-bind="text:Message">
+            </div>
+        </li>
+        <!-- /ko -->
+    </ul><!-- end of chat-msgs -->
+
+
+    <form action="#" class="chat-textbox">
+        <input type="text" class="chat-input" placeholder="Enter reply here.." data-bind="value: NewGuestMessage" />
+        <input type="submit" class="chat-submit" value="Reply" data-bind="click:function(){SendMessageToGuest(GuestId())}">
+    </form><!-- end of chat-textbox -->
+</div><!--end of chat-box -->
+@*<script src="~/Scripts/app/returnguest.js"></script>*@
+@Scripts.Render("~/scripts/returnguest")
+

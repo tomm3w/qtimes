@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="150" height="60" viewBox="0 0 150 60">
+    <g id="prefix__logo" transform="translate(-273 -15)">
+        <text id="prefix__Seat" fill="#3e5b6a" font-family="NunitoSans-Bold, Nunito Sans" font-size="44px" font-weight="700" transform="translate(273 59)">
+            <tspan x="0" y="0">Seat</tspan>
+        </text>
+        <path id="prefix__icon" fill="#2bc783" d="M26 52A26.007 26.007 0 0 1 15.88 2.043a26.007 26.007 0 0 1 20.24 47.914A25.837 25.837 0 0 1 26 52zm-.12-42.594a16.474 16.474 0 1 0 0 32.949 16.328 16.328 0 0 0 9.761-3.21l1.031.943a2.665 2.665 0 1 0 3.6-3.932l-.9-.825A16.467 16.467 0 0 0 25.88 9.406zm0 26.892a10.414 10.414 0 1 1 8.964-5.107l-2.8-2.559a2.665 2.665 0 0 0-3.6 3.932l2.589 2.369A10.417 10.417 0 0 1 25.88 36.3z" transform="translate(371 19)"/>
+    </g>
+</svg>

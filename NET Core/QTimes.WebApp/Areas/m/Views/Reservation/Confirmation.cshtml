@@ -1,0 +1,161 @@
+﻿@model QTimes.core.dal.Models.Reservation
+
+@{
+    Layout = "~/Areas/m/Views/Shared/_LayoutConfirmation.cshtml";
+}
+
+<script>
+    var businessId = '@Model.BusinessDetailId';
+    var webserviceURL = '@ViewBag.webserviceURL';
+     var passUrl = '@Model.PassUrl';
+</script>
+
+<div class="homescreen_pop modal fade" id="homescreen_pop" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </div>
+                <div class="popup_para_wrap">
+                    <div class="images_logo_pop">
+                        <img src="/content/mReservation/img/Group 1141.svg" alt="">
+                    </div>
+                    <p class="pop_title">Add to iOS Home Screen</p>
+                    <p class="pop_sub_p">For iOS, tap this (from Safari)</p>
+                    <div class="img_up-shw">
+                        <img src="/content/mReservation/img/screen.png" alt="">
+                    </div>
+                    <p class="pop_sub_p divided_sec_pop">then choose <span>"Add to Home Screen"</span></p>
+                    <p class="pop_title anroid_head">Add to Android Home Screen</p>
+                    <p class="pop_sub_p">
+                        Open the link in your chrome browser <br>
+                        and choose <span>"Add To Homescreen"</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="bookin_content">
+    <div class="container">
+        <div class="bookin_content_wrap">
+            <div class="bokin_head">
+                <p>Booking Confirmation</p>
+            </div>
+            <div class="bokin_body">
+                <div class="bokin_sec1">
+                    <p class="bokin_sec1_header">@Model.BusinessDetail.BusinessName</p>
+                    <div class="event_confirm_div">
+                        <ul class="event_confirm one_set">
+                            <li><span>EVENT</span>@Model.BusinessDetail.BusinessName</li>
+                            <li><span>CONFIRMATION</span>6210SR05424</li>
+                        </ul>
+                        <ul class="event_confirm two_set">
+                            <li><span>GROUP SIZE</span>@Model.Size</li>
+                        </ul>
+                        <ul class="event_confirm">
+                            <li><span>GUEST</span>@Model.ReservationGuest.Name</li>
+                        </ul>
+                    </div>
+                    <div class="image_qr">
+                        <img id="qrcode" alt="QR" src="/images/noimage.png">
+                    </div>
+                </div>
+                <div class="bokin_linkup">
+                    <ul>
+                        <li class="homescreen_a"><a type="button" class="" data-toggle="modal" data-target="#homescreen_pop" href="#">&#43;&nbsp;to Homescreen</a></li>
+                        <li class="save_to_a"><a href="@Model.PassUrl">Save To Wallet</a></li>
+                    </ul>
+                </div>
+                <div class="bokin_sec2">
+                    <div id="accordion">
+                        <div class="card">
+                            <div class="card-header" id="headingOne">
+                                <div class="btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    <div class="ico_head">
+                                        <h5 class="mb-0">
+                                            GUEST NAMES
+                                        </h5>
+                                        <div class="arrow_wrap">
+                                            <i class="fa fa-chevron-down down_arrow"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                                <div class="card-body">
+                                    <ul class="person_name_acco">
+                                        <li>@Model.ReservationGuest.Name</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header" id="headingTwo">
+                                <div class="btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    <div class="ico_head">
+                                        <h5 class="mb-0">
+                                            GUIDELINES
+                                        </h5>
+                                        <div class="arrow_wrap">
+                                            <i class="fa fa-chevron-down down_arrow"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                                <div class="card-body">
+                                    <ul class="person_name_acco">
+                                        @if (Model.BusinessDetail.EnablePrivacyPolicy == true && !string.IsNullOrWhiteSpace(Model.BusinessDetail.PrivacyPolicyFilePath))
+                                        {
+                                            <li><a id="privayPolicy" href="#" target="_blank">PRIVACY POLICY</a></li>
+                                        }
+                                        @if (Model.BusinessDetail.EnableServiceTerms == true && !string.IsNullOrWhiteSpace(Model.BusinessDetail.ServiceTermsFilePath))
+                                        {
+                                            <li><a id="termsService" href="#" target="_blank">TERMS OF SERVICE</a></li>
+                                        }
+                                        @if (Model.BusinessDetail.EnableCommunityGuidelines == true && !string.IsNullOrWhiteSpace(Model.BusinessDetail.CummunityGuidelinesFilePath))
+                                        {
+                                            <li><a id="communityGuidelines" href="#" target="_blank">COMMUNITY GUIDELINES</a></li>
+                                        }
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header" id="headingThree">
+                                <div class="btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                    <div class="ico_head">
+                                        <h5 class="mb-0">
+                                            POWERED BY
+                                        </h5>
+                                        <div class="arrow_wrap">
+                                            <i class="fa fa-chevron-down down_arrow"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                                <div class="card-body">
+                                    <ul class="person_name_acco">
+                                        <li>QTimes</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<environment include="Development">
+    <script src="~/Scripts/app/reservation/m/confirmation.js"></script>
+</environment>
+<environment exclude="Development">
+    <script src="/Scripts/app/reservation/m/confirmation.min.js"></script>
+</environment>

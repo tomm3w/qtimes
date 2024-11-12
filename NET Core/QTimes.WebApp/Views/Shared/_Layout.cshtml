@@ -1,0 +1,55 @@
+﻿@*@{ //string baseUrl = Request.Url.GetLeftPart(UriPartial.Authority); }*@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="Social distancing, Social distancing applications, Occupancy Control, Reduced reservations during Coronavirus, Covid -19 Occupancy limitations, Covid-19 reservation platform, Coronavirus social distancing platform">
+    <meta name="description" content="Social distancing, Social distancing applications, Occupancy Control, Reduced reservations during Coronavirus, Covid -19 Occupancy limitations, Covid-19 reservation platform, Coronavirus social distancing platform">
+    <title>QTimes</title>
+    <environment include="Development">
+        <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,800;1,900&display=swap" rel="stylesheet">
+        <link href="/Content/assets/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+        <link href="/Content/assets/bootstrap/css/bootstrap-select.min.css" rel="stylesheet" />
+        <link href="/Content/assets/css/style.css" rel="stylesheet" />
+        <link href="/Content/assets/css/animate.css" rel="stylesheet" />
+        <link rel="stylesheet" href="/Content/assets/slick-1.8.1/slick/slick.css">
+    </environment>
+    <environment exclude="Development">
+        <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,800;1,900&display=swap" rel="stylesheet">
+        <link href="/css/vendor.min.css" rel="stylesheet" />
+        <link href="/css/site.min.css" rel="stylesheet" />
+    </environment>
+
+
+    @Html.Raw(JavaScriptSnippet.FullScript)
+    <environment include="Development">
+        <script src="/Content/assets/js/jquery-3.5.1.js"></script>
+        <script src="/Content/assets/bootstrap/js/bootstrap.min.js"></script>
+        <script src="/Content/assets/bootstrap/js/bootstrap-select.js"></script>
+        <script src="/Content/assets/slick-1.8.1/slick/slick.js"></script>
+        <script src="/Scripts/wow.js"></script>
+        <script src="/Scripts/utility.js"></script>
+        <script src='https://www.google.com/recaptcha/api.js'></script>
+        <script src="/Content/assets/js/app.js"></script>
+        <script src="~/Scripts/notify.min.js"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="/js/vendor.min.js"></script>
+        <script src="/js/site.min.js"></script>
+        <script src="/Content/assets/slick-1.8.1/slick/slick.js"></script>
+        <script src="/Scripts/wow.js"></script>
+        <script src='https://www.google.com/recaptcha/api.js'></script>
+    </environment>
+</head>
+<body class="qtimes_body">
+    <div id="wrapper_qtimes">
+        @Html.Partial("_HeaderLogo")
+        @RenderBody()
+        @Html.Partial("_Footer")
+    </div>
+
+    @RenderSection("Scripts")
+</body>
+</html>

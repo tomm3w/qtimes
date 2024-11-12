@@ -1,0 +1,100 @@
+﻿@*@if (ViewBag.User.RestaurantId == null)
+{
+    <script>
+        if (window.location.href.toLowerCase().indexOf('admin/restaurant') == -1) {
+            window.location.href = "@Url.Action("Index", "Restaurant", new { area = "Admin" })";
+        }
+    </script>
+}*@
+@using SeatQ.Areas.Admin.Models;
+@{
+    MenuListModel menu = new SeatQ.Helpers.MenuHelper().GetMenu();
+    string selectedMenu = ViewBag.selectedMenu ?? "Metrics";
+    menu.selectedMenu = menu.Menus.FirstOrDefault(m => m.Name.ToLower() == selectedMenu.ToLower());
+
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>@ViewBag.Title</title>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="shortcut icon" href="~/Images/favicon.ico" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/jquery.pageslide.css" rel="stylesheet" />
+    <link href="~/Content/slider.css" rel="stylesheet" />
+
+    @Styles.Render("~/Content/cssadmin")
+    @Styles.Render("~/Content/themes/base/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryui")
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/ko")
+    <link href="~/Content/bootstrap-switch.css" rel="stylesheet" />
+    <script src="~/Scripts/utility.js"></script>
+    <script src="~/Scripts/form2js.js"></script>
+    <script src="~/Scripts/jquery.toObject.js"></script>
+    <script src="~/Scripts/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="~/Scripts/jquery.cookie.js"></script>
+    <script src="~/Scripts/notify.min.js"></script>
+    <script src="~/Scripts/bootstrap-switch.js"></script>
+
+    <script>
+        var rcid = 0;
+        var webserviceURL = "@ViewBag.CoreApiEndpoint";
+        var webserviceCoreURL = "@ViewBag.CORE_API_URL";
+    </script>
+</head>
+<body>
+    <div class="overlay" id="overlay" style="display:none"></div>
+
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header col-sm-3 col-md-1">
+                <a class="navbar-brand" href="#">Project name</a>
+            </div>
+            <div class="navbar-collapse collapse col-sm-9 col-sm-offset-3" id="divWaitlist">
+                <div class="pull-left">
+                    <img data-bind="attr:{src:ImageSrc}" alt="" class="pull-left" />
+                    <h4 data-bind="text:BusinessName"></h4>
+                    <div data-bind="text: RestaurantNumber" class="link-gray h6"></div>
+                </div>
+                <div class="pull-right">
+                    <div class="welcome-info">Welcome <strong>@ViewBag.User.BusinessName</strong> | <a href="@Url.Action("logoff", "Account", new { area = "" })" class="txt-green">Logoff</a></div>
+                    <a href="#" class="button green pull-right" id="addList">ADD NEW LIST</a>
+                </div>
+                <div class="pull-right">
+                    <select class="selectbox" id="selectCompany" style="display:none">
+                        <option value="0">Choose Restaurant...</option>
+                    </select>
+                </div>
+                <div class="center-block w270 link-gray">Avg. Wait Time <span class="avg-time"><strong data-bind="text: AverageWaitTime"></strong>&nbsp;Mins</span></div>
+            </div>
+            <div class="navbar-collapse collapse" id="divOther">
+                <div class="pull-right">
+                    <div class="welcome-info"> Welcome <strong>@User.Identity.Name</strong> | <a href="@Url.Action("logoff", "Account", new { area = "" })" class="txt-green">Logoff</a></div>
+                    <a href="#" class="button green pull-right" id="addBtn">NEW MESSAGE</a>
+                    <a href="#" id="filter" onclick="ShowFilter()" class="btn-filter pull-right">Filter</a>
+                    <a href="#" id="customDate" class="btn-custom pull-right" onclick="ShowCustom()">Custom</a>
+                </div>
+                <div class="pull-right">
+                    <select class="selectbox" id="selectCompany" style="display:none">
+                        <option value="0">Choose Restaurant...</option>
+                    </select>
+                </div>
+
+                <h3 class="center-block w270" id="divHeader"></h3>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-9 col-sm-offset-3 col-md-11 col-md-offset-1 main">
+                @RenderBody()
+            </div>
+        </div>
+    </div>
+</body>
+</html>

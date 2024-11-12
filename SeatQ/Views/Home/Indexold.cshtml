@@ -1,0 +1,336 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+    Layout = "~/Views/Shared/_LayoutHomeOld.cshtml";
+}
+<style>
+    .widget-close {
+        background: rgba(0, 0, 0, 0) url("/images/close-button.png") no-repeat scroll 0 0;
+        background-size: 24px 24px;
+        height: 24px;
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        width: 24px;
+        z-index: 999;
+    }
+
+    .widget-holder {
+        position: absolute;
+        bottom: 20px;
+        left: 20px;
+        z-index: 99999;
+        position: fixed;
+        -webkit-box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.25);
+        -moz-box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.25);
+        box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.25);
+    }
+</style>
+<div class="w-section section hero">
+    <div class="w-nav header" data-collapse="medium" data-animation="over-right" data-duration="400">
+        <a class="w-nav-brand" href="#">
+            <img class="logo" src="NewDesign/images/SeatQ-Logo.png" width="50">
+        </a>
+        <nav class="w-nav-menu nav-menu" role="navigation">
+            <a class="w-nav-link nav-link" href="javascript:void()" id="btnSignin">Sign In</a><a class="w-nav-link nav-link" href="javascript:void()" id="btnSignup">Sign Up</a><a class="w-nav-link nav-link" href="#Contact">Contact Us&nbsp;</a>
+        </nav>
+        <div class="w-nav-button menu-button">
+            <div class="w-icon-nav-menu"></div>
+        </div>
+    </div>
+    <h1 class="heading">
+        SeatQ enhances waitlist management and
+        improves guest satisfaction
+    </h1>
+    <div class="w-hidden-small w-hidden-tiny block-1" data-ix="popout-7">
+        <img class="bullet-check" src="NewDesign/images/clock.png" width="48">
+        <div class="bullet-text white">
+            View wait times
+            <br>on mobile&nbsp;
+        </div>
+    </div>
+    <div class="w-hidden-small w-hidden-tiny block-1" data-ix="popout-8">
+        <img class="bullet-check" src="NewDesign/images/comment.png" width="48">
+        <div class="bullet-text white">
+            Read Guest
+            <br>reviews 
+        </div>
+    </div>
+    <div class="w-hidden-small w-hidden-tiny block-1" data-ix="popout-9">
+        <img class="bullet-check" src="NewDesign/images/download.png" width="48">
+        <div class="bullet-text white">
+            Coupon
+            <br> downloads
+        </div>
+    </div>
+    <div class="w-hidden-small w-hidden-tiny block-1" data-ix="popout-10">
+        <img class="bullet-check" src="NewDesign/images/heart.png" width="48">
+        <div class="bullet-text white">
+            Rewards for
+            <br>returning guests
+        </div>
+    </div>
+    <div class="w-hidden-small w-hidden-tiny block-1" data-ix="popout-11">
+        <img class="bullet-check" src="NewDesign/images/users.png" width="48">
+        <div class="bullet-text white">
+            Send special
+            <br>messages to guests
+        </div>
+    </div><a class="button call-to-action" href="#Why">Get Started Now!</a>
+</div>
+<div class="w-section section first" id="Why">
+    <h2 class="title-2">Why SeatQ?</h2>
+    <p class="description">SeatQ wait list management, allows for seamless communication between your business and guests.</p>
+    <div class="w-row row">
+        <div class="w-col w-col-6 w-col-stack">
+            <img class="image-kiosk" src="NewDesign/images/kiosk-image.png" width="500" data-ix="left-to-right">
+        </div>
+        <div class="w-col w-col-6 w-col-stack">
+            <div class="block-2">
+                <div class="w-row">
+                    <div class="w-col w-col-2">
+                        <img class="icon-1" src="NewDesign/images/scissor.svg">
+                    </div>
+                    <div class="w-col w-col-10 w-clearfix">
+                        <div class="bullet-text">Eliminate Costly Pagers</div>
+                    </div>
+                </div>
+            </div>
+            <div class="block-2">
+                <div class="w-row">
+                    <div class="w-col w-col-2">
+                        <img class="icon-1" src="NewDesign/images/Customer2.svg" width="32">
+                    </div>
+                    <div class="w-col w-col-10 w-clearfix">
+                        <div class="bullet-text">Set up SeatQ to communicate specials based on previous visits by guests</div>
+                    </div>
+                </div>
+            </div>
+            <div class="block-2">
+                <div class="w-row">
+                    <div class="w-col w-col-2">
+                        <img class="icon-1" src="NewDesign/images/Star.svg">
+                    </div>
+                    <div class="w-col w-col-10 w-clearfix">
+                        <div class="bullet-text">Special positioning on the wait list for your returning guests</div>
+                    </div>
+                </div>
+            </div>
+            <div class="block-2">
+                <div class="w-row">
+                    <div class="w-col w-col-2">
+                        <img class="icon-1" src="NewDesign/images/Statistic.svg">
+                    </div>
+                    <div class="w-col w-col-10 w-clearfix">
+                        <div class="bullet-text">Manage offers automatically by pre-loading them based on the number of times the guest returns</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="w-section section second">
+    <h2 class="title-2"><span class="highlight-text">Easy to use</span> waitlist control, guest messaging and tracking returning guests</h2>
+    <p class="description">6,000 respondents recently surveyed by a major restaurant reservations platform indicated that they wanted to see these applications most</p>
+    <div class="w-row row">
+        <div class="w-col w-col-4">
+            <div class="block-1 highlight">
+                <img class="flat-icon" src="NewDesign/images/Watch.svg" data-ix="popout">
+                <div class="bullet-text light">
+                    “1. How long is the wait time”&nbsp;
+                    <br><strong class="highlight-text">(85%)</strong>
+                </div>
+            </div>
+        </div>
+        <div class="w-col w-col-4">
+            <div class="block-1 highlight">
+                <img class="flat-icon" src="NewDesign/images/Checklist.svg" data-ix="popout-3">
+                <div class="bullet-text light">
+                    “2. Add name to wait list”&nbsp;
+                    <br><strong class="highlight-text">(83%)</strong>
+                </div>
+            </div>
+        </div>
+        <div class="w-col w-col-4">
+            <div class="block-1 highlight">
+                <img class="flat-icon" src="NewDesign/images/Smartphone-Message.svg" data-ix="popout-6">
+                <div class="bullet-text light">
+                    “3. Notifications that table is ready”
+                    <br> <strong class="highlight-text">(83%)</strong>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="w-row">
+        <div class="w-col w-col-4">
+            <div class="block-1 highlight">
+                <img class="flat-icon" src="NewDesign/images/bubbles.svg" data-ix="popout-5">
+                <div class="bullet-text light">
+                    “4. Two way texting”
+                    <br>&nbsp;<strong class="highlight-text">(70%)</strong>
+                </div>
+            </div>
+        </div>
+        <div class="w-col w-col-4">
+            <div class="block-1 highlight">
+                <img class="flat-icon" src="NewDesign/images/Customer.svg" data-ix="popout-2">
+                <div class="bullet-text light">
+                    “5. Choose their special table”
+                    <br> <strong class="highlight-text">(69%)</strong>
+                </div>
+            </div>
+        </div>
+        <div class="w-col w-col-4">
+            <div class="block-1 highlight">
+                <img class="flat-icon" src="NewDesign/images/Phone.svg" data-ix="popout-4">
+                <div class="bullet-text light">
+                    “6. View Menus”&nbsp;
+                    <br><strong class="highlight-text">(58%)</strong>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="w-section section third">
+    <h2 class="title-2"><span class="highlight-text">SeatQ</span>&nbsp;delivers the service your <br />guests want.</h2>
+    <div class="divider"></div>
+    <div class="divider-long"></div>
+    <div class="content1">
+        <div class="w-container">
+            <div class="w-row row">
+                <div class="w-col w-col-6 w-col-stack col">
+                    <img class="small-flat-icon left" src="NewDesign/images/Waitlist.svg">
+                    <h4 class="title-2 left"><span>Wait </span>Time and List</h4>
+                    <div class="description left">Guests can check current wait times and add their name to the wait list</div>
+                </div>
+                <div class="w-col w-col-6 w-col-stack">
+                    <img src="NewDesign/images/Image-1.png" width="537" data-ix="left-to-right-2">
+                </div>
+            </div>
+            <div class="divider-long"></div>
+            <div class="w-row">
+                <div class="w-col w-col-6 w-col-stack">
+                    <img class="image-hide" src="NewDesign/images/Image-2.png" width="559" data-ix="left-to-right">
+                </div>
+                <div class="w-col w-col-6 w-col-stack col">
+                    <img class="small-flat-icon left" src="NewDesign/images/Sharing.svg">
+                    <h4 class="title-2 left">Direct Guest Reviews</h4>
+                    <div class="description left">Ask your guest to provide their review</div><img class="w-hidden-main" src="NewDesign/images/Image-2.png" width="559" data-ix="left-to-right">
+                </div>
+            </div>
+            <div class="divider-long"></div><img class="small-flat-icon" src="NewDesign/images/Diamond.svg">
+            <h4 class="title-2">Coupon</h4>
+            <div class="description">Offer incentives for completing reviews at the table</div>
+        </div><img class="image" src="NewDesign/images/Image-3.png" width="500" data-ix="popout">
+    </div>
+    <div class="attention-block">
+        <h2 class="title-2">What’s More?</h2>
+        <p class="description">SeatQ provide solutions to engage your guests, encourage their return, meet their expectations and deliver real-time reviews.</p>        <a class="button signup" href="sign-up.html">Get Started Now!</a>
+    </div>
+</div>
+
+@*<div class="w-section section fifth">
+    <h2 class="title-2 white">Pricing Plans</h2><p class="description white">Visa, American Express, Master Card, Discover</p><div class="w-row">
+        <div class="w-col w-col-6 w-col-stack">
+            <div class="pricing-block" data-ix="popout" style="opacity: 1; transform: scale(1); transition: opacity 500ms, transform 500ms;">
+                <h3 class="pricing-title">Limited Plan</h3><div class="pricing"><div class="pricing"><strong class="price">$59<br></strong>monthly</div><div class="pricing seperator">/</div><div class="pricing"><strong class="price">$649<br></strong>annually</div></div><div class="pricing-text">
+                    200 Seats per month<br>Wait List Management<br>Coupon Downloads<br>Customer Support (8
+                    to 5 ET/M - F)<br>Free beacon with annual signups
+                </div><div class="pricing-text grayed">Two way push messaging<br>Dedicated Account Manager</div><a class="button signup" href="http://bit.ly/SeatQ59">Get This Plan</a>
+            </div>
+        </div><div class="w-col w-col-6 w-col-stack"><div class="pricing-block" data-ix="popout-2" style="opacity: 1; transform: scale(1); transition: opacity 500ms, transform 500ms;"><h3 class="pricing-title">Unlimited Plan</h3><div class="pricing"><div class="pricing"><strong class="price">$69<br></strong>monthly</div><div class="pricing seperator">/</div><div class="pricing"><strong class="price">$749<br></strong>annually</div></div><div class="pricing-text">Unlimited Seats per month<br>Wait List Management<br>Coupons Downloads<br>Customer Support (8 to 5 ET/M - F)<br>Free beacon with annual signups<br>Two way push messaging<br>Dedicated Account Manager</div><a class="button signup" href="http://bit.ly/SeatQUnlimited">Get This Plan</a></div></div>
+    </div>
+</div>*@
+
+<div class="w-section section sixth" id="Contact">
+    <h2 class="title-2">Get in touch</h2><p class="description">
+        Contact the SeatQ team to get setup and running either as a
+        standalone application or integrate with an existing mobile app.&nbsp;
+    </p><div class="divider"></div><div class="contact-number">(970) 306-7315</div><div class="contact-number">sales@seatq.com</div><div class="form-block">
+        <div class="w-form">
+            @*<form id="email-form" name="email-form" data-name="Email Form" data-redirect="http://seatq.webflow.io/#Contact">*@
+            <div class="w-row">
+                <div class="w-col w-col-6 column">
+                    <label class="field-label" for="txtname">Your Full Name:</label>
+                    <input class="w-input text-field" id="txtname" type="text" placeholder="John Smith" name="name" data-name="Name" required="required">
+                    <label class="field-label" for="txtbusinessname">Business Name:</label>
+                    <input class="w-input text-field" id="txtbusinessname" type="text" placeholder="Iggies Beach Bar" name="Business" required="required" data-name="Business">
+                </div>
+                <div class="w-col w-col-6 column2">
+                    <label class="field-label" for="txtemail">Your Email Address:</label>
+                    <input class="w-input text-field" id="txtemail" type="email" placeholder="johns@email.com" name="email" data-name="Email" required="required">
+                    <label class="field-label" for="txtphone">Phone #:</label>
+                    <input class="w-input text-field" id="txtphone" type="text" placeholder="(000) 000-0000 " name="Phone" required="required" data-name="Phone">
+                </div>
+
+            </div>
+            <label class="field-label" for="txtmessage">Comments:</label>
+            <textarea class="w-input text-field area" id="txtmessage" placeholder="How can we help you?" name="Message" data-name="Message" required="required"></textarea>
+            <div class="w-col w-col-6 column2">
+                <div class="g-recaptcha" data-sitekey="6LdKKMcUAAAAAJnOkEimAbs1QaSrn6Hz9USp60ct"></div>
+            </div>
+            <a class="button gray pull-right" onclick="ContactSupport()" style="cursor:pointer">SEND MESSAGE</a>
+
+            @*</form>*@
+            <div class="w-form-done"><p>Thank you! Your submission has been received!</p></div><div class="w-form-fail"><p>Oops! Something went wrong while submitting the form</p></div>
+        </div>
+    </div>
+</div>
+<div class="footer">
+    <div class="footer-text">All rights reserved © SeatQ 2020-2021</div>
+</div>
+
+<div class="widget-holder">
+    @*<a class="widget-close" href="javascript:close();"></a>*@
+    <a href="~/Content/COVID.pdf" target="_blank">
+        <img src="~/Images/covid-img@2x.png" style="width:420px" />
+    </a>
+</div>
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script type="text/javascript" src="NewDesign/js/webflow.js"></script>
+<!--[if lte IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif]-->
+<script type="text/javascript">
+
+    var webserviceURL = "@Url.Action("ContactSupport", "Home")";
+
+    jQuery(document).ready(function () {
+
+        $("#btnSignin").click(function () {
+            window.location.href = "@Url.Action("Login", "Account")";
+        });
+        $("#btnSignup").click(function () {
+            window.location.href = "@Url.Action("Register", "Account")";
+        });
+
+        $('.widget-close').click(function () {
+            $('.widget-holder').hide();
+        });
+    });
+
+    function ContactSupport() {
+        var response = grecaptcha.getResponse();
+
+        if (response.length === 0) {
+            $.notify("Please check the reCAPTCHA");
+        } else {
+            $.ajax({
+                type: "POST",
+                url: webserviceURL,
+                data: JSON.stringify({ Name: $("#txtname").val(), Email: $("#txtemail").val(), BusinessName: $("#txtbusinessname").val(), Phone: $("#txtphone").val(), Message: $("#txtmessage").val() }),
+                contentType: "application/json; charset=utf-8",
+                dataType: 'json',
+                success: function (data) {
+                    if (data.status == "ok") {
+                        NotifySavedMessage("Thanks for contacting SeatQ.");
+                    }
+                    if (data.status == "error") {
+                        NotifyErrorMessage(data.ErrorMessage);
+                    }
+                },
+                error: function (error) {
+                    alert('error');
+                }
+            });
+        }
+    }
+</script>

@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+    <defs>
+        <style>
+            .prefix__cls-1{fill:none;stroke:#bbbccb}
+        </style>
+    </defs>
+    <g id="prefix__save-wallet" transform="translate(-31 -379)">
+        <g id="prefix__Rectangle_132" class="prefix__cls-1" data-name="Rectangle 132" transform="translate(31 379)">
+            <rect width="16" height="16" rx="5"/>
+            <rect width="15" height="15" x=".5" y=".5" fill="none" rx="4.5"/>
+        </g>
+        <path id="prefix__Rectangle_133" fill="#bbbccb" d="M0 0h16v3a5 5 0 0 1-5 5H5a5 5 0 0 1-5-5V0z" data-name="Rectangle 133" transform="translate(31 387)"/>
+        <path id="prefix__Line_8" d="M0 0L15 0" class="prefix__cls-1" data-name="Line 8" transform="translate(31.5 383.5)"/>
+    </g>
+</svg>

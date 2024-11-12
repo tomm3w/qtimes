@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>SeatQ</title>
+	<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+	
+	<!-- styles -->
+	<link rel="stylesheet" type="text/css" href="assets/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="assets/bootstrap/css/bootstrap-select.min.css" >
+	<link rel="stylesheet" type="text/css" href="assets/css/app.css">
+
+	<!-- scripts -->
+	<script type="text/javascript" src="assets/js/jquery.js"></script>
+	<script type="text/javascript" src="assets/bootstrap/js/bootstrap.min.js"></script>
+	<script src="assets/bootstrap/js/bootstrap-select.js"></script>
+	<script type="text/javascript" src="assets/js/app.js"></script>
+
+</head>
+<body>
+	<div class="loader">
+        <div class="loader_txt_wrap">
+            <div class="loader_txt"></div>
+            <span class="lode">Loading....</span>
+        </div>
+    </div>
+	<div id="wrapper">
+		<div class="header-container">
+			<header id="header" class="container">
+				<div class="logo-time">
+					<div id="logo">
+						<h1><a href="index.html" title="Logo">Welcome <span class="username">Brianne!</span></a></h1>
+						<a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button"><span class="menu-icon"></span></a>
+					</div><!--end of logo-time-->
+
+					<div class="time">
+						<span class="time-icon"></span> 11:16 am
+					</div><!--end of time-->
+				</div><!--end of logo-time-->
+				
+				<div class="header-table">
+					<span class="bg-gray bg-only"></span>
+					<table class="table">
+						<thead>
+							<tr>
+								<th>Waiting</th>
+								<th>Seated</th>
+								<th class="align-right">Table size</th>
+								<th>1-4</th>
+								<th>5-6</th>
+								<th>7-8</th>
+								<th>9+</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td rowspan="2"><span class="medium-text color-white">1</span></td>
+								<td rowspan="2"><span class="medium-text color-white">34</span></td>
+								<td class="align-right"><span class="smallest-text color-halfwhite">Inline</span></td>
+								<td>3</td>
+								<td>1</td>
+								<td>0</td>
+								<td>0</td>
+							</tr>
+							<tr>
+								<td class="align-right"><span class="smallest-text color-halfwhite">Turnline</span></td>
+								<td>7</td>
+								<td>5</td>
+								<td>0</td>
+								<td>0</td>
+							</tr>
+						</tbody>
+					</table><!-- end of table -->
+				</div><!--end of header-table-->
+
+				<a href="#" class="logout" title="Logout">Logout</a>
+				<a href="#" class="btn btn-primary add-new-btn" data-toggle="modal" data-target="#add-waitlist"><span class="add-icon"></span>Add New</a>
+			</header><!--end of header-->
+		</div><!--end of header-container-->
+
+		
+		<aside id="sidebar" class="main-sidebar bg-darkgray">
+			<ul class="sidebar-menu">
+				<li class="active"><a href="white-popup.html" title="Waitlist"><span class="wait-icon"></span>Waitlist</a></li>
+				<li><a href="#" title="Seating"><span class="seat-icon"></span>Seating</a></li>
+				<li><a href="loyalty.html" title="Loyalty"><span class="loyal-icon"></span>Loyalty</a></li>
+				<li><a href="messages.html" title="Messages"><span class="message-icon"></span>Messages</a></li>
+				<li><a href="#" title="Metrics"><span class="message-icon"></span>Metrics</a></li>
+				<li><a href="#" title="Hostess"><span class="message-icon"></span>Hostess</a></li>
+				<li class="pos-rel">
+					<a href="#" class="dropdown-toggle"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" title="Hostess"><span class="more-icon"></span>More</a>
+					<ul class="sub-menu dropdown-menu">
+						<li><a href="#">Account Settings</a></li>
+						<li><a href="#">Log Off</a></li>
+						<div class="arrow_box"></div>
+					</ul>	
+				</li>
+			</ul><!-- end of sidebar-menu -->
+		</aside><!-- end of sidebar -->
+		
+		<div class="content-wrapper">
+			<section class="content-header">
+				<h2 class="uppercase">Loyalty</h2>
+			</section><!-- end of content-header -->
+			
+			<section class="content-body">
+				<div class="content-table normal-table custom-table-responsive-xs">
+					<table class="table table-striped">
+						<thead>
+							<tr class="shadow-bottom">
+								<th width="55%">Name</th>
+								<th width="9%">Total</th>
+								<th width="9%">Week</th>
+								<th width="9%">Month</th>
+								<th width="9%">Year</th>
+								<th width="9%"></th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>
+									<div class="name-block">
+										<p class="name">Zach Perdue</p>
+										<span class="visit-info">Last Visit: September 04, 2015</span>
+									</div>
+								</td>
+								<td>
+									16
+								</td>
+								<td>
+									1
+								</td>
+								<td>
+									3
+								</td>
+								<td>
+									14
+								</td>
+								<td>
+									<a href="#" title="Message"><span class="small-message">asdfasdf</span></a>
+								</td>
+							</tr>
+
+							<tr>
+								<td>
+									<div class="name-block">
+										<p class="name">Don Johnson</p>
+										<span class="visit-info">Last Visit: August 17, 2015</span>
+									</div>
+								</td>
+								<td>
+									16
+								</td>
+								<td>
+									1
+								</td>
+								<td>
+									3
+								</td>
+								<td>
+									14
+								</td>
+								<td>
+									<a href="#" title="Message"><span class="small-message">asdfasdf</span></a>
+								</td>
+							</tr>
+
+							<tr>
+								<td>
+									<div class="name-block">
+										<p class="name">Jennifer Langley</p>
+										<span class="visit-info">Last Visit: September 01, 2015</span>
+									</div>
+								</td>
+								<td>
+									16
+								</td>
+								<td>
+									1
+								</td>
+								<td>
+									3
+								</td>
+								<td>
+									14
+								</td>
+								<td>
+									<a href="#" title="Message"><span class="small-message">asdfasdf</span></a>
+								</td>
+							</tr>
+
+							<tr>
+								<td>
+									<div class="name-block">
+										<p class="name">Tim Cook</p>
+										<span class="visit-info">Last Visit: May 12, 2015</span>
+									</div>
+								</td>
+								<td>
+									16
+								</td>
+								<td>
+									1
+								</td>
+								<td>
+									3
+								</td>
+								<td>
+									14
+								</td>
+								<td>
+									<a href="#" title="Message"><span class="small-message">asdfasdf</span></a>
+								</td>
+							</tr>
+
+
+							
+						</tbody>			
+					</table><!-- end of table -->
+
+				</div><!-- end of content-table -->
+				
+				<nav class="pull-right">
+				  <ul class="pagination">
+				    <li class="disabled"><a href="#" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>
+				    <li class="active"><a href="#">1 <span class="sr-only">(current)</span></a></li>
+				    <li><a href="#">2 <span class="sr-only">(current)</span></a></li>
+				    <li><a aria-label="Next" href="#"><span aria-hidden="true">»</span></a></li>
+				  </ul>
+				</nav>
+			</section><!-- end of content-body -->
+		</div><!-- end of content-wrapper -->
+
+		<!-- Modal -->
+		<div class="modal fade" id="add-waitlist" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h4 class="modal-title uppercase" id="myModalLabel">Add New List</h4>
+					</div><!-- end of modal-header -->
+
+					<div class="modal-body">
+						<form action="#" class="theme-black-form">
+							<div class="form-group">
+								<label>Name:</label>
+								<input type="text" class="form-control">
+							</div>
+							<div class="form-group">
+								<label>Phone Number:</label>
+								<input type="text" class="form-control">
+							</div>
+							<div class="form-inline">
+								<label class="block">Estimated Wait</label>
+								<div class="form-group inline-form">
+									<input type="text" class="form-control input-small" placeholder="00">
+									<label>Hrs.</label>
+								</div>
+
+								<div class="form-group">
+									<input type="text" class="form-control input-small" placeholder="00">
+									<label>Mins.</label>
+								</div>
+								<div class="form-group pull-right">
+									<a href="#" class="time-btn"><span class="minus-btn"></span></a>
+									<a href="#" class="time-btn"><span class="plus-btn"></span></a>
+								</div>
+							</div>
+
+							<div class="form-group">
+								<label>Seating Preference</label>
+								<select class="selectpicker">
+									<option>First Available</option>
+									<option>Second</option>
+									<option>Third</option>
+								</select>
+							</div>
+							<div class="form-group">
+								<label>Comments/Special request</label>
+								<textarea name="comments" cols="30" rows="5" class="form-control"></textarea>
+							</div>
+						</form><!-- end of theme-black-form -->
+					</div><!-- end of modal-body -->
+
+					<div class="modal-footer">
+						<button type="button" class="btn btn-primary"><span class="add-icon"></span> Add to waitlist</button>
+						<button type="button" class="btn btn-default close-popup" data-dismiss="modal"><span class="cross-icon"></span> Cancel</button>
+					</div><!-- end of modal-footer -->
+
+				</div><!-- end of modal-content -->
+			</div><!-- end of modal-dialog -->
+		</div><!-- end of modal -->
+	</div><!--end of wrapper-->
+</body>
+</html>

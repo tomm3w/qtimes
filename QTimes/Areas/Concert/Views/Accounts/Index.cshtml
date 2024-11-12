@@ -1,0 +1,95 @@
+﻿<div class="content-wrapper">
+
+    @Html.Partial("_PartialMenu")
+
+    <section class="content-header">
+        <div class="content_header_left">
+            <h2 class="uppercase">MY BUSINESS</h2>
+        </div>
+        <div class="content_header_right">
+            <a href="#" class="btn btn-primary green_right_btn" data-toggle="modal" data-target="#add-new-reserve_id">
+                <span class="svg_add-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15">
+                        <path id="prefix__add_icon" d="M6 15V9H0V6h6V0h3v6h6v3H9v6z" style="fill:#fff" />
+                    </svg>
+                </span>
+                NEW BUSINESS
+            </a>
+        </div>
+    </section>
+
+    <section class="content-body clearfix">
+        <div class="account_form content-body_prf">
+            <form>
+                <div class="form_ac">
+                    <div class="form-group document_form-slide">
+                        <ul>
+                            <!--ko foreach:BusinessAccounts-->
+                            <li>
+                                <div class="lf_doc">
+                                    <div class="account_img">
+                                        <img data-bind="attr: {src: LogoFullPath}" alt="">
+                                    </div>
+                                    <div class="txt_lf_bk">
+                                        <p class="policy_p_con" data-bind="text: BusinessName"></p>
+                                    </div>
+                                </div>
+                                <div class="rt_doc">
+                                    <p class="occasion_knw" data-bind="text: BusinessType"></p>
+                                    <a class="btn_on-off on_btn" data-bind="text: ButtonText, attr: {href: Href}"></a>
+                                </div>
+                            </li>
+                            <!--/ko-->
+                        </ul>
+                        @*<ul class="add_account_btn_ul_concert">
+                                <li><a href="/concert/events">Add Account</a></li>
+                            </ul>*@
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+</div>
+<div class="modal fade" id="add-new-reserve_id" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-backdrop="static">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title uppercase" id="myModalLabel">NEW BUSINESS</h4>
+            </div>
+            <!-- end of modal-header -->
+            <div class="modal-body">
+                <form action="#" class="theme-black-form">
+                    <div class="form_first">
+                        <div class="form-group res_fr_1">
+                            <label>Business Name</label>
+                            <input type="text" class="form-control" placeholder="Enter business name" data-bind="value:BusinessName">
+                        </div>
+                    </div>
+                    <div class="form_first">
+                        <div class="form-group res_fr_1 select_opt">
+                            <label>Type</label>
+                            <select class="selectpicker" data-bind="value:BusinessTypeId">
+                                <option value="1">Default</option>
+                                <option value="2">Gym</option>
+                                <option value="3">Concert</option>
+                            </select>
+                        </div>
+                    </div>
+                </form>
+                <!-- end of theme-black-form -->
+            </div>
+            <!-- end of modal-body -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary transpart" data-bind="click: AddBusiness">
+                    Add Business
+                </button>
+                <button type="button" class="btn btn-default close-popup" data-dismiss="modal">CANCEL</button>
+            </div>
+            <!-- end of modal-footer -->
+        </div>
+        <!-- end of modal-content -->
+    </div>
+    <!-- end of modal-dialog -->
+</div>
+
+<script src="~/Scripts/app/concert/businessaccount.js"></script>

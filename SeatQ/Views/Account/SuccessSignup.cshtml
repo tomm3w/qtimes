@@ -1,0 +1,60 @@
+﻿@model SeatQ.core.dal.Models.UserProfile
+@{
+    ViewBag.Title = "Congratulations!";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<hgroup class="title">
+</hgroup>
+
+<section id="loginForm" class="form-design success txt-center">
+
+    @Html.AntiForgeryToken()
+
+
+    <fieldset>
+        
+        <ul class="list-unstyled">
+            <li class="text-center">
+                <h2 class="link-gray">@ViewBag.Title</h2>
+
+        <p>Thank you for choosing SeatQ. A confirmation link has been sent to your email.
+We also provide a temporary password for your account.
+            </li>
+            <li>
+                @Html.TextBoxFor(m => m.Email, new { Name = "Email", @placeholder = "youremail@email.com", disabled = "true" })
+                <input type="submit" value="RESEND CONFIRMATION" class="button white text-center" onclick="ResendConfirmation()" />
+                @Html.HiddenFor(m => m.UserId, new { Name = "UserId" })
+            </li>
+            <li>
+                @Html.ValidationSummary()
+            </li>
+        </ul>
+    </fieldset>
+
+
+    <script>
+        var webserviceURL = "@Url.Action("ResendConfirmation", "Account")";
+
+        function ResendConfirmation() {
+            $.ajax({
+                type: "POST",
+                url: webserviceURL,
+                data: JSON.stringify({ Email: $("input[name=Email]").val(), UserId: $("input[name=UserId]").val() }),
+                contentType: "application/json; charset=utf-8",
+                dataType: 'json',
+                success: function (data) {
+                    if (data.status == "ok") {
+                        $(".validation-summary-valid").html("A confirmation link has been sent to your email");
+                        $(".validation-summary-valid").show();
+                    }
+                    if (data.status == "error") {
+                        showErrorOnElement(data, $(".validation-summary-valid"));
+                    }
+                },
+                error: function () {
+                    alert('error');
+                }
+            });
+        }
+
+    </script>

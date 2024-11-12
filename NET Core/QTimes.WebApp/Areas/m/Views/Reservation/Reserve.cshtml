@@ -1,0 +1,117 @@
+﻿@{
+    ViewBag.Title = "QTimes";
+    Layout = "~/Areas/m/Views/Shared/_Layout.cshtml";
+}
+<style>
+    .waitlist2 .mob_body .form_first input {
+        color: #000;
+    }
+</style>
+<div class="app__header">
+    <h4 class="head_top">NEW RESERVATION</h4>
+</div>
+<div class="mob_body">
+    <form action="#" class="theme-black-form">
+        <div class="form_first">
+            <div class="form-group res_fr_1">
+                <label>Name.</label>
+                <input type="text" class="form-control" placeholder="Enter your name" data-bind="value: GuestName">
+            </div>
+            <div data-bind="visible: IsDlscanEnabled">
+                <div class="form-group res_fr_1">
+                    <label>Family Name.</label>
+                    <input type="text" class="form-control" placeholder="Family Name" data-bind="value: FamilyName">
+                </div>
+                <div class="form-group res_fr_1">
+                    <label>First name.</label>
+                    <input type="text" class="form-control" placeholder="First Name" data-bind="value: FirstName">
+                </div>
+                <div class="form-group res_fr_1">
+                    <label>Date of Birthday.</label>
+                    <input type="text" class="form-control" placeholder="Date of Birthday" data-bind="value: Dob">
+                </div>
+                <div class="form-group res_fr_1">
+                    <label>City.</label>
+                    <input type="text" class="form-control" placeholder="City" data-bind="value: City">
+                </div>
+                <div class="form-group res_fr_1">
+                    <label>State.</label>
+                    <input type="text" class="form-control" placeholder="State" data-bind="value: State">
+                </div>
+                <div class="form-group res_fr_1">
+                    <label>Zip.</label>
+                    <input type="text" class="form-control" placeholder="Zip" data-bind="value: Zip">
+                </div>
+                <div class="form-group res_fr_1">
+                    <label>Address.</label>
+                    <input type="text" class="form-control" placeholder="Address" data-bind="value: Address">
+                </div>
+                <div class="form-group res_fr_1">
+                    <label>Email.</label>
+                    <input type="text" id="email" class="form-control" data-bind="value: Email">
+                </div>
+            </div>
+            <div class="form-group res_fr_2">
+                <label>Mobile No.</label>
+                <input type="text" id="phone" class="form-control" data-bind="value: MobileNumber">
+            </div>
+        </div>
+        <nav class="pull-right">
+            <label>Group Size:</label>
+            <ul class="pagination" data-bind="foreach: new Array(LimitSize())">
+                <li>
+                    <a href="#" data-bind="text:$index()+1, attr: {id: 'size' + $index()+1 }, click: $root.SetSizeValue"></a>
+                </li>
+            </ul>
+        </nav>
+        <div class="form-group form_second select_opt">
+            <label>Select Date</label>
+            <div id="datepicker" class="input-group date" data-date-formate="yyyy-mm-dd">
+                <input type="date" class="date_picker_show" name="daterange" data-bind="value: SelectedDate, event:{ change: OnReservationDateChange}" style="width:165px">
+            </div>
+            <div class="select_time_div_mob">
+                <!--ko if: Times().length > 0 -->
+                <label>Select Time</label>
+                <p id="info" style="display:none">Please select <b>Available Time. Available Spots are displayed on left side.</b></p>
+                <!--/ko-->
+                <!--ko if: Times().length == 0 -->
+                <p id="info"><b>No boookings are available for today.</b></p>
+                <!--/ko-->
+            </div>
+            <div class="form-group form_three">
+                <ul>
+                    <!--ko foreach: Times-->
+                    <li data-bind="click: SetTimeSlot, css:{ 'disabled' : IsHourPassed() }" class="timeslots">
+                        <span class="input_chk"></span>
+                        <span class="time_resv" data-bind="text: Time"></span>
+                        <span class="left_days" data-bind="text: SpotLeft() + ' left'"></span>
+                    </li>
+                    <!--/ko-->
+                </ul>
+            </div>
+            <div class="form-group form_fourth">
+                <label>Notes/Comment</label>
+                <input name="comments" class="form-control textarea" placeholder="Enter notes/comments here..." data-bind="value: Comments">
+            </div>
+            <button class="btn btn--grn" data-bind="click: Add">RESERVE</button>
+        </div>
+    </form>
+</div>
+<script>
+    var id = '@ViewBag.id';
+    var input = document.querySelector("#phone");
+    var iti = window.intlTelInput(input, {
+        separateDialCode: true,
+        utilsScript: "/content/intl-tel-input/js/utils.js"
+    });
+
+    $('.select_time_div_mob label').click(function () {
+        $('#info').slideToggle();
+    });
+</script>
+<environment include="Development">
+    <script src="~/Scripts/app/reservation/m/waitlist.js"></script>
+</environment>
+<environment exclude="Development">
+    <script src="~/Scripts/app/reservation/m/waitlist.min.js"></script>
+</environment>

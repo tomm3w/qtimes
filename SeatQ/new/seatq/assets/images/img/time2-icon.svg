@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 34 34">
+    <defs>
+        <linearGradient id="prefix__linear-gradient" x1=".5" x2=".5" y2="1" gradientUnits="objectBoundingBox">
+            <stop offset="0" stop-color="#2bc792"/>
+            <stop offset="1" stop-color="#20928a"/>
+        </linearGradient>
+    </defs>
+    <g id="prefix__time2-icon" transform="translate(-659.999 -1464)">
+        <path id="prefix__Subtraction_8" fill="url(#prefix__linear-gradient)" d="M7234-48a16.889 16.889 0 0 1-12.021-4.979A16.888 16.888 0 0 1 7217-65a16.888 16.888 0 0 1 4.979-12.021A16.889 16.889 0 0 1 7234-82a16.888 16.888 0 0 1 12.021 4.979A16.888 16.888 0 0 1 7251-65a16.888 16.888 0 0 1-4.979 12.021A16.888 16.888 0 0 1 7234-48zm0-30a12.909 12.909 0 0 0-9.192 3.809A12.915 12.915 0 0 0 7221-65a12.915 12.915 0 0 0 3.807 9.192A12.909 12.909 0 0 0 7234-52a13 13 0 0 0 12.98-12.249H7234V-78z" data-name="Subtraction 8" transform="translate(-6557 1546)"/>
+    </g>
+</svg>

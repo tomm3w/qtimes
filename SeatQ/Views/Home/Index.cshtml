@@ -1,0 +1,337 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutHomeNew.cshtml";
+}
+<style>
+    .widget-close {
+        background: rgba(0, 0, 0, 0) url("/images/close-button.png") no-repeat scroll 0 0;
+        background-size: 24px 24px;
+        height: 24px;
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        width: 24px;
+        z-index: 999;
+    }
+
+    .widget-holder {
+        position: absolute;
+        bottom: 20px;
+        left: 20px;
+        z-index: 99999;
+        position: fixed;
+    }
+</style>
+
+<div id="wrapper_qtimes">
+    <header class="header header_stick" style="height:unset">
+        <div class="container">
+            <div class="header_all_wrap">
+                <a href="#" class="navbar-brand-logo">
+                    <img src="/content/assets/images/img/logo@2x.png" alt="" />
+                </a>
+                <!-- logo -->
+                <div class="navigation_menu">
+                    <a href="#" class="nav-tog_btn">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </a>
+                    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                        <div class="collapse navbar-collapse"
+                             id="navbarSupportedContent">
+                            <ul class="navbar-nav mr-auto">
+                                <li class="nav-item active">
+                                    <a class="nav-link" href="#qhome">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#qsetup">How it works</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#sinfo">Why SeatQ</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#qcontact">Contact Us</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                    <!-- nav -->
+                    <div class="seatQ_link">
+                        <ul>
+                            <li><a href="https://qtimes.co">QTimes</a></li>
+                        </ul>
+                    </div>
+                    <!-- seatQ_link_btn -->
+                </div>
+                <!-- navigation_menu -->
+                <div class="seatQ_sign">
+                    <ul>
+                        <li><a href="/account/login">Sign In</a></li>
+                        <li class="active"><a href="/account/register">Sign Up</a></li>
+                    </ul>
+                </div>
+                <!-- seatQ_sign_btn -->
+            </div>
+        </div>
+        <!-- container -->
+    </header>
+    <!-- =========================
+          header
+          ======================== -->
+    <div class="banner_qtimes" id="qhome" style="margin-top:unset;">
+        <!-- banner_qtimes_img -->
+    </div>
+    <!-- banner_qtimes -->
+    <!-- =========================
+          banner_qtimes
+          ======================== -->
+    <main class="qtimes_main">
+        <div class="section1">
+            <div class="container">
+                <div class="sec1_2_img_svg">
+                    <img src="/content/assets/images/img/ph3.png" alt="" class="wow slideInLeft">
+                </div>
+                <div class="sec1">
+                    <p class="sec1_txt_p">
+                        Enhances waitlist management and <br />improves guest satisfaction
+                    </p>
+                    <div class="sec1_img">
+                    </div>
+                    <!-- sec1_img -->
+                    <div class="sec1_txt">
+                        <p class="sec1_txt_mini">SeatQ is a wait list management that allows a seamless <br> communication between your business and guests.</p>
+                        <ul class="sec1_txt_ul">
+                            <li>
+                                Eliminate Costly Pagers
+                            </li>
+                            <li>
+                                Communicate specials based on previous visits by guests
+                            </li>
+                            <li>
+                                Special positioning on the wait list for your returning guests
+                            </li>
+                            <li>
+                                Manage offers automatically by pre-loading them based on the number of times the guest returns
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- sec1_txt -->
+                </div>
+            </div>
+        </div>
+        <!-- section1 -->
+        <div class="section2">
+            <div class="container">
+                <div class="sec2">
+                    <div class="sec2_img">
+                        <div class="sec2_img_svg">
+                        </div>
+                    </div>
+                    <div class="sec2_txt">
+                        <p class="sec2_txt_p">
+                            SeatQ delivers the service your guests want.
+                        </p>
+                        <p class="sec2_txt_mini">Easy to use waitlist control, guest messaging and tracking returning guests</p>
+                        <ul class="sec2_txt_ul">
+                            <li>
+                                <span class="sec2_icon">
+                                    <img src="/content/assets/images/img/clock.svg"
+                                         alt="" />
+                                </span><a>Wait Times</a>
+                            </li>
+                            <li>
+                                <span class="sec2_icon">
+                                    <img src="/content/assets/images/img/chat.svg"
+                                         alt="" />
+                                </span><a>Messaging</a>
+                            </li>
+                            <li>
+                                <span class="sec2_icon">
+                                    <img src="/content/assets/images/img/gift.svg"
+                                         alt="" />
+                                </span><a>Rewards</a>
+                            </li>
+                            <li>
+                                <span class="sec2_icon">
+                                    <img src="/content/assets/images/img/pass.svg"
+                                         alt="" />
+                                </span><a>Mobile Coupons</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- section2 -->
+        <div class="section3" id="qsetup">
+            <div class="container">
+                <div class="sec3">
+                    <div class="sec3_img">
+                        <div class="sec3_img_svg">
+                            <img src="/content/assets/images/img/video-illu@2x.png" alt="" class="female_pers" />
+                            <div class="sec3_img_svg_play">
+                                @*<a href="#">
+                                        <img src="/content/assets/images/img/play-button.svg" alt="" />
+                                    </a>*@
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- section3 -->
+        <div class="section4" id="sinfo">
+            <div class="container">
+                <div class="sec4">
+                    <div class="sec4_txt">
+                        <div class="header_p">
+                            <p>Why SeatQ?</p>
+                        </div>
+                        <p class="sec4_txt_p">
+                            SeatQ provide solutions to engage your guests, encourage their return, meet their expectations and deliver real-time reviews.
+                        </p>
+                    </div>
+                    <div class="sec4_img">
+                        <div class="sec4_img_svg wow slideInRight">
+                            <img src="/content/assets/images/img/illu2.svg" alt="" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- section4 -->
+        <div class="section8" id="qcontact">
+            <div class="container">
+                <div class="sec8">
+                    <div class="sec8_lf">
+                        <p class="sec8_lf_h">Contact Us</p>
+                        <div class="sec8_lf_img_p">
+                            <div class="sec8_lf_txt_wrap">
+                                <p class="sec8_txt">
+                                    Do you want to learn more about Qtimes? <br />
+                                    Please send us a message and we are here to <br />help you
+                                    as soon as we can. Thank you!
+                                </p>
+                            </div>
+                            <div class="sec8_img_svg wow slideInRight">
+                                <img src="/content/assets/images/img/support-illu.svg" alt="" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sec8_rt">
+                        <form class="sec8 formation">
+                            <div class="sec8_form-group">
+                                <label for="qtimes_name">Name</label>
+                                <input type="text"
+                                       class="form-control"
+                                       id="txtname"
+                                       placeholder="Enter your full name" />
+                            </div>
+                            <div class="sec8_form-group">
+                                <label for="qtimes_name">Business Name</label>
+                                <input type="text" class="form-control" id="txtbusinessname" placeholder="Enter your business name" required>
+                            </div>
+                            <div class="sec8_form-group">
+                                <label for="qtimes_email">Email Address:</label>
+                                <input type="text"
+                                       class="form-control"
+                                       id="txtemail"
+                                       placeholder="Enter valid email address" />
+                            </div>
+                            <div class="sec8_form-group">
+                                <label for="qtimes_contact">Phone No.:</label>
+                                <input type="text"
+                                       class="form-control"
+                                       id="txtphone"
+                                       placeholder="Contact Number" />
+                            </div>
+                            <div class="sec8_form-group">
+                                <label for="qtimes_textarea">Messages:</label>
+                                <textarea id="txtmessage"
+                                          placeholder="How can we help you?"></textarea>
+                            </div>
+                            <div class="sec8_form-group">
+                                <div class="g-recaptcha" data-sitekey="6LdKKMcUAAAAAJnOkEimAbs1QaSrn6Hz9USp60ct"></div>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn_submit" onclick="ContactSupport()">
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Send Message
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- section8 -->
+    </main>
+    <!-- =========================
+          body_main
+          ======================== -->
+    <footer>
+        <div class="container">
+            <div class="footer_p">
+                <p class="footer_right">All rights reserved © 2020 - Qtimes</p>
+                <p class="footer_terms"><a href="#">Terms & Conditions</a></p>
+            </div>
+        </div>
+    </footer>
+    <!-- ========================
+          footer
+          ======================== -->
+</div>
+
+@*<div class="widget-holder">
+        <a href="~/Content/COVID.pdf" target="_blank">
+            <img src="~/Images/covid-img@2x.png" style="width:420px" />
+        </a>
+    </div>*@
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script type="text/javascript" src="NewDesign/js/webflow.js"></script>
+<!--[if lte IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif]-->
+<script type="text/javascript">
+
+    var webserviceURL = "@Url.Action("ContactSupport", "Home")";
+
+    jQuery(document).ready(function () {
+
+        $("#btnSignin").click(function () {
+            window.location.href = "@Url.Action("Login", "Account")";
+        });
+        $("#btnSignup").click(function () {
+            window.location.href = "@Url.Action("Register", "Account")";
+        });
+
+        $('.widget-close').click(function () {
+            $('.widget-holder').hide();
+        });
+    });
+
+    function ContactSupport() {
+
+        event.preventDefault();
+        var response = grecaptcha.getResponse();
+
+        if (response.length === 0) {
+            $.notify("Please check the reCAPTCHA");
+        } else {
+            $.ajax({
+                type: "POST",
+                url: webserviceURL,
+                data: JSON.stringify({ Name: $("#txtname").val(), Email: $("#txtemail").val(), BusinessName: $("#txtbusinessname").val(), Phone: $("#txtphone").val(), Message: $("#txtmessage").val() }),
+                contentType: "application/json; charset=utf-8",
+                dataType: 'json',
+                success: function (data) {
+                    if (data.status == "ok") {
+                        NotifySavedMessage("Thanks for contacting SeatQ.");
+                    }
+                    if (data.status == "error") {
+                        NotifyErrorMessage(data.ErrorMessage);
+                    }
+                },
+                error: function (error) {
+                    alert('error');
+                }
+            });
+        }
+    }
+</script>

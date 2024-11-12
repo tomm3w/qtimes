@@ -1,0 +1,53 @@
+﻿@{
+    ViewBag.Title = "Log In";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model SeatQ.core.dal.Models.LoginModel
+
+<style>
+    .field-validation-error, .validation-summary-errors {
+        color: red;
+    }
+</style>
+<header class="header header_non-stick">
+    @Html.Partial("_HeaderLogo")
+</header>
+<main class="signin_main grey--bg">
+    <div class="wrapper">
+        <div class="sign_whole_wrap">
+            <div class="signin_page white--bg">
+                <p class="sign_head">Sign In</p>
+                @using (Html.BeginForm("login", "account", FormMethod.Post, new { @id = "loginForm", @class = "sign_form" }))
+                {
+                    @Html.AntiForgeryToken()
+                    @Html.ValidationSummary(true)
+                    <div class="form-group">
+                        <label for="signin_name">Username</label>
+                        @Html.TextBoxFor(m => m.UserName, new { @placeholder = "Username", @class = "form-control", @id = "signin_name" })
+                        @Html.ValidationMessageFor(m => m.UserName)
+                    </div>
+                    <div class="form-group">
+                        <label for="signin_pswd">Password</label>
+                        @Html.PasswordFor(m => m.Password, new { @placeholder = "Password", @class = "form-control", @id = "signin_pswd" })
+                        @Html.ValidationMessageFor(m => m.Password)
+                    </div>
+                    <button type="submit" class="btn btn-primary sign_btn sign_grn ladda-button" data-style="expand-r" id="submitBtn">
+                        <span class="ladda-label">Sign In</span>
+                    </button>
+
+                }
+            </div>
+            <div class="sign_otions">
+                <a href="/account/register" class="signup_a">Sign Up</a>
+                <a href="/account/forgotpassword" class="forget_a">I forgot my password</a>
+            </div>
+        </div>
+    </div>
+</main>
+<script>
+    $("#submitBtn").click(function () {
+        event.preventDefault();
+
+        $("#loginForm").submit();
+    });
+</script>

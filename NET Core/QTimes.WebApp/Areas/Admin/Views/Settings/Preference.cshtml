@@ -1,0 +1,231 @@
+﻿<div class="content-wrapper">
+
+    @Html.Partial("_PartialMenu")
+
+    <section class="content-header">
+        <div class="content_header_left">
+            <h2 class="uppercase">SETTINGS</h2>
+            <div class="navigation_lft">
+                <ul>
+                    <li><a href="/admin/settings/account">Account Setup</a></li>
+                    <li class="active"><a href="/admin/settings/preference">Preferences</a></li>
+                    <li><a href="/admin/settings/business">Business Profile</a></li>
+                </ul>
+            </div>
+        </div>
+    </section><!-- end of content-header -->
+    <section class="content-header_prf">
+        <h2 class="uppercase">PREFERENCES</h2>
+        <a href="#" class="btn btn-primary" data-bind="click: UpdatePreference">
+            SAVE CHANGES
+        </a>
+    </section>
+
+    <section class="content-body clearfix">
+
+        <div class="account_form content-body_prf">
+            <label class="avai_label">Availability</label>
+            <form class="availability_div_form">
+                <div class="form_ac">
+                    <div class="form-group">
+                        <label class="select_lbl">Open Days</label>
+                        <ul class="select_from_to select_opt">
+                            <li>
+                                <div class="select_from_to_wrap">
+                                    <select class="form-control selectpicker" id="select_day_from" data-bind="value: OpenDayFrom">
+                                        <option value="Sunday">Sunday</option>
+                                        <option value="Monday">Monday</option>
+                                        <option value="Tuesday">Tuesday</option>
+                                        <option value="Wednesday">Wednesday</option>
+                                        <option value="Thursday">Thursday</option>
+                                        <option value="Friday">Friday</option>
+                                        <option value="Saturday">Saturday</option>
+                                    </select>
+                                </div>
+                            </li>
+                            <!-- <span class="sepreate_to">to</span> -->
+                            to
+                            <li>
+                                <!-- <label class="select_lbl">Open Hour</label> -->
+                                <div class="select_from_to_wrap">
+                                    <select class="form-control selectpicker" id="select_day_to" data-bind="value: OpenDayTo">
+                                        <option value="Saturday">Saturday</option>
+                                        <option value="Friday">Friday</option>
+                                        <option value="Thursday">Thursday</option>
+                                        <option value="Wednesday">Wednesday</option>
+                                        <option value="Tuesday">Tuesday</option>
+                                        <option value="Monday">Monday</option>
+                                        <option value="Sunday">Sunday</option>
+                                    </select>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="form-group">
+                        <label class="select_lbl">Open Hour</label>
+                        <ul class="select_am_pm select_opt">
+                            <li>
+                                <input type="time" class="form-control" placeholder="00:00" data-bind="value: OpenHourFrom">
+                                <div class="select_am_pm_wrap">
+                                </div>
+                            </li>
+                            to
+                            <li>
+                                <input type="time" class="form-control" placeholder="00:00" data-bind="value: OpenHourTo">
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <div class="account_form content-body_prf">
+            <form>
+                <div class="form_ac">
+                    <div class="form-group document_form-slide">
+                        <p class="heading_doc_profile_con">LIMITATATION</p>
+                        <ul>
+                            <li>
+                                <div class="lf_doc">
+                                    <div class="check_box_grn con_p">
+                                        <input type="checkbox" data-bind="checked: IsLimitSizePerHour">
+                                        <label class="checkmark"></label>
+                                    </div>
+                                    <div class="txt_lf_bk">
+                                        <p class="policy_p_con">LIMIT SIZE PER HOUR</p>
+                                        @*<p class="policy_pp_con">Total number of available spots </p>*@
+                                    </div>
+                                </div>
+                                <div class="rt_doc" data-bind="css: { activation: IsLimitSizePerHour() }">
+                                    <div class="input_book">
+                                        <input type="number" min="0" placeholder="000" data-bind="value: LimitSizePerHour">
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="lf_doc">
+                                    <div class="check_box_grn con_p">
+                                        <input type="checkbox" data-bind="checked: IsLimitTimePerReservation">
+                                        <label class="checkmark"></label>
+                                    </div>
+                                    <div class="txt_lf_bk">
+                                        <p class="policy_p_con">LIMIT TIME PER RESERVATION</p>
+                                        @*<p class="policy_pp_con">Minimum and maximum size per reservation</p>*@
+                                    </div>
+                                </div>
+                                <div class="rt_doc" data-bind="css: { activation: IsLimitTimePerReservation() }">
+                                    <div class="input_book">
+                                        <div class="lft_limit_wrap">
+                                            <label class="lft_limit">Minimum&nbsp;</label>
+                                            <input type="text" class="form-control" placeholder="1" data-bind="value: MinLimitTimePerReservation">
+                                            <div class="select_am_pm_wrap select_opt">
+                                                <select class="form-control selectpicker" id="select_day_to">
+                                                    <option value="Hour">Hrs</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="lft_limit_wrap">
+                                            <label class="lft_limit">Maximum</label>
+                                            <input type="text" class="form-control" placeholder="3" data-bind="value: MaxLimitTimePerReservation">
+                                            <div class="select_am_pm_wrap select_opt">
+                                                <select class="form-control selectpicker" id="select_day_to">
+                                                    <option value="Hour">Hrs</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="lf_doc">
+                                    <div class="check_box_grn con_p">
+                                        <input type="checkbox" data-bind="checked: IsLimitSizePerGroup">
+                                        <label class="checkmark"></label>
+                                    </div>
+                                    <div class="txt_lf_bk">
+                                        <p class="policy_p_con">LIMIT SIZE PER GROUP</p>
+                                        @*<p class="policy_pp_con">Allow time expiration for each reservation</p>*@
+                                    </div>
+                                </div>
+                                <div class="rt_doc" data-bind="css: { activation: IsLimitSizePerGroup() }">
+                                    <div class="input_book">
+                                        <input type="number" min="1" placeholder="0" data-bind="value: LimitSizePerGroup">
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <div class="account_form content-body_prf">
+            <form>
+                <div class="form_ac">
+                    <div class="form-group document_form-slide">
+                        <p class="heading_doc_profile_con">EXTRAS</p>
+                        <ul>
+                            <li>
+                                <div class="lf_doc">
+                                    <div class="check_box_grn con_p">
+                                        <input type="checkbox" data-bind="checked: IsDLScanEnabled">
+                                        <label class="checkmark"></label>
+                                    </div>
+                                    <div class="txt_lf_bk">
+                                        <p class="policy_p_con">Drivers License</p>
+                                        <p class="policy_pp_con">Add drivers License during signup</p>
+                                    </div>
+                                </div>
+                                <div class="rt_doc"></div>
+                            </li>
+                            <li>
+                                <div class="lf_doc">
+                                    <div class="check_box_grn con_p">
+                                        <input type="checkbox" data-bind="checked: IsChargeEnabled">
+                                        <label class="checkmark"></label>
+                                    </div>
+                                    <div class="txt_lf_bk">
+                                        <p class="policy_p_con">Tickets &amp; Payments</p>
+                                        <p class="policy_pp_con">Setup ticket pricing and payment options</p>
+                                    </div>
+                                </div>
+                                <div class="rt_doc"> </div>
+                            </li>
+                            <li>
+                                <div class="lf_doc">
+                                    <div class="check_box_grn con_p">
+                                        <input type="checkbox" data-bind="checked: IsSeatmapEnabled">
+                                        <label class="checkmark"></label>
+                                    </div>
+                                    <div class="txt_lf_bk">
+                                        <p class="policy_p_con">Use Seating Methods</p>
+                                        <p class="policy_pp_con">Setup seating methods and maps</p>
+                                    </div>
+                                </div>
+                                <div class="rt_doc" data-bind="css: { activation: IsSeatmapEnabled() }">
+                                    <div class="input_book">
+                                        <div class="lft_limit_wrap">
+                                            <label class="lft_limit">Columns</label>
+                                            <input type="text" class="form-control" placeholder="1" data-bind="value: NoOfSeatColumns">
+                                        </div>
+                                        <div class="lft_limit_wrap">
+                                            <label class="lft_limit">Rows&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                                            <input type="text" class="form-control" placeholder="3" data-bind="value: NoOfSeatRows">
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+    </section>
+</div>
+<environment include="Development">
+    <script src="~/Scripts/app/reservation/preference.js"></script>
+</environment>
+<environment exclude="Development">
+    <script src="~/Scripts/app/reservation/preference.min.js"></script>
+</environment>

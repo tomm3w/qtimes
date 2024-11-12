@@ -1,0 +1,24 @@
+.thakyou2 {
+	.imgHolder {
+		background-color: #f1f8f5;
+		background-image: none !important;
+		box-shadow: none !important;
+	}
+	.green-txt {
+		color: #2bb277 !important;
+		font-size: 24px !important;
+		    font-weight: normal !important;	
+		line-height: 1.33 !important;
+		margin-bottom: 28px;
+		display: block;
+		text-align: center !important;
+		font-family: $rob !important;
+	}
+	p {
+		font-size: 18px !important;
+		font-weight: 300 !important;
+		color: #5e5e5e !important;
+		    line-height: 1.44 !important;
+		    font-family: $rob !important;
+	}
+}

@@ -1,0 +1,182 @@
+﻿
+@{
+    ViewBag.Title = "Reservation";
+}
+
+<style>
+
+    .r1_drop_wrap {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+    }
+
+    .btn {
+        padding: 6px 25px 6px 12px;
+        height: 59px;
+    }
+
+    .form-group input {
+        width: 100%;
+        height: 36px;
+        border: solid 1px #d1d1d2;
+        background-color: #f4f4f4;
+        border-radius: 0;
+    }
+
+    .active {
+        display: block;
+    }
+
+    .select_opt .btn-default {
+        width: 95%;
+    }
+
+    .front_arrow {
+        height: 59px;
+        padding-top: 15px !important;
+    }
+
+    .seat-cg-btn {
+        margin-bottom: 40px;
+    }
+
+    .waitlist2 .mob_body .form_first label {
+        font-size: 15px;
+        font-weight: 600;
+        margin-top: 15px;
+    }
+
+    .sport-map_hd {
+        height:unset;
+        max-height: unset;
+    }
+    .sport-map_hd:before {
+        background: unset;
+    }
+</style>
+
+<script>
+    var id = '@ViewBag.id';
+</script>
+
+<div class="app__header">
+    <h4 class="head_top" id="appHeader">NEW RESERVATION</h4>
+</div>
+
+<div class="mob_body reserve_absolute1 active">
+    <form action="#" class="theme-black-form">
+        @*<div class="form_first">
+                <div class="form-group res_fr_1">
+                    <label>Select Concert</label>
+                    <input type="text" class="form-control" placeholder="Enter your name">
+                </div>
+            </div>*@
+        <div class="form-group form_second">
+            <nav class="pull-right">
+                <label>Size:</label>
+                <ul class="pagination" data-bind="foreach: new Array(LimitSize())">
+                    <li>
+                        <a href="#" data-bind="text:$index()+1, attr: {id: 'size' + ($index()+1) }, click: $root.SetSizeValue"></a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="form-group form_second">
+            <label>Main Guest(You)</label>
+            <input type="text" class="form-control" placeholder="Enter your name" data-bind="value: GuestName">
+        </div>
+        <div class="form-group form_second">
+            <label>Phone No</label>
+            <input type="tel" class="form-control" id="mob_id" placeholder="" autocomplete="off" data-bind="value: MobileNumber">
+        </div>
+        <div class="form-group form_second">
+            <label>Email</label>
+            <input type="text" class="form-control" id="mob_id" placeholder="" autocomplete="off" data-bind="value: Email">
+        </div>
+        <div class="right_coner select_opt sel_con">
+            <label>Select Seating</label>
+            <div class="r1_drop_wrap">
+                <select style="margin-right:20px" class="form-control selectpicker" id="ddSeatName" data-bind="options: Seatings, value:SpotValue, optionsText: 'Name', optionsValue: 'Spots', event:{ change: OnChangeSpot}, optionsCaption: 'Choose...'">
+                </select>
+                <select class="form-control selectpicker spots" data-bind="value: SeatNo">
+                </select>
+            </div>
+        </div>
+        <br />
+
+        <div class="form-group form_second select_opt">
+            <div class="select_to-seat">
+                <div class="seat-cg-btn">
+                    <a href="#">VIEW SEATING</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group form_second select_opt">
+            <p class="watlist4_notice">Please review your details before continuing,we will ask for <strong>Guest Details</strong> on the next page</p>
+
+            <div class="fixed_btn">
+                <button class="btn btn--grn" style="flex:0 0 100%;max-width:100%">Next</button>
+            </div>
+        </div>
+
+    </form>
+</div>
+
+
+<div class="mob_body reserve_absolute2" style="display:none">
+    <form action="#" class="theme-black-form">
+        <div class="form_first">
+            <!--ko foreach:Guests -->
+            <div class="form-group res_fr_1">
+                <label data-bind="text: 'Guest ' + ($index()+2)">Guest 2</label>
+                <span>Full Name</span>
+                <input type="text" class="form-control" placeholder="" data-bind="value: Name">
+            </div>
+            <div class="form-group res_fr_1 pn_1_con">
+                <span>Phone No</span>
+                <input type="tel" class="form-control" autocomplete="off" data-bind="value: MobileNo, attr: {id:'mob_id' + ($index()+2)}">
+            </div>
+            <div class="right_coner select_opt sel_con">
+                <p class="sel_p_add">Select Seating</p>
+                <div class="r1_drop_wrap">
+                    <select style="margin-right:20px" class="form-control selectpicker" data-bind="options: $root.Seatings, value:SpotValue, optionsText: 'Name', optionsValue: 'Spots', event:{ change: OnChangeSpot}, optionsCaption: 'Choose...'">
+                    </select>
+                    <select class="form-control selectpicker spots" data-bind="value: SeatNo">
+                    </select>
+                </div>
+            </div>
+            <!--/ko-->
+        </div>
+        <div class="form-group form_second select_opt">
+            <p class="watlist4_notice">
+                Please review your details before continuing.
+            </p>
+            <div class="fixed_btn">
+                <a href="#" class="front_arrow"><img src="/content/mreservation/img/arrow.svg" alt=""></a>
+                <button class="btn btn--grn" data-bind="click: AddReservation">Submit</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+
+<div class="sport-map_wrap reserve_absolute3" style="display:none">
+    <div class="content">
+        <div class="sport-map_hd">
+            <img data-bind="attr: {src: SeatMap }" class="seatmap_tri_svg" style="max-height:1000px;top:unset;" />
+            <div class="cross-del">
+                <img src="/content/mreservation/img/cross.svg">
+            </div>
+            @*<div class="sport-map-conf-btn">
+                <ul>
+                    <li class="rg"><a href="#">R1-08</a></li>
+                    <li class="cof"><a href="#">CONFIRM</a></li>
+                </ul>
+            </div>*@
+        </div>
+    </div>
+</div>
+<script src="~/Scripts/app/concert/m/waitlist.js"></script>

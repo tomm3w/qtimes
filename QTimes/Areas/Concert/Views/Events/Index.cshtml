@@ -1,0 +1,165 @@
+﻿<style>
+    input.con_met_input {
+        width: 150px;
+        border-right: 1px solid #d1d1d2;
+    }
+</style>
+<div class="content-wrapper">
+
+    @Html.Partial("_PartialMenu")
+
+    <section class="content-header">
+        <div class="content_header_left">
+            <h2 class="uppercase">RESERVATION</h2>
+            <ul class="date_to select_opt">
+                <li>
+                    <svg class="svg_clander" xmlns="http://www.w3.org/2000/svg" width="18" height="20" viewBox="0 0 18 20">
+                        <path id="prefix__iconfinder_calendar_3671721" d="M1 4a2.006 2.006 0 0 1 2-2h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2zm2 2v12h14V6zm2-6h2v2H5zm8 0h2v2h-2zM5 9h2v2H5zm0 4h2v2H5zm4-4h2v2H9zm0 4h2v2H9zm4-4h2v2h-2zm0 4h2v2h-2z" transform="translate(-1)" style="fill:#94979c" />
+                    </svg>
+                </li>
+                <li>
+                    <input type="date" class="form-control" data-bind="value: EventDate, event:{ change: OnChangeDate}" style="height:30px;width:150px;padding: 6px 12px" />
+                </li>
+                @*<li>
+            <select class="form-control selectpicker " id="select_month">
+                <option>May</option>
+                <option>Jun</option>
+                <option>July</option>
+                <option>Aug</option>
+            </select>
+        </li>
+        <li class="day_number">
+            <select class="form-control selectpicker" id="select_date">
+                <option>16</option>
+                <option>17</option>
+                <option>18</option>
+                <option>19</option>
+            </select>
+        </li>
+        <li>
+            <select class="form-control selectpicker" id="select_yrs">
+                <option>2020</option>
+                <option>2021</option>
+                <option>2023</option>
+                <option>2024</option>
+            </select>
+        </li>*@
+            </ul>
+        </div>
+        <div class="content_header_right">
+            <div class="search_bar_rft_con">
+                <input type="text" class="search_input" placeholder="Search" data-bind="textInput: SearchText">
+            </div>
+            <a href="#" class="btn btn-primary green_right_btn" data-toggle="modal" data-target="#add-new-reserve_id">
+                <span class="svg_add-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15">
+                        <path id="prefix__add_icon" d="M6 15V9H0V6h6V0h3v6h6v3H9v6z" style="fill:#fff" />
+                    </svg>
+                </span>
+                ADD EVENT
+            </a>
+        </div>
+    </section>
+
+    <section class="content-body clearfix con-met">
+        <div class="content-table custom-table-responsive">
+            <table class="table">
+                <thead>
+                    <tr class="shadow-bottom">
+                        <th>NAME</th>
+                        <th>RESERVED GUEST</th>
+                        <th>DATE</th>
+                        <th>TIME</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody data-bind="foreach: Events">
+                    <tr>
+                        <td>
+                            <p class="time_show_msg meri_ico_svf">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="22.999" height="23.003" viewBox="0 0 22.999 23.003">
+                                    <defs>
+                                        <linearGradient id="linear-gradient" x1=".5" x2=".5" y2="1" gradientUnits="objectBoundingBox">
+                                            <stop offset="0" stop-color="#1bbc66" />
+                                            <stop offset="1" stop-color="#27a544" />
+                                        </linearGradient>
+                                    </defs>
+                                    <path id="events" fill="url(#linear-gradient)" d="M16153.2-1497h-15.4a3.805 3.805 0 0 1-3.8-3.8v-15.4a3.805 3.805 0 0 1 3.8-3.8h15.4a3.806 3.806 0 0 1 3.8 3.8v15.4a3.806 3.806 0 0 1-3.8 3.8zm-10.858-18a.664.664 0 0 0-.673.653v11.05a.658.658 0 0 0-.666.648.66.66 0 0 0 .669.649h1.342a.66.66 0 0 0 .669-.649.66.66 0 0 0-.669-.649v-3.71l7.521-2.575c.677-.231 1.05-.539 1.05-.866s-.373-.634-1.05-.866l-7.521-2.575v-.458a.662.662 0 0 0-.672-.652z" transform="translate(-16134.001 1520.002)" />
+                                </svg>
+                                <span data-bind="text: Name"></span>
+                            </p>
+                        </td>
+                        <td>
+                            <p class="red_sh">0</p>
+                        </td>
+                        <td>
+                            <p data-bind="text: DateFormated"></p>
+                        </td>
+                        <td>
+                            <p data-bind="text: TimeFromFormated()+' - '+TimeToFormated()"></p>
+                        </td>
+                        <td><a class="edit-msg" data-bind="click: function(){$root.EditEvent(this)}">Edit</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+</div>
+
+<div class="modal fade" id="add-new-reserve_id" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-backdrop="static">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title uppercase" id="myModalLabel" data-bind="text: Mode() + ' Event'"></h4>
+            </div>
+            <!-- end of modal-header -->
+            <div class="modal-body">
+                <form action="#" class="theme-black-form">
+                    <div class="form_first">
+                        <div class="form-group res_fr_1">
+                            <label>Name</label>
+                            <input type="text" class="form-control" placeholder="Enter event name" data-bind="value: Name">
+                        </div>
+                    </div>
+                    <div class="form-group form_third select_opt">
+                        <label>Select Date</label>
+                        <div id="datepicker" class="input-group date" data-date-formate="yyyy-mm-dd">
+                            <input type="date" class="date_picker_show" name="daterange" data-bind="value: Date" style="width: 150px!important">
+                        </div>
+                    </div>
+                    <div class="">
+                        <div class="right_coner select_opt sel_con">
+                            <p class="sel_p_add">Select Seatings</p>
+                            <div class="r1_drop_wrap">
+                                <input type="time" class="con_met_input" placeholder="00:00" data-bind="value: TimeFrom">
+                                @*<select class="form-control selectpicker">
+                                        <option>AM</option>
+                                        <option>PM</option>
+                                    </select>*@
+                                &nbsp;&nbsp;to&nbsp;&nbsp;
+                                <input type="time" class="con_met_input" placeholder="00:00" data-bind="value: TimeTo">
+                                @*<select class="form-control selectpicker">
+                                        <option>PM</option>
+                                        <option>AM</option>
+                                    </select>*@
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <!-- end of theme-black-form -->
+            </div>
+            <!-- end of modal-body -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary transpart" data-bind="click: Save, text: Mode() + ' Event'">
+                </button>
+                <button type="button" class="btn btn-default close-popup" data-dismiss="modal">CANCEL</button>
+            </div>
+            <!-- end of modal-footer -->
+        </div>
+        <!-- end of modal-content -->
+    </div>
+    <!-- end of modal-dialog -->
+</div>
+
+<script src="~/Scripts/app/concert/events.js"></script>

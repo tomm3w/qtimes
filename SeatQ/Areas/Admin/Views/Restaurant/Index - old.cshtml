@@ -1,0 +1,207 @@
+﻿@{
+    ViewBag.Title = "Business Setup";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin_old.cshtml";
+}
+<script>
+    $("#divWaitlist").remove()
+</script>
+<style>
+    .fileinput-button {
+        position: relative;
+        overflow: hidden;
+    }
+
+    btn {
+        display: inline-block;
+        margin-bottom: 0;
+        font-weight: 400;
+        text-align: center;
+        vertical-align: middle;
+        cursor: pointer;
+        background-image: none;
+        border: 1px solid transparent;
+        white-space: nowrap;
+        padding: 6px 12px;
+        font-size: 14px;
+        line-height: 1.42857143;
+        border-radius: 4px;
+        -webkit-user-select: none;
+    }
+
+    .btn-success {
+        color: #fff;
+        background-color: #5cb85c;
+        border-color: #4cae4c;
+    }
+
+    .fileinput-button input {
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin: 0;
+        opacity: 0;
+        -ms-filter: 'alpha(opacity=0)';
+        font-size: 200px;
+        direction: ltr;
+        cursor: pointer;
+        width: 100% !important;
+    }
+
+    .progress {
+        overflow: hidden;
+        height: 20px;
+        margin-bottom: 20px;
+        background-color: #f5f5f5 !important;
+        border-radius: 4px;
+        -webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,.1);
+        box-shadow: inset 0 1px 2px rgba(0,0,0,.1);
+    }
+
+    .progress-bar-success {
+        background-color: #5cb85c;
+    }
+
+    .progress-bar {
+        float: left;
+        width: 0;
+        height: 100%;
+        font-size: 12px;
+        line-height: 20px;
+        color: #fff;
+        text-align: center;
+        background-color: #428bca;
+        -webkit-box-shadow: inset 0 -1px 0 rgba(0,0,0,.15);
+        box-shadow: inset 0 -1px 0 rgba(0,0,0,.15);
+        -webkit-transition: width .6s ease;
+        transition: width .6s ease;
+    }
+
+    .form-horizontal .form-group .img.col-xs-2 img {
+        max-height: 130px;
+        max-width: 100%;
+    }
+
+    .form-horizontal .form-group .col-xs-10 .img img {
+        max-height: 320px;
+        max-width: 550px;
+    }
+</style>
+<script src="~/Scripts/jQuery.FileUpload/jquery.fileupload.js"></script>
+<div class="form-horizontal" id="restaurant-box">
+
+    <div class="form-group">
+        <ul class="menu pull-left">
+            <li><a href="#" class="link-gray active">Business Setup</a></li>
+            <li><a href="@Url.Action("Index", "AccountInfo", new { area="Admin"})" class="link-gray">Account Setup</a></li>
+            <li><a href="@Url.Action("Index", "Preferences", new { area = "Admin" })" class="link-gray">Preferences</a></li>
+            <li><a href="@Url.Action("Index", "Tables", new { area = "Admin" })" class="link-gray">Tables</a></li>
+        </ul>
+        <input type="button" value="Save Changes" class="button green pull-right" data-bind="click:Update" />
+    </div>
+    @* BUSINESS SETUP  *@
+    <div>
+        @*<div class="form-group">
+                <label class="col-xs-2"><img src="~/Content/Uploads/Images/business-logo.png" alt="" /></label>
+                <div class="col-xs-10">
+                    <input type="file" />
+                </div>
+            </div>*@
+        <div class="form-group">
+            <div class="img col-xs-2">
+                <img id="logo" data-bind="attr:{src:ImageSrc}" />
+            </div>
+            <form class="col-xs-10" id="formimageupload" data-exclude-bind="true" method="post" action="@Url.Action("Upload", "File", new { area = "Webservice" })" enctype="multipart/form-data">
+                <div class="desc">
+                    <span class="button darkgray fileinput-button">
+                        <span>Choose File..</span>
+                        <input type="file" name="Image">
+                    </span>
+                    <span class="link-gray in-block h6">JPEG,GIF,PNG - <br />recommended file size is 420 kb.</span>
+                </div>
+            </form>
+            @*                <div class="status-bar">
+                    <div id="progress" class="progress">
+                        <div class="progress-bar progress-bar-success">
+                            <div class="status-txt">75%</div>
+                        </div>
+                    </div>
+                </div>*@
+        </div>
+        <div class="form-group">
+            <label class="col-xs-2">Full Name</label>
+            <div class="col-xs-10">
+                <input type="text" data-bind="value:FullName" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-xs-2">Business Name</label>
+            <div class="col-xs-10">
+                <input type="text" data-bind="value:BusinessName" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-xs-2">Business Email</label>
+            <div class="col-xs-10">
+                <input type="text" data-bind="value:Email" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-xs-2">Address Line 1</label>
+            <div class="col-xs-10">
+                <input type="text" data-bind="value:Address1" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-xs-2">Address Line 2</label>
+            <div class="col-xs-10">
+                <input type="text" data-bind="value:Address2" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-xs-2">City/State/Zip</label>
+            <div class="col-xs-10">
+                <input type="text" class="wtriple" data-bind="value:CityTown" />
+                <input type="text" class="wtriple" data-bind="value:State" />
+                <input type="text" class="wtriple" data-bind="value:Zip" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-xs-2">Contact No.</label>
+            <div class="col-xs-10">
+                <input type="text" data-bind="value:Phone" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-xs-2">Restaurant Number</label>
+            <div class="col-xs-10">
+                <input type="text" data-bind="value:RestaurantNumber" />
+            </div>
+        </div>
+        @*<div class="form-group">
+                <label class="col-xs-2">Table Layout</label>
+                <div class="col-xs-10">
+                    <input type="file" />
+                </div>
+            </div>*@
+        <div class="form-group">
+            <label class="col-xs-2">Table Layout</label>
+            <div class="col-xs-10">
+                <form id="formtableimageupload" data-exclude-bind="true" method="post" action="@Url.Action("Upload", "File", new { area = "Webservice" })" enctype="multipart/form-data">
+                    <div class="desc">
+                        <span class="button darkgray fileinput-button">
+                            <span>Choose File..</span>
+                            <input type="file" name="Image">
+                        </span>
+                        <span class="link-gray in-block h6">JPEG,GIF,PNG - <br />recommended file size is 420 kb.</span>
+                    </div>
+                </form>
+                <div class="img" style="margin-top:10px;">
+                    <img id="tableLayout" data-bind="attr:{src:TableLayoutSrc}" />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@*<script src="~/Scripts/app/restaurant.js"></script>*@
+@Scripts.Render("~/scripts/restaurant")

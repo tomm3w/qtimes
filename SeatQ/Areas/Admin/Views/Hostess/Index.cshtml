@@ -1,0 +1,63 @@
+﻿@{
+    ViewBag.Title = "Hostess";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin_old.cshtml";
+}
+<script>
+    $("#divWaitlist").remove()
+</script>
+<div id="add-hostess" style="display: none;" class="popover">
+    <a href="#" class="close" onclick="HidePopup()">X</a>
+    <h4 id="title">Create New Hostess</h4>
+    <ul>
+        <li>
+            <input type="text" id="UserName" class="guest-name" placeholder="Username" data-bind="value: UserName" />
+        </li>
+        <li>
+            <input type="text" class="email" placeholder="Email" data-bind="value: Email" />
+        </li>
+        <li>
+            <input type="password" class="password" placeholder="Password" data-bind="value: Password" />
+        </li>
+
+        <!--<li><input type="text" placeholder="ID" /></li>-->
+        <li>
+            <label class="radio pull-left">
+                <input type="radio" name="hostess" value="true" data-bind="checked:isActive" />
+                Active
+            </label>
+            <label class="radio pull-left">
+                <input type="radio" name="hostess" value="false" data-bind="checked:isActive" />
+                Blocked
+            </label>
+        </li>
+        <li>
+            <input type="button" value="SUBMIT" class="button green pull-right half" data-bind="click:Add" />
+        </li>
+    </ul>
+</div>
+<table cellspacing="0" cellpadding="0" border="0" width="100%" class="table table-simple">
+    <thead>
+        <tr>
+            <th></th>
+            <th>Username</th>
+            <th>Member Since</th>
+            <th>Email</th>
+            <th>Last Access</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody data-bind="foreach: businesses, as: 'business'">
+        <tr>
+            <td><span data-bind="attr:{class:StatusClass}"></span></td>
+            <td data-bind="text:UserName"></td>
+            <td data-bind="text:MemberSince"></td>
+            <td data-bind="text:Email"></td>
+            <td data-bind="text:LastAccess"></td>
+            <td>
+                <a href="#" class="edit" data-bind="click: function(){$root.Edit(UserId())}">Edit</a>
+            </td>
+        </tr>
+    </tbody>
+</table>
+@*<script src="~/Scripts/app/hostess.js"></script>*@
+@Scripts.Render("~/scripts/hostess")

@@ -1,0 +1,64 @@
+﻿
+<div class="content-wrapper">
+
+    @Html.Partial("_PartialMenu")
+
+    <section class="content-header">
+        <div class="content_header_left">
+            <h2 class="uppercase">METRICS</h2>
+        </div>
+        <div class="content_header_right">
+            <ul class="date_to select_opt">
+                <li>
+                    <svg class="svg_clander" xmlns="http://www.w3.org/2000/svg" width="18" height="20" viewBox="0 0 18 20">
+                        <path id="prefix__iconfinder_calendar_3671721" d="M1 4a2.006 2.006 0 0 1 2-2h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2zm2 2v12h14V6zm2-6h2v2H5zm8 0h2v2h-2zM5 9h2v2H5zm0 4h2v2H5zm4-4h2v2H9zm0 4h2v2H9zm4-4h2v2h-2zm0 4h2v2h-2z" transform="translate(-1)" style="fill:#94979c" />
+                    </svg>
+                </li>
+                <li>
+                    <select class="form-control selectpicker" id="select_onday" data-bind="event:{ change: OnChangeDate}">
+                        <option value="0">Today</option>
+                        <option value="1">Yesterday</option>
+                    </select>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="content-body clearfix">
+        <div class="mertics_col">
+            <ul>
+                <li>
+                    <div class="box_mertics_col">
+                        <p>Average Wait Time</p>
+                        <h3 data-bind="text: AvgWaitTime">0 min</h3>
+                    </div>
+                </li>
+                <li>
+                    <div class="box_mertics_col">
+                        <p>No. of In Place</p>
+                        <h3 data-bind="text: NoOfPlace">0</h3>
+                    </div>
+                </li>
+                <li>
+                    <div class="box_mertics_col">
+                        <p>Cancelled</p>
+                        <h3 data-bind="text: Cancelled">0</h3>
+                    </div>
+                </li>
+                <li>
+                    <div class="box_mertics_col">
+                        <p>Group Size</p>
+                        <h3 data-bind="text: AvgGroupSize">0</h3>
+                    </div>
+                </li>
+                <li>
+                    <div class="box_mertics_col">
+                        <p>New Guest</p>
+                        <h3 data-bind="text: NewGuest">0</h3>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
+</div>
+<script src="~/Scripts/app/reservation/metrics.js"></script>

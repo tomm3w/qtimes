@@ -1,0 +1,157 @@
+﻿<style>
+    input[type=time] {
+        width: 110px;
+        border: solid 1px #d1d1d2;
+        background: white;
+    }
+</style>
+<div class="preference_body accont_coms content-wrapper">
+
+    @Html.Partial("_PartialMenu")
+
+    <section class="content-header">
+        <div class="content_header_left">
+            <h2 class="uppercase">SETTINGS</h2>
+            <div class="navigation_lft">
+                <ul>
+                    <li><a href="/reservation/settings/account">Account Setup</a></li>
+                    <li class="active"><a href="/reservation/settings/preference">Preferences</a></li>
+                    <li><a href="/reservation/settings/business">Business Profile</a></li>
+                </ul>
+            </div>
+        </div>
+    </section><!-- end of content-header -->
+    <section class="content-header_prf">
+        <h2 class="uppercase">PREFERENCES</h2>
+        <a href="#" class="btn btn-primary" data-bind="click: UpdatePreference">
+            SAVE CHANGES
+        </a>
+    </section>
+
+    <section class="content-body clearfix">
+        <div class="account_form content-body_prf">
+            <label class="avai_label">Availability</label>
+            <form>
+                <div class="form_ac">
+                    <div class="form-group">
+                        <label class="select_lbl">Open Days</label>
+                        <ul class="select_from_to select_opt">
+                            <li>
+                                <div class="select_from_to_wrap">
+                                    <select class="form-control selectpicker" id="select_day_from" data-bind="value: OpenDayFrom">
+                                        <option value="Monday">Monday</option>
+                                        <option value="Tuesday">Tuesday</option>
+                                        <option value="Wednesday">Wednesday</option>
+                                        <option value="Thursday">Thursday</option>
+                                        <option value="Friday">Friday</option>
+                                        <option value="Saturday">Saturday</option>
+                                        <option value="Sunday">Sunday</option>
+                                    </select>
+                                </div>
+                            </li>
+                            <!-- <span class="sepreate_to">to</span> -->
+                            to
+                            <li>
+                                <!-- <label class="select_lbl">Open Hour</label> -->
+                                <div class="select_from_to_wrap">
+                                    <select class="form-control selectpicker" id="select_day_to" data-bind="value: OpenDayTo">
+                                        <option value="Friday">Friday</option>
+                                        <option value="Saturday">Saturday</option>
+                                        <option value="Sunday">Sunday</option>
+                                        <option value="Monday">Monday</option>
+                                        <option value="Tuesday">Tuesday</option>
+                                        <option value="Wednesday">Wednesday</option>
+                                        <option value="Thursday">Thursday</option>
+                                    </select>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="form-group">
+                        <label class="select_lbl">Open Hour</label>
+                        <ul class="select_am_pm select_opt">
+                            <li>
+                                <input type="time" class="form-control" placeholder="00:00" data-bind="value: OpenHourFrom">
+                                <div class="select_am_pm_wrap">
+                                    @*<select class="form-control selectpicker" id="select_day_to">
+                                        <option value="AM">AM</option>
+                                        <option value="PM">PM</option>
+                                    </select>*@
+                                </div>
+                            </li>
+                            to
+                            <li>
+                                <input type="time" class="form-control" placeholder="00:00" data-bind="value: OpenHourTo">
+                                @*<div class="select_am_pm_wrap">
+                                    <select class="form-control selectpicker" id="select_day_to" data-bind="value: OpenHourTo">
+                                        <option value="AM">AM</option>
+                                        <option value="PM">PM</option>
+                                    </select>
+                                </div>*@
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="account_form content-body_prf">
+            <form>
+
+                <div class="form_ac">
+                    <div class="form-group limiteshow_wrap">
+                        <ul class="limiteshow">
+                            <li>
+                                <div class="checkbox_head">
+                                    @*<label class="checkbox"></label>*@
+                                    <input type="checkbox" class="checkbox" data-bind="checked: IsLimitSizePerHour"/>
+                                    <span class="ck_txt">LIMIT SIZE PER HOUR</span>
+                                </div>
+                                <div class="lft_limit_wrap">
+                                    <label class="lft_limit">LIMIT</label>
+                                    <input type="text" class="form-control" placeholder="24" data-bind="value: LimitSizePerHour">
+                                </div>
+                            </li>
+                            <li class="limiteshow_ul_two">
+                                <div class="checkbox_head">
+                                    @*<label class="checkbox"></label>*@
+                                    <input type="checkbox" class="checkbox" data-bind="checked: IsLimitTimePerReservation"/>
+                                    <span class="ck_txt">LIMIT TIME per reservation</span>
+                                </div>
+                                <div class="lft_limit_wrap">
+                                    <label class="lft_limit">Minimum</label>
+                                    <input type="text" class="form-control" placeholder="1" data-bind="value: MinLimitTimePerReservation">
+                                    <div class="select_am_pm_wrap select_opt">
+                                        <select class="form-control selectpicker" id="select_day_to">
+                                            <option value="Hour">Hrs</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="lft_limit_wrap">
+                                    <label class="lft_limit">Maximum</label>
+                                    <input type="text" class="form-control" placeholder="3" data-bind="value: MaxLimitTimePerReservation">
+                                    <div class="select_am_pm_wrap select_opt">
+                                        <select class="form-control selectpicker" id="select_day_to">
+                                            <option value="Hour">Hrs</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="checkbox_head">
+                                    @*<label class="checkbox"></label>*@
+                                    <input type="checkbox" class="checkbox" data-bind="checked: IsLimitSizePerGroup"/>
+                                    <span class="ck_txt">LIMIT SIZE PER GROUP</span>
+                                </div>
+                                <div class="lft_limit_wrap">
+                                    <label class="lft_limit">LIMIT</label>
+                                    <input type="text" class="form-control" placeholder="5" data-bind="value: LimitSizePerGroup">
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+</div>
+<script src="~/Scripts/app/reservation/preference.js"></script>

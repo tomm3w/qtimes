@@ -1,0 +1,146 @@
+﻿<style>
+    input[type=time] {
+        width: 125px !important;
+        border: solid 1px #d1d1d2 !important;
+        background: white !important;
+    }
+</style>
+<div class="content-wrapper">
+
+    @Html.Partial("_PartialMenu")
+
+    <section class="content-header">
+        <div class="content_header_left">
+            <h2 class="uppercase">SETTINGS</h2>
+            <div class="navigation_lft">
+                <ul>
+                    <li><a href="/concert/settings/account">Account Setup</a></li>
+                    <li><a href="/concert/settings/business">Business Profile</a></li>
+                    @*<li><a href="/concert/settings/preferences">Preferences</a></li>
+                        <li class="active"><a href="#">Seatings</a></li>*@
+                </ul>
+            </div>
+        </div>
+    </section>
+    <!-- end of content-header -->
+    <section class="content-header_prf">
+        <h2 class="uppercase">Business Profile</h2>
+        <a href="#" class="btn btn-primary grey-right_btn" data-bind="click: UpdateSeating">
+            Save
+        </a>
+    </section>
+    <section class="content-body clearfix">
+        <div class="account_form content-body_prf">
+            <form>
+                <div class="form_ac">
+                    <div class="form-group">
+                        <label>SeatMap/Image</label>
+                        <div class="upload_pic">
+                            <div class="img_upld">
+                                <img src="/content/assets/images/bp_1.png" alt="" id="accountlogo">
+                            </div>
+                            <div class="uplod_btn_click">
+                                <input type="file" class="btn over_in" placeholder="Upload file..." accept="images/*" id="over_in_input">
+                                <button for="file" class="btn btn_photo img-upload_con" id="show_img">Upload file...</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="account_form content-body_prf">
+            <form>
+                <div class="form_ac">
+                    <div class="form-group document_form-slide">
+                        <p class="heading_doc_profile_con">SEATS / SPOTS</p>
+                        <ul class="row_group_ul-con-seat">
+                            <li>
+                                <div class="radio_chose">
+                                    <input type="radio" id="rows" name="drone" value="row" data-bind="checked: SeatType">
+                                    <label class="radio_chose_mrk"></label>
+                                </div>
+                                Rows
+                            </li>
+                            <li>
+                                <div class="radio_chose">
+                                    <input type="radio" id="group" name="drone" value="group" data-bind="checked: SeatType">
+                                    <label class="radio_chose_mrk"></label>
+                                </div>
+                                Group
+                            </li>
+                        </ul>
+                        <ul class="seating-concert_ul_dwn">
+                            <li>
+                                <div class="lf_doc seating-concert_lf">
+                                    <div class="check_box_grn con_p">
+                                        <input type="checkbox" data-bind="checked: AllowCheckInTime">
+                                        <label class="checkmark"></label>
+                                    </div>
+                                    <p class="policy_p_con">Allow Check-In Time</p>
+                                </div>
+
+                                <div class="seating-concert_rt activation">
+                                    <!-- ko foreach: ConcertSeatings-->
+                                    <div class="seating-concert__collect_ul">
+                                        <ul class="minus_btn_end">
+                                            <li>
+                                                <a href="#" data-bind="click: Delete">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21">
+                                                        <g id="remove" transform="translate(-44 -107)">
+                                                            <g id="Group_3" data-name="Group 3" transform="translate(44 107)">
+                                                                <g id="Ellipse_38" fill="none" stroke="#d1d1d2" stroke-width="3px" data-name="Ellipse 38">
+                                                                    <circle cx="10.5" cy="10.5" r="10.5" stroke="none" />
+                                                                    <circle cx="10.5" cy="10.5" r="9" />
+                                                                </g>
+                                                            </g>
+                                                            <path id="minus" fill="#d1d1d2" d="M0 0H3V11H0z" transform="rotate(90 -28 88)" />
+                                                        </g>
+                                                    </svg>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                        <ul class="input_filed_shw">
+                                            <li class="name_input_filed_shw">
+                                                <p>Name</p>
+                                                <input type="text" placeholder="R1" data-bind="value: Name">
+                                            </li>
+                                            <li class="sport_input_filed_shw">
+                                                <p>Spots</p>
+                                                <input type="number" placeholder="10" data-bind="value: Spots">
+                                            </li>
+                                            <li>
+                                                <p>Seats per spot</p>
+                                                <input type="number" placeholder="1" data-bind="value: SeatsPerSpot">
+                                            </li>
+                                        </ul>
+                                        <ul class="time_check_time">
+                                            <li class="select_am_pm select_opt">
+                                                <input type="time" class="form-control" placeholder="00:00:00" data-bind="value: CheckInTime">
+                                                <div class="select_am_pm_wrap">
+                                                    @*<select class="form-control selectpicker" id="select_day_to">
+                                                            <option>AM</option>
+                                                            <option>PM</option>
+                                                        </select>*@
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <!-- /ko -->
+                                    <div class="append_btn"><a href="#" data-bind="click: AddSeats">Add</a></div>
+                                </div>
+
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+
+</div>
+<environment include="Development">
+    <script src="~/Scripts/app/concert/seatings.js"></script>
+</environment>
+<environment exclude="Development">
+    <script src="~/Scripts/app/concert/seatings.min.js"></script>
+</environment>

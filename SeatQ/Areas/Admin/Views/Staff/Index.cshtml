@@ -1,0 +1,108 @@
+﻿
+@{
+    ViewBag.Title = "Staff";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+<style>
+    .radio-status {
+        background: #fff;
+        line-height: 34px;
+        width: 50%;
+        border-right: 1px solid #dcdee2;
+        text-align: center;
+        margin-right: 0px !important;
+        font-weight: 600 !important;
+    }
+</style>
+<section class="content-header">
+    <div class="content_header_left">
+        <h2 class="uppercase">Staff</h2>
+    </div>
+    <div class="content_header_right">
+        <a href="#" id="addList" class="btn btn-primary add-new-reserve blue_right_btn" data-toggle="modal" data-target="#add-waitlist">
+            <span class="svg_add-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15">
+                    <path id="prefix__add_icon" d="M6 15V9H0V6h6V0h3v6h6v3H9v6z" style="fill:#fff" />
+                </svg>
+            </span>NEW STAFF
+        </a>
+    </div>
+</section>
+
+<section class="content-body">
+    <div class="content-table normal-table custom-table-responsive-xs">
+        <table class="table table-striped">
+            <thead>
+                <tr class="shadow-bottom">
+                    <th width="25%">User Name</th>
+                    <th width="15%">Type</th>
+                    <th width="25%">Email</th>
+                    <th width="12%">Last Access</th>
+                    <th width="15%"></th>
+                </tr>
+            </thead>
+            <tbody data-bind="foreach: businesses">
+                <tr>
+                    <td data-bind="text: UserName"></td>
+                    <td data-bind="text: Title"></td>
+                    <td data-bind="text: Email"></td>
+                    <td data-bind="text: LastAccess"></td>
+                    <td><a href="#" data-bind="click: function(){$root.Edit(UserId())}">Edit</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+
+
+<div class="modal fade new_rule in" id="add-waitlist" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-backdrop="static">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header topic_only">
+                <h4 class="modal-title uppercase" id="myModalLabel">New Staff</h4>
+            </div><!-- end of modal-header -->
+
+            <div class="modal-body">
+                <form action="#" class="theme-white-form">
+                    <div class="form-group">
+                        <div class="form-group inline-form" style="width:50%">
+                            <label class="block">Type</label>
+                            <select class="selectpicker" data-bind="options: StaffType, value:StaffTypeId, optionsText: 'text', optionsValue: 'value', optionsCaption: 'Staff Type'"></select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>User Name</label>
+                        <input type="text" class="form-control" data-bind="value: UserName" id="username">
+                    </div>
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" class="form-control" data-bind="value: Email" id="email">
+                    </div>
+                    <div class="form-group">
+                        <label>Password</label>
+                        <input type="password" class="form-control" data-bind="value: Password">
+                    </div>
+                    <div class="form-inline">
+                        <label class="block">Status</label>
+                        <div class="form-group inline-form radio-status">
+                            <input type="radio" name="hostess" value="true" data-bind="checked:isActive" />
+                            Active
+                        </div>
+                        <div class="form-group pull-right radio-status">
+                            <input type="radio" name="hostess" value="false" data-bind="checked:isActive" />
+                            Blocked
+                        </div>
+                    </div>
+                </form><!-- end of theme-black-form -->
+            </div><!-- end of modal-body -->
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-bind="click: Add" id="btnAdd"><span class="add-icon"></span> <span id="btnSubmit">Add to waitlist</span></button>
+                <button type="button" class="btn btn-default" data-dismiss="modal"><span class="cross-icon"></span> Cancel</button>
+            </div><!-- end of modal-footer -->
+
+        </div><!-- end of modal-content -->
+    </div><!-- end of modal-dialog -->
+</div>
+@*<script src="~/Scripts/app/staff.js"></script>*@
+@Scripts.Render("~/scripts/staff")

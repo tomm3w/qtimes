@@ -1,0 +1,85 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin_old.cshtml";
+}
+<script>
+    $("#divWaitlist").remove();
+</script>
+<h5>Ready Message</h5>
+<ul class="list-item" data-bind="foreach: ReadyMessages">
+    <li>
+        <div class="rdy-msg pull-left"></div>
+        <span data-bind="text:ReadyMessage1"></span>
+        <a href="#" class="edit pull-right" data-bind="click:function(){$root.EditReadyMessage(this)}">edit</a>
+    </li>
+</ul>
+
+<h5>Custom Messages</h5>
+<ul class="list-item" data-bind="foreach: VisitMessages">
+    <li>
+        <div class="csm-msg pull-left" data-bind="text:Visit"></div>
+        <span data-bind="text:VisitMessage1"></span>
+        <a href="#" class="edit pull-right" data-bind="click:function(){$root.EditVisitMessage(this)}">edit</a>
+    </li>
+    @*<li>
+            <div class="csm-msg pull-left">2</div>
+            Thank you for visiting,On your next visit you will get 5% discount on drinks.
+            <a href="#" class="edit pull-right">edit</a>
+        </li>
+        <li>
+            <div class="csm-msg pull-left">3</div>
+            Thank you for visiting,On your next visit you will get 5% discount on drinks.
+            <a href="#" class="edit pull-right">edit</a>
+        </li>*@
+</ul>
+
+@* Edit Ready Message *@
+<div class="popover" style="display:none;" id="editReadyMsg">
+    <a href="#" class="close" onclick="ClearAll()">X</a>
+    <h4 class="flow"><span id="title">Edit Ready Message </span><input type="checkbox" name="my-checkbox" id="chkedit"></h4>
+    <ul>
+        <li>
+            <textarea placeholder="Type your message..." data-bind="value: ReadyMessage" onkeyup="countChar('txtReadyMessage', 'spanReady')" id="txtReadyMessage"></textarea>
+        </li>
+        <li>
+            <input type="number" placeholder="1" class="group-size pull-left" style="display:none" />
+            <input type="submit" value="SAVE CHANGES" class="button green pull-right" id="btnSubmitReadyMsg" data-bind="click:function(){UpdateReadyMessage(ReadyMessageId())}" />
+        </li>
+        <li>No. of characters remaining: <span id="spanReady"></span></li>
+    </ul>
+</div>
+
+@* Create new Message *@
+<div class="popover" style="display:none" id="addMessage">
+    <a href="#" class="close" onclick="ClearAll()">X</a>
+    <h4 class="flow"><span id="title">New Message </span><input type="checkbox" name="my-checkbox" id="chknew"></h4>
+    <ul>
+        <li>
+            <textarea placeholder="Type your message..." data-bind="value: VisitMessage" onkeyup="countChar('txtVisitMessage', 'spanVisit')" id="txtVisitMessage"></textarea>
+        </li>
+        <li>
+            <input type="number" placeholder="No. of Visit" class="group-size half pull-left" data-bind="value: Visit" />
+            <input type="submit" value="ADD & SAVE" class="button green pull-right" id="btnSubmit" data-bind="click:Save" />
+            <a href="#" class="link-txt link-gray pull-right" id="btnDelete" data-bind="click:function(){DeleteVisitMessage(VisitMessageId())}" style="display:none">DELETE</a>
+        </li>
+        <li>No. of characters remaining: <span id="spanVisit"></span></li>
+    </ul>
+</div>
+@*<script src="~/Scripts/app/message.js"></script>*@
+@Scripts.Render("~/scripts/message")
+
+<script>
+    $("[name='my-checkbox']").bootstrapSwitch();
+
+    function countChar(value, label) {
+        var txt = $('#' + value);
+        var len = txt.val().length;
+        if (len >= 160) {
+            txt.val(txt.val().substring(0, 160)).change();
+            $('#' + label).text(0);
+        }
+        else {
+            $('#' + label).text(160 - len);
+        }
+    };
+</script>

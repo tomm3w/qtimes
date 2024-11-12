@@ -1,0 +1,333 @@
+.waitlist2 {
+	.app__header {
+		text-align: center;
+		height: initial !important;
+		background-image: none !important;
+		padding: 26px 15px 0px !important;
+		    border-top: 3px solid #2bb277;
+		.head_top {
+			font-size: 15px;
+			font-weight: 500;
+			opacity: 0.5;
+			color: #2a2f3a;
+			text-align: left;
+			font-family: $rob !important;
+			margin-bottom: 17px;
+		}
+		
+	}
+	.mob_body {
+		padding: 0px 15px 0px;
+		text-align: left;
+
+		.form_first {
+			margin-bottom: 9px;
+			.form-group {
+				margin-bottom: 8px;
+			}
+			label {
+				font-size: 13px;
+				font-weight: 500;
+				margin-bottom: 7px;
+				line-height: 1;
+			}
+
+			input {
+				height: 40px;
+				border: solid 1px #d1d1d2;
+				background-color: #f4f4f4;
+				border-radius: 0;
+				font-size: 14px;
+				font-weight: 300;
+				color: #a5a5a5;
+			}
+		}
+		.pull-right {
+			border-bottom: 1px solid #f1f1f1;
+			padding-bottom: 16.5px;
+			margin-bottom: 19.5px;
+
+			label {
+				font-size: 14px;
+				font-weight: normal;
+				margin-bottom: 12px;
+			}
+			.pagination {
+				// justify-content: center;
+				li {
+					display: inline-block;
+					margin: 0 4px;
+					text-align: center;
+					a {
+						font-size: 13px;
+						width: 36px;
+						height: 36px;
+						line-height: 36px;
+						border: solid 1px #d1d1d2;
+						background-color: #ffffff;
+						color: #2a2f3a;
+						font-weight: normal;
+						cursor: pointer;
+						display: inline-block;
+						border-radius: 100%!important;
+						text-align: center;
+					}
+					&.active,
+					&:hover {
+						a {
+							background-color: #2bc783;
+							color: #fff;
+							border: solid 1px #2bc783;
+						}
+					}
+				}
+			}
+		}
+		.form_second {
+			margin-bottom: 10px;
+			.dropdown-menu.open  {
+				padding: 0;
+				border-radius: 0;
+				margin: 0;
+				&.show {
+					.dropdown-menu {
+						display: block;
+					}
+				}
+				.dropdown-menu {
+					// padding: .375rem .75rem;
+					li {
+						padding: 0 5px;
+						a {
+							font-size: 14px;
+							font-weight: normal;
+							color: #2a2f3a;
+							display: block;
+						}
+						&:hover {
+							background: #fafafa;
+						}
+					}
+				}
+			}
+			label {
+				display: block;
+				font-size: 13px;
+				font-weight: 500;
+				margin-bottom: 7px;
+				line-height: 1;
+			}
+			.date_picker_show {
+				width: 137px;
+				height: 40px;
+				position: relative;
+				border: solid 1px #d1d1d2;
+				background-color: #f4f4f4 !important;
+				z-index: 0;
+				border-radius: 0;
+				box-shadow: none;
+				font-size: 14px;
+				font-weight: normal;
+				line-height: 1;
+				color: #2a2f3a;
+				padding: .375rem .75rem;
+				cursor: pointer;
+			}
+			.svg_clander {
+				position: relative;
+				left: -30px;
+				top: 0px;
+
+			}
+		}
+		.form_three {
+			ul {
+			    overflow: auto;
+    max-height: 200px;
+			}
+			li {
+				display: flex;
+				align-items: center;
+				justify-content: flex-start;
+				flex-wrap: wrap;
+				padding: 7px 8px;
+			    /* margin-bottom: 9px; */
+			    cursor: pointer;
+			    border: 1px solid #e6e6e6;
+			    border-top: 0;
+			    font-size: 12px;
+			    font-weight: normal;
+			    color: #333;
+
+			    &:first-child {
+			    	border-top: 1px solid #e6e6e6;
+			    }
+			    &:hover,
+			    &.active {
+			    	background: #f1f8f5;
+			    }
+			    .time_resv {
+			    	
+			    	order: 2;
+			    	font-size: 12px;
+			    	font-weight: normal;
+			    	color: #333333;
+			    }
+			    .left_days {
+			    	order: 3;
+			    	margin-left: auto;
+			    	text-align: right;
+			    	font-size: 12px;
+			    	font-weight: 500;
+			    	color: #2a2f3a;
+			    }
+			}
+			.input_chk  {
+				width: 14px;
+				height: 14px;
+				border: solid 1px #c2c2c2;
+				background-color: #f5f5f5;
+				border-radius: 50%;
+				margin-right: 18px;
+				display: inline-block;
+				position: relative;
+				order: 1;
+				&:after {
+					content: "";
+					position: absolute;
+					width: 6px;
+					height: 6px;
+					border-radius: 50%;
+					background: #2bc783;
+					left: 0;
+					right: 0;
+					top: 2px;
+					margin: 0 auto;
+					text-align: center;
+					opacity: 0;
+				}
+				&.tick {
+					border: solid 2px #2bc783 !important;
+
+					&:after {
+						opacity: 1 !important;
+					}
+				}
+			}
+		}
+		.form_fourth {
+			margin-bottom: 75px;
+			label {
+				font-size: 13px;
+				font-weight: 500;
+				line-height: 1;
+				color: #2a2f3a;
+				margin-bottom: 7px;
+			}
+			.textarea {
+				height: 40px;
+				border: solid 1px #d1d1d2;
+				background-color: #f4f4f4;
+				border-radius: 0;
+				padding: .375rem .75rem;
+				font-size: 14px;
+				font-weight: normal;
+				color: #000;
+				line-height: 1.36;
+				overflow: hidden;
+				padding: 5px 10px;
+				height: 36px;
+				line-height: 1.7;
+				overflow: hidden;
+				background: #f4f4f4;
+			}
+		}
+	}
+}
+
+
+
+#datepicker {
+	margin-bottom: 10px;
+	    display: inherit;
+}
+.form_second .datepicker-days {
+	display: none!important;
+	    border: 1px solid #ddd;
+    background: #fff;
+}
+.form_second .datepicker-days.open {
+	display: inline-block!important;
+}
+.form_second #datepicker .table-condensed {
+	border: 2px solid #f1f1f1;
+}
+.form_second #datepicker {
+	width: 100%;
+}
+.form_second #datepicker .table-condensed thead tr:nth-child(2) th {
+	background: #2bc783;
+	color: #fff;
+	border-radius: 0;
+	border-radius: 0;
+}
+.form_second #datepicker .datepicker {
+	padding: 0;
+	    position: absolute;
+    z-index: 1;
+}
+input::placehoder {
+	color: #a5a5a5 !important;
+}
+.res_check {
+    display: inline-flex;
+    position: relative;
+    align-items: center;
+    vertical-align: middle;
+}
+.res_check input {
+	    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    left: 0;
+    margin: 0;
+    z-index: 1;
+    width: 14px !important;
+    height: 14px !important;
+}
+.res_check input:checked ~ .input_chk {
+    border: solid 2px #2bc783 !important;
+}
+.res_check input:checked ~ .input_chk:after {
+    opacity: 1 !important;
+}
+.select_time_div_mob {
+	margin: 19px 0 10px;
+}
+.select_time_div_mob label {
+	position: relative;
+	    margin-bottom: 8px;
+
+}
+ .select_time_div_mob label:after {
+ 	content: "";
+ 	position: absolute;
+ 	background-image: url(../../../assets/img/info_icon.svg) ;
+ 	background-repeat: no-repeat;
+ 	    width: 13px;
+    height: 13px;
+    right: 0;
+    left: auto;
+    background-size: contain;
+
+ }
+ .select_time_div_mob p {
+     text-align: center;
+    color: #1898db;
+    line-height: 1.5;
+    font-size: 12px;
+    font-weight: normal;
+    font-family: "Roboto", sans-serif !important;
+    background-color: #eaf1f5;
+    padding: 13px 8px;
+ }

@@ -1,0 +1,71 @@
+﻿@{
+    ViewBag.Title = "Tables";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin_old.cshtml";
+}
+<script>
+    $("#divWaitlist").remove()
+</script>
+
+<form class="form-horizontal" id="restaurant-box">
+    <div class="form-group">
+        <ul class="menu pull-left">
+            <li><a href="@Url.Action("Index", "Restaurant", new { area="Admin"})" class="link-gray">Business Setup</a></li>
+            <li><a href="@Url.Action("Index", "AccountInfo", new { area = "Admin" })" class="link-gray">Account Setup</a></li>
+            <li><a href="@Url.Action("Index", "Preferences", new { area = "Admin" })" class="link-gray">Preferences</a></li>
+            <li><a href="#" class="link-gray active">Tables</a></li>
+        </ul>
+        <input type="button" value="Add Table" class="button green pull-right" id="addTableBtn" />
+    </div>
+</form>
+<div id="add-table" style="display: none;" class="popover">
+    <a href="#" class="close" onclick="HidePopup()">X</a>
+    <h4 id="title">Add New Table</h4>
+    <ul>
+        <li>
+            <input type="text" id="TableNumber" class="table-no" placeholder="Table Number" data-bind="value: TableNumber" />
+        </li>
+        <li>
+            <select style="width:318px;height:44px;color:#576473;padding:12px" data-bind="options: TableType, value:TableTypeId, optionsText: 'text', optionsValue: 'value', optionsCaption: 'Select Table Type'"></select>
+        </li>
+        <li>
+            <label class="checkbox">
+                <input type="checkbox" data-bind="checked: IsOut" />Out
+            </label>
+        </li>
+        <li>
+            <input type="button" value="SUBMIT" class="button green pull-right half" data-bind="click:Add" />
+        </li>
+    </ul>
+</div>
+<div id="content-inner">
+    <table cellpadding="0" cellspacing="0" border="0" width="100%" class="table table-simple">
+        <thead>
+            <tr>
+                <th>
+                    Table Number
+                </th>
+                <th>
+                    Table Type
+                </th>
+                <th>
+                    Out
+                </th>
+                <th>
+
+                </th>
+            </tr>
+        </thead>
+        <tbody data-bind="foreach: businesses, as: 'business'">
+            <tr>
+                <td data-bind="text: TableNumber"></td>
+                <td data-bind="text: Title"></td>
+                <td data-bind="text: IsOut"></td>
+                <td>
+                    <a href="#" class="edit-pl" data-bind=" click:function(){$root.Edit(TableId())}"></a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+@*<script src="~/Scripts/app/tables.js"></script>*@
+@Scripts.Render("~/scripts/tables")

@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="292" height="310.03" viewBox="0 0 292 310.03">
+    <defs>
+        <style>
+            .prefix__cls-2{fill:none;stroke:#218261;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-width:12px}
+        </style>
+    </defs>
+    <g id="prefix__big-icon2" opacity="0.5" transform="translate(6.131 5.417)">
+        <g id="prefix__Group_13" data-name="Group 13" transform="translate(-.131 .583)">
+            <path id="prefix__Path_7" d="M186.217 95.609a89.609 89.609 0 1 0-129.434 80.184V235H76.7v19.913h39.826V235h19.913v-59.207a89.524 89.524 0 0 0 49.778-80.184z" class="prefix__cls-2" data-name="Path 7" transform="translate(43.063 43.117)"/>
+            <path id="prefix__Line_1" d="M0 0L0 19" class="prefix__cls-2" data-name="Line 1" transform="translate(140)"/>
+            <path id="prefix__Line_2" d="M0 0L14.081 14.081" class="prefix__cls-2" data-name="Line 2" transform="translate(41.107 40.161)"/>
+            <path id="prefix__Line_3" d="M0 0L19 0" class="prefix__cls-2" data-name="Line 3" transform="translate(0 140)"/>
+            <path id="prefix__Line_4" d="M21 0L0 0" class="prefix__cls-2" data-name="Line 4" transform="translate(259 140)"/>
+            <path id="prefix__Line_5" d="M14.081 0L0 14.081" class="prefix__cls-2" data-name="Line 5" transform="translate(224.156 40.161)"/>
+            <path id="prefix__Path_8" d="M72.739 23.957L42.87 14v19.913L13 23.957" class="prefix__cls-2" data-name="Path 8" transform="translate(96.802 114.769)"/>
+        </g>
+    </g>
+</svg>

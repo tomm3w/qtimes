@@ -1,0 +1,65 @@
+﻿@{
+    ViewBag.Title = "Preferences";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin_old.cshtml";
+}
+<script>
+    $("#divWaitlist").remove()
+</script>
+<style>
+    input[type=time]::-webkit-inner-spin-button,
+    input[type=number]::-webkit-inner-spin-button,
+    input[type=time]::-webkit-outer-spin-button,
+    input[type=number]::-webkit-outer-spin-button{
+        height:40px;
+        margin-left: 5px;
+    }
+</style>
+<form class="form-horizontal" id="restaurant-box">
+    <div class="form-group">
+        <ul class="menu pull-left">
+            <li><a href="@Url.Action("Index", "Restaurant", new { area="Admin"})" class="link-gray">Business Setup</a></li>
+            <li><a href="@Url.Action("Index", "AccountInfo", new { area = "Admin" })" class="link-gray">Account Setup</a></li>
+            <li><a href="#" class="link-gray active">Preferences</a></li>
+            <li><a href="@Url.Action("Index", "Tables", new { area = "Admin" })" class="link-gray">Tables</a></li>
+        </ul>
+        <input type="button" value="Save Changes" class="button green pull-right" data-bind="click:Update" />
+    </div>
+    @* ACCOUNT SETUP  *@
+    <div>
+        <div class="form-group">
+            <label for="inputEmail" class="col-xs-2">Opening Hour</label>
+            <div class="col-xs-10">
+                <input style="width:285px" type="time" id="OpeningHour" placeholder="hh:mm" data-bind="value: OpeningHour" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-xs-2">Closing Hour</label>
+            <div class="col-xs-10">
+                <input style="width:285px" type="time" id="ClosingHour" placeholder="hh:mm" data-bind="value: ClosingHour" />
+            </div>
+        </div>
+        <div class="form-group" style="display:none">
+            <label class="col-xs-2">Closed Day(s)</label>
+            <div class="col-xs-10">
+                <input type="checkbox" value="Sunday">Sunday
+                <input type="checkbox" value="Monday" />Monday
+                <input type="checkbox" value="Tuesday" />Tuesday<br />
+                <input type="checkbox" value="Wednesday">Wednesday
+                <input type="checkbox" value="Thursday" />Thursday
+                <input type="checkbox" value="Friday" />Friday<br />
+                <input type="checkbox" value="Saturday" />Saturday
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-xs-2">Waittime Interval Day(s)</label>
+            <div class="col-xs-10">
+                <input style="width:285px" type="number" data-bind="value:WaittimeInterval" />
+
+            </div>
+        </div>
+
+    </div>
+</form>
+@*<script src="~/Scripts/jquery.maskedinput.min.js"></script>*@
+@*<script src="~/Scripts/app/preferences.js"></script>*@
+@Scripts.Render("~/scripts/preferences")

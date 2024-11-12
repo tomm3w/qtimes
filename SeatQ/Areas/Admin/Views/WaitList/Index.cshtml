@@ -1,0 +1,267 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<section class="content-header">
+    <div class="content_header_left">
+        <h2 class="uppercase">Waiting</h2>
+    </div>
+    <div class="content_header_right">
+        <a href="#" id="addList" class="btn btn-primary add-new-reserve blue_right_btn" data-toggle="modal" data-target="#add-waitlist">
+            <span class="svg_add-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15">
+                    <path id="prefix__add_icon" d="M6 15V9H0V6h6V0h3v6h6v3H9v6z" style="fill:#fff" />
+                </svg>
+            </span>ADD NEW
+        </a>
+    </div>
+</section>
+
+<section class="content-body clearfix">
+    <div class="content-table custom-table-responsive">
+        <table class="table">
+            <thead>
+                <tr class="shadow-bottom">
+                    <th width="7%">Size</th>
+                    <th width="39%">Name</th>
+                    <th width="6%">Msg</th>
+                    <th width="6%">Seat</th>
+                    <th width="6%">Cancel</th>
+                    <th width="9%">Added</th>
+                    <th width="7%">Est. Wait</th>
+                    <th width="7%">Time SAT</th>
+                    <th width="6%"></th>
+                    <th width="6%"></th>
+                </tr>
+            </thead>
+            <tbody data-bind="foreach: businesses, as: 'business'">
+                <!-- ko if: IsCancelled -->
+                <tr class="bg-lightgray seen-block">
+                    <td><span class="large-text" data-bind="text: GroupSize"></span></td>
+                    <td colspan="4">
+                        <div class="name-block no-log">
+                            <p class="name">
+                                <span data-bind="text: GuestNameWithType"></span>
+                                <!-- ko if: IsReturnedGuest -->
+                                <span class="star"></span>
+                                <!-- /ko -->
+                            </p>
+                            <span class="message inactive" data-bind="attr:{class:CommentsClass},text: Comments"></span>
+                            <span class="available-info" data-bind="text: TableBooked"></span>
+                        </div>
+                    </td>
+                    <td data-bind="text: ActualTime"></td>
+                    <td data-bind="text: Time"></td>
+                    <td data-bind="text: TimeSat"></td>
+                    <td>
+                        <span data-bind="text: TotalMinuteSat"></span><span data-bind="attr:{class:LateSeatingClass},text: LateSeating"></span>
+                    </td>
+                    <td>
+                        <a href="#" class="edit-link" title="Edit" data-bind="click:function(){$root.Edit(WaitListId())}"><span>Edit</span></a>
+                    </td>
+                </tr>
+                <!-- /ko -->
+                <!-- ko ifnot: IsCancelled -->
+                <tr>
+                    <td data-bind="attr:{class:SizeClass}"><span class="large-text" data-bind="text: GroupSize"></span></td>
+
+                    <td>
+                        <div class="name-block">
+                            <p class="name">
+                                <span data-bind="text: GuestNameWithType"></span>
+                                <!-- ko if: IsReturnedGuest -->
+                                <span class="star"></span>
+                                <!-- /ko -->
+                            </p>
+                            <span data-bind="attr:{class:CommentsClass},text: Comments"></span>
+                            <span class="available-info" data-bind="text: TableBooked"></span>
+                            <span data-bind="attr:{class:RemainingTimeClass},text: RemainingTime"></span>
+                            <span style="float:right"><a href="#" data-bind="click:function(){$root.SendTextMessage(WaitListId())}, attr:{style: ReadyMessageClass}">Send</a></span>
+                        </div>
+                    </td>
+
+                    <!-- ko if: IsUnReadMessage -->
+                    <td>
+                        <span style="cursor:pointer" class="medium-text color-blue" data-bind="text: UnReadMessageCount,click:function(){$root.ShowMsg(WaitListId(),GuestName())}"></span>
+                    </td>
+                    <!-- /ko -->
+                    <!-- ko ifnot: IsUnReadMessage -->
+                    <td class="bg-blue">
+                        <a href="#" class="message-link" title="Message" data-bind="click:function(){$root.ShowMsg(WaitListId(),GuestName())}"><span>Msg</span></a>
+                    </td>
+                    <!-- /ko -->
+
+                    <td class="bg-darkgreen">
+                        <a href="#" class="confirm-link" title="Confirm" data-bind="visible: ShowConfirmed, click:function(){$root.Confirmed(WaitListId())}"><span>Confirm</span></a>
+                        <a href="#" class="seat-link poplink" title="Seat" data-bind="visible: ShowSeated, click:function(){$root.OpenSeated(WaitListId())}"><span>Seat</span></a>
+                        <a href="#" class="leave-link" title="Leave" data-bind="visible: ShowLeft, click:function(){$root.Left(WaitListId())}"><span>Leave</span></a>
+                    </td>
+                    <td class="bg-darkred">
+                        <a href="#" class="cancel-link" title="Cancel"><span data-bind="click:function(){$root.Leave(WaitListId())}"></span></a>
+                    </td>
+                    <td data-bind="text: ActualTime"></td>
+                    <td data-bind="text: Time"></td>
+                    <td data-bind="text: TimeSat"></td>
+                    <td>
+                        <span data-bind="text: TotalMinuteSat"></span><span data-bind="attr:{class:LateSeatingClass},text: LateSeating"></span>
+                    </td>
+                    <td>
+                        <a href="#" class="edit-link" title="Edit" data-bind="click:function(){$root.Edit(WaitListId())}"><span>Edit</span></a>
+                    </td>
+                </tr>
+                <!-- /ko -->
+            </tbody>
+        </table><!-- end of table -->
+
+    </div><!-- end of content-table -->
+    <nav class="pull-right">
+        <ul class="pagination" data-bind="with: pagingdata">
+            <li><a href="#" aria-label="Previous" data-bind="click: function () { GoToPage(Page()-1) }, visible: HasPrev()"><span aria-hidden="true">&laquo;</span></a></li>
+            <!-- ko foreach: new Array(TotalPages()) -->
+            <li data-bind="attr: { class: ($parent.Page() == $index() + 1 ? 'active' : '') }"><a href=" #" data-bind="click: function () { $parent.GoToPage($index() + 1) }, text: $index() + 1"><span class="sr-only">(current)</span></a></li>
+            <!-- /ko -->
+            <li><a data-bind="click: function () { GoToPage(Page()+1) }, visible: HasNext()" href="#"><span aria-hidden="true">»</span></a></li>
+        </ul>
+    </nav>
+
+</section><!-- end of content-body -->
+<!-- popup section -->
+<span class="popup-overlay"></span>
+<div class="popup-box">
+    <div class="popup-header">
+        <h2 class="popup-title">SEATING</h2>
+        <a href="javascript:void(0)" data-bind="click: function(){$root.CloseSeated()}" class="popup-close"><span></span></a>
+    </div><!--end of popup-header -->
+
+    <div class="popup-content">
+        <ul class="list-unstyled popup-list">
+            <li>
+                <label>Table No.</label>
+                <label> ( Max Seating)</label>
+                <div class="pull-right popup-dotall">
+                    <span>Status</span>
+                </div>
+            </li>
+            <!--ko foreach: TableStatus-->
+            <li data-bind="click: function(){$root.Seated(TableId(), TableStatus())}" style="cursor:pointer">
+                <label data-bind="text: TableNumber"></label>
+                <label data-bind="text: ' (' + MaxSeating() + ')'"></label>
+                <div class="pull-right popup-dotall">
+                    <span data-bind="text: Avg, attr:{class:AvgClass}"></span>
+                    <ol class="list-unstyled" data-bind="html: Status"></ol>
+                </div>
+            </li>
+            <!--/ko-->
+
+        </ul>
+        @*<div class="okbtn"><a href="#">OK</a></div>*@
+    </div><!-- end of popup-content -->
+
+
+</div><!--end of popup-box -->
+<!-- Chat section -->
+<span class="chat-overlay"></span>
+<div class="chat-box">
+    <div class="chat-header">
+        <h2 class="chat-title" data-bind="text:MyGuestName"></h2>
+        <a href="javascript:;" class="chat-close" onclick="ClearAll()"><span></span></a>
+    </div><!--end of chat-header -->
+
+    <ul class="chat-msgs" data-bind="foreach: GuestMessages">
+        <!-- ko if: MessageFrom -->
+        <li class="chat-details from-msg">
+            <div class="from-details clearfix">
+                <h3 class="pull-left color-green" data-bind="text:GuestName"></h3>
+                <span class="pull-right" data-bind="text:MessageTime"></span>
+            </div>
+            <div class="chat-content" data-bind="text:Message">
+            </div>
+        </li>
+        <!-- /ko -->
+        <!-- ko ifnot: MessageFrom -->
+        <li class="chat-details own-msg">
+            <div class="own-details clearfix">
+                <h3 class="pull-right">You</h3>
+                <span clas="pull-left" data-bind="text:MessageTime"></span>
+            </div>
+            <div class="chat-content" data-bind="text:Message">
+            </div>
+        </li>
+        <!-- /ko -->
+    </ul><!-- end of chat-msgs -->
+
+
+    <form action="#" class="chat-textbox">
+        <input type="text" class="chat-input" placeholder="Enter reply here.." data-bind="value: NewGuestMessage" />
+        <input type="submit" class="chat-submit" value="Reply" data-bind="click:function(){SendMessageToGuest(MyWaitListId())}">
+    </form><!-- end of chat-textbox -->
+</div><!--end of chat-box -->
+<!-- Modal -->
+<div class="modal fade new_rule in" id="add-waitlist" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-backdrop="static">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header topic_only">
+                <h4 class="modal-title uppercase" id="myModalLabel">Add New List</h4>
+            </div>
+
+            <div class="modal-body">
+                <form action="#" class="theme-white-form">
+                    <div class="form-inline">
+                        <div class="form-group inline-form" style="width:130px">
+                            <label class="block">Guest Type</label>
+                            <select class="selectpicker" data-bind="options: GuestType, value:GuestTypeId, optionsText: 'text', optionsValue: 'value', optionsCaption: 'Guest Type'"></select>
+                        </div>
+                        <div class="form-group pull-right">
+                            <label class="block">Group Size</label>
+                            <input type="number" class="form-control" data-bind="value: GroupSize">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Name</label>
+                        <input type="text" class="form-control" data-bind="value: GuestName">
+                    </div>
+                    <div class="form-group">
+                        <label>Phone Number</label>
+                        <input type="text" class="form-control" data-bind="value: MobileNumber" placeholder="+1 XXXXXXXXXX">
+                    </div>
+                    <div class="form-inline">
+                        <label class="block">Estimated Wait</label>
+                        <div class="form-group inline-form">
+                            <input type="number" class="form-control input-small" placeholder="00" min="0" data-bind="value: EstimatedHours">
+                            <label>Hrs.</label>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="number" class="form-control input-small" placeholder="00" min="0" data-bind="value: EstimatedMins">
+                            <label>Mins.</label>
+                        </div>
+                        <div class="form-group pull-right">
+                            <a href="#" class="time-btn" data-bind="click: MinusEstimatedWait"><span class="minus-btn"></span></a>
+                            <a href="#" class="time-btn" data-bind="click: PlusEstimatedWait"><span class="plus-btn"></span></a>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label style="width:100%">Seating Preference</label>
+                        <select class="selectpicker" data-bind="options: Tables, value:TableId, optionsText: 'text', optionsValue: 'value', optionsCaption: 'First Available'"></select>
+                    </div>
+                    <div class="form-group">
+                        <label>Comments/Special request</label>
+                        <textarea name="comments" cols="30" rows="5" class="form-control" data-bind="value: Comments"></textarea>
+                    </div>
+                </form><!-- end of theme-black-form -->
+            </div><!-- end of modal-body -->
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-bind="click: AddWaitlist" id="btnAdd"><span class="add-icon"></span> <span id="btnSubmit">Add to waitlist</span></button>
+                <button type="button" class="btn btn-default" data-dismiss="modal"><span class="cross-icon"></span> Cancel</button>
+            </div><!-- end of modal-footer -->
+
+        </div><!-- end of modal-content -->
+    </div><!-- end of modal-dialog -->
+</div><!-- end of modal -->
+@*<script src="~/Scripts/app/waitlist.js"></script>*@
+@Scripts.Render("~/scripts/waitlist")
+
+

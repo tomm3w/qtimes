@@ -1,0 +1,6 @@
+@QTimes.WeApi_HostAddress = http://localhost:5159
+
+GET {{QTimes.WeApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="469.001" height="182" viewBox="0 0 469.001 182">
+    <defs>
+        <linearGradient id="prefix__linear-gradient" x1="1" x2="0" y1=".418" y2=".423" gradientUnits="objectBoundingBox">
+            <stop offset="0" stop-color="#2bc792"/>
+            <stop offset="1" stop-color="#20928a"/>
+        </linearGradient>
+    </defs>
+    <path id="prefix__chat-bubble" fill="url(#prefix__linear-gradient)" d="M214.11 153.306H10a10 10 0 0 1-10-10V10A10 10 0 0 1 10 0h449a10 10 0 0 1 10 10v133.306a10 10 0 0 1-10 10H237.4L203.834 182z" transform="translate(.001)"/>
+</svg>

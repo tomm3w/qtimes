@@ -1,0 +1,34 @@
+﻿@{
+    ViewBag.Title = "QTimes";
+    Layout = "~/Areas/m/Views/Shared/_Layout.cshtml";
+}
+
+<div class="waittime_reserve">
+    <div class="app__header">
+        <div class="imgHolder">
+            <img src="~/Images/noimage.png" id="logo">
+        </div>
+    </div>
+    <div class="mob_body">
+        <div class="waittime_reserve_body">
+            <div class="waittime_reserve_txt_wrap app__form">
+                <div class="waittime_reserve_para">
+                    <div class="waittime_reserve_para_p">
+                        <h2 class="businessName"></h2>
+                        <p>
+                            Welcome to <span class="businessName"></span> Reservation
+                            <br><br>
+                            During this time where there is social distancing and limit the number of people in the area, we have launched this application to reserve a time while you are staying at <span class="businessName"></span>.
+                        </p>
+                    </div>
+                </div>
+                <button class="btn btn--orng" onclick="javascript: location.href='/m/reservation/reserve/@ViewBag.id'">MAKE A RESERVATION</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    var id = '@ViewBag.id';
+</script>
+<script src="~/Scripts/app/reservation/m/business.js"></script>

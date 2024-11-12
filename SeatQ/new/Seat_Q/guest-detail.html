@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1,user-scalable=0"/>
+   <title></title>
+   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"
+   integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+   <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,600,700,800,900&display=swap"
+   rel="stylesheet">
+   <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
+   <link rel="stylesheet" href="assets/dist/css/bootstrap-select.min.css">
+   <link rel="stylesheet" href="assets/dist/css/intlTelInput.css">
+   <link rel="stylesheet" type="text/css" href="assets/dist/css/style.css">
+   <link rel="stylesheet" type="text/css" href="assets/dist/css/custom.css">
+</head>
+<body class="commonctn waitlist2 waitlist3 waitlist4 guest-detail_body">
+   <div class="app">
+      <div class="container">
+         <div class="app__container">
+            <div class="waittime">
+               <div class="app__header">
+                  <h4 class="head_top">GUEST DETAILS</h4>
+               </div>
+               <div class="mob_body">
+                  <form action="#" class="theme-black-form">
+                     <div class="form_first">
+                        <div class="form-group res_fr_1">
+                           <label>Main Guest(You)</label>
+                           <input type="text" class="form-control" placeholder="Enter your name">
+                        </div>
+                        <div class="form-group res_fr_1">
+                           <label>Guest 2</label>
+                           <span>Full Name</span>
+                           <input type="text" class="form-control" placeholder="Enter guest2 full name">
+                        </div>
+                         <div class="form-group res_fr_1 pn_1_con">
+                           <span>Phone No</span>
+                          <input type="tel" class="form-control" id="mob_id" placeholder="+1" autocomplete="off">
+                        </div>
+                        <div class="form-group res_fr_1">
+                           <label>Guest 3</label>
+                           <span>Full Name</span>
+                           <input type="text" class="form-control" placeholder="Enter guest2 full name">
+                        </div>
+                         <div class="form-group res_fr_1 pn_2_con">
+                           <span>Phone No</span>
+                           <input type="tel" class="form-control" id="mob_id2" placeholder="+1" autocomplete="off">
+                        </div>
+                     </div>
+                     <div class="form-group form_second select_opt">
+                           <p class="watlist4_notice">Please review your details before continuing,we will ask for <strong>Guest Details</strong> on the next page</p>
+                           <div class="fixed_btn">
+                              <a href="#" class="front_arrow"><img src="assets/img/arrow.svg" alt=""></a>
+                        <button class="btn btn--grn">Next</button>
+                        </div>
+                     </div>
+                  </form>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <script src="https://code.jquery.com/jquery-3.4.1.js"
+   integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+   integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+   crossorigin="anonymous"></script>
+   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+   integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+   crossorigin="anonymous"></script>
+   <script src="assets/js/bootstrap-input-spinner.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+   <script src="assets/js/bootstrap-select.js"></script>
+   <script src="assets/js/intlTelInput.js"></script>
+   <script src="assets/js/intlTelInput.min.js"></script>
+   <script>
+      $(document).ready(function() {
+         $("#mob_id").intlTelInput({
+            initialCountry: "auto",
+            geoIpLookup: function(callback) {
+               $.get('https://ipinfo.io', function() {}, "jsonp").always(function(resp) {
+                  var countryCode = (resp && resp.country) ? resp.country : "";
+                  callback(countryCode);
+               });
+            }
+         });
+         $("#mob_id2").intlTelInput({
+            initialCountry: "auto",
+            geoIpLookup: function(callback) {
+               $.get('https://ipinfo.io', function() {}, "jsonp").always(function(resp) {
+                  var countryCode = (resp && resp.country) ? resp.country : "";
+                  callback(countryCode);
+               });
+            }
+         });
+      });
+   </script>
+</body>
+</html>

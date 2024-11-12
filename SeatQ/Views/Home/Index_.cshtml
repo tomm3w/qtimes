@@ -1,0 +1,176 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+    Layout = "~/Views/Shared/_LayoutHome.cshtml";
+}
+<script type="text/javascript">
+    $(function () {
+        $("#wrapper-home .menu-resolution").click(function () {
+            $("#menu-home").show();
+        });
+    });
+</script>
+<div class="home-banner text-center text-white">
+    <div class="text-center">
+        <div class="desc"><h1>The New Wait List Management Tool </h1>
+        <h4 class="container">Using an IPAD to manage your wait list makes for smart managment tool for tracking guest seating and a new marketing tool for communicating with your guest. SeatQ is leading in the way in restaurant wait list management.</h4>
+        <p><a class="button darkgray" role="button">SHOW ME HOW IT WORKS</a></p>
+            </div>
+    </div>
+</div>
+
+<div class="home-partners">
+    <div class="container">
+        <h4 class="bold pull-left">OUR PARTNERS: </h4>
+        <a class="logo-ivew">
+            <img src="~/Content/Uploads/Images/iveew.png" alt="" /></a>
+        <a class="logo-idest">
+            <img src="~/Content/Uploads/Images/idestn.png" alt="" /></a>
+        <a class="logo-pushme">
+            <img src="~/Content/Uploads/Images/pushme.png" alt="" /></a>
+    </div>
+</div>
+
+<div class="bg-gray home-why">
+    <div class="container">
+        <div class="col-lg-6">
+            <img src="~/Content/Uploads/Images/why-seatq.png" alt="" />
+        </div>
+        <div class="col-lg-6">
+            <h2>Why SeatQ?</h2>
+            <br />
+            <p class="txt-center">SeatQ is the newest in wait list management tools that allows for seamless communication between restaurants and their guest.</p>
+            <ul class="list-unstyled">
+                <li class="why-delete">Eliminate Costly Pagers</li>
+                <li class="why-setting">Set up SQ to communicate specials based on previous visits by guests</li>
+                <li class="why-special">Special positioning on the wait list for your returning guests
+                </li>
+                <li class="why-manage">Manage offers automatically allows you to create offers whether the guest has visited your restaurant once or one hundred times. Pre-load offers based on # of times a guest has returned</li>
+            </ul>
+        </div>
+    </div>
+
+</div>
+
+<div class="home-what">
+    <div class="container">
+        <div class="col-lg-6 bg-white">
+            <h2>What More?</h2>
+            <br />
+            <p>It focused on providing restaurants with customer centric tools to engage with guests, encouraging less cancelled seats and encourage return guests with manage expectation and dynamic guest reviews. </p>
+        </div>
+        <div class="col-lg-6 bg-white">
+            <img src="~/Content/Uploads/Images/what-more.png" alt="" />
+        </div>
+    </div>
+</div>
+
+
+<div class="bg-gray home-plan">
+    <div class="container">
+        <div class="col-lg-6">
+            <div class="plan-box pull-left text-center">
+                <h4>Simple Plan</h4>
+                <h2 class="txt-green">$59 <span>/month</span></h2>
+                <ul class="list-unstyled">
+                    <li>200 Seats / Mo</li>
+                    <li>Include Survey Features</li>
+                    <li>Include Coupon Passbook</li>
+                    <li>24/7 Customer Support</li>
+                </ul>
+                <a href="#" class="button darkblue text-white">Purchase Plan</a>
+            </div>
+            <div class="plan-box pull-left text-center">
+                <h4>Smart Plan</h4>
+                <h2 class="txt-green">$600 <span>/year</span></h2>
+                <ul class="list-unstyled">
+                    <li>2,000+ Seats / Mo</li>
+                    <li>Include Survey Features</li>
+                    <li>Include Coupon Passbook</li>
+                    <li>Unlimited SMS Service</li>
+                    <li>24/7 Customer Support</li>
+                </ul>
+                <a href="#" class="button darkblue text-white">Purchase Plan</a>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <h2>Payment Option</h2>
+            <p>We offer you two option for your preffered payment method.</p><br />
+            <ul class="list-unstyled">
+                <li class="pay-credit">Option 1 : Credit Card & Debit Card<br />
+        Visa, Master Card</li>
+                <li class="pay-paypal">Option 2 : Pay Using Paypal</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="bg-white home-setup border-bot">
+    <div class="container">
+        <h4 class="pull-left no-margin">Need help for you business setup?</h4>
+        <h5 class="pull-right no-margin"><span class="txt-green">Or call us</span> : +1970 306-7315</h5>
+    </div>
+</div>
+<div class="bg-white home-setup" id="contact">
+    <div class="container">
+        <div class="col-md-4">
+            <input type="text" placeholder="Your Name" class="w100" id="txtname" />
+            <input type="text" placeholder="Business Name" class="w100" id="txtbusinessname"/>
+        </div>
+        <div class="col-md-4">
+            <input type="text" placeholder="Email Address" class="w100" id="txtemail"/>
+            <input type="text" placeholder="Phone No." class="w100" id="txtphone"/>
+        </div>
+        <div class="col-md-4 last">
+            <textarea class="w100" placeholder="Type your message here..." id="txtmessage"></textarea>
+        </div>
+        <h5 class="pull-left">Get in touch with our 24/7 customer support - We Solved It!</h5>
+        <a class="button gray pull-right" onclick="ContactSupport()">SEND MESSAGE</a>
+    </div>
+</div>
+
+<div class="home-footer">
+    <div class="container">
+        <ul class="pull-left list-unstyled col-md-1">
+            <li><a href="/Account/Register" class="link-gray">Sign Up</a></li>
+            <li><a href="/Account/Login" class="link-gray">Sign In</a></li>
+        </ul>
+        <ul class="pull-left list-unstyled col-md-1">
+            <li><a href="#" class="link-gray">Blog</a></li>
+            <li><a href="#" class="link-gray">Blog</a></li>
+        </ul>
+    </div>
+
+</div>
+<div class="home-footer">
+    <div class="container text-white">
+        All Rights Reserved &#169; SeatQ 2014
+    </div>
+</div>
+
+
+
+<script>
+
+    var webserviceURL = "@Url.Action("ContactSupport", "Home")";
+
+    function ContactSupport() {
+        $.ajax({
+            type: "POST",
+            url: webserviceURL,
+            data: JSON.stringify({ Name: $("#txtname").val(), Email: $("#txtemail").val(), BusinessName: $("#txtbusinessname").val(), Phone: $("#txtphone").val(), Message: $("#txtmessage").val() }),
+            contentType: "application/json; charset=utf-8",
+            dataType: 'json',
+            success: function (data) {
+                if (data.status == "ok") {
+                    NotifySavedMessage("Thanks for contacting SeatQ.");
+                }
+                if (data.status == "error") {
+                    NotifyErrorMessage(data.ErrorMessage);
+                }
+            },
+            error: function (error) {
+                alert('error');
+            }
+        });
+    }
+</script>

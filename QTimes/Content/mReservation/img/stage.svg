@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="482.202" height="417.431" viewBox="0 0 482.202 417.431">
+    <defs>
+        <filter id="prefix__Path_210" width="357" height="318" x="0" y="8" filterUnits="userSpaceOnUse">
+            <feOffset dy="1"/>
+            <feGaussianBlur result="blur" stdDeviation="1"/>
+            <feFlood flood-opacity=".161"/>
+            <feComposite in2="blur" operator="in"/>
+            <feComposite in="SourceGraphic"/>
+        </filter>
+    </defs>
+    <g id="prefix__stage" transform="translate(-4247 734)">
+        <g id="prefix__Group_1109" data-name="Group 1109">
+            <path id="prefix__Path_211" fill="#dcdcdc" d="M4360-412l3 5-90 34 20 56s169.527 7.7 250-42 151.817-103.675 153-109-8-28-8-28 44.55-49.124 41-58a19.013 19.013 0 0 0-12-11l5-17-26-11-8 11-37 11-16-37 24-24-8-6 8-11v-15l-8-2-4 4-58-54v-14l-6-4-26 27-6-9 6-9-10-9h-10l-12 13z" data-name="Path 211"/>
+            <g filter="url(#prefix__Path_210)" transform="translate(4247 -734)">
+                <path id="prefix__Path_210-2" fill="#fcfcfc" d="M4256-626l-6 90 15 22v25l46 3 29 74 64-25 3 4 127-50v-3l61-25-31-77 37-38-15-20-3-16-67-62-48 49 5 26-12-11-21 24-64 24h-36v13l-12-22z" data-name="Path 210" transform="translate(-4247 734)"/>
+            </g>
+            <text id="prefix__STAGE-2" fill="#2a2f3a" data-name="STAGE" font-family="NunitoSans-Black, Nunito Sans" font-size="16px" font-weight="800" letter-spacing="0.018em" transform="matrix(.934 -.358 .358 .934 4457 -508)">
+                <tspan x="-26.752" y="0">STAGE</tspan>
+            </text>
+        </g>
+    </g>
+</svg>

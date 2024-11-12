@@ -1,0 +1,45 @@
+﻿@{
+    ViewBag.Title = "QTimes";
+    Layout = "~/Areas/m/Views/Shared/_Layout.cshtml";
+}
+
+<div class="waittime_reserve">
+    <div class="app__header">
+        <div class="imgHolder">
+            <img src="~/Images/noimage.png" id="logo">
+        </div>
+    </div>
+    <div class="mob_body">
+        <div class="waittime_reserve_body">
+            <div class="waittime_reserve_txt_wrap app__form">
+                <div class="waittime_reserve_para">
+                    <div class="waittime_reserve_para_p">
+                        <h2 class="businessName"></h2>
+                        <p>
+                            Welcome to <span class="businessName"></span> Reservation
+                            <br><br>
+                            <span class="businessDescription"></span>
+                        </p>
+                        <ul class="splash_ul">
+                            <li><a href="#" id="privayPolicy" target="_blank">Privacy Policy</a></li>
+                            <li><a href="#" id="termsService" target="_blank">Terms Of Service</a></li>
+                            <li><a href="#" id="communityGuidelines" target="_blank">Community Guidelines</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <button class="btn btn--orng" onclick="javascript: location.href='/m/reservation/reserve/@ViewBag.id'">MAKE A RESERVATION</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    var id = '@ViewBag.id';
+</script>
+<script src="~/Scripts/app/reservation/m/business.js"></script>
+<environment include="Development">
+    <script src="~/Scripts/app/reservation/m/business.js"></script>
+</environment>
+<environment exclude="Development">
+    <script src="~/Scripts/app/reservation/m/business.min.js"></script>
+</environment>

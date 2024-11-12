@@ -1,0 +1,178 @@
+﻿<script src="~/Scripts/bwip-js-min.js"></script>
+<script>
+    var eventid = '@ViewBag.id';
+</script>
+
+<div class="content-wrapper">
+
+    @Html.Partial("_PartialMenu")
+
+    <section class="content-header">
+        <div class="content_header_left">
+            <h2 class="uppercase" data-bind="text: EventName">SETTINGS</h2>
+        </div>
+    </section>
+
+    <section class="content-header_prf">
+        <h2 class="uppercase">Business Profile</h2>
+        <a href="/concert/events" class="btn">BACK</a>
+        <a href="#" class="btn btn-primary grey-right_btn" data-bind="click: UpdateProfile">
+            Save
+        </a>
+    </section>
+    <section class="content-body clearfix">
+        <div class="account_form content-body_prf">
+            <form>
+                <div class="form_ac">
+                    <div class="form-group">
+                        <label>Business Image</label>
+                        <div class="upload_pic">
+                            <div class="img_upld">
+                                <img src="/content/assets/images/bp_1.png" alt="" id="accountlogo">
+                            </div>
+                            <div class="uplod_btn_click">
+                                <input type="file" class="btn over_in" placeholder="Upload file..." accept="images/*" id="over_in_input">
+                                <button for="file" class="btn btn_photo img-upload_con" id="show_img">Upload file...</button>
+                                <span id="customtxt"></span>
+                            </div>
+                        </div>
+                        <div class="page_info_conc">
+                            <label>Page Intro</label>
+                            <textarea class="form-control" data-bind="value: Description" style="width:736px;height:76px;"></textarea>
+                        </div>
+                        <div class="page_info_conc form_ac">
+                            <div class="form-group">
+                                <label>Virtual No.</label>
+                                <input type="text" class="form-control" placeholder="1xxxxxxxxxx" data-bind="value: VirtualNo">
+                            </div>
+                            <div class="form-group">
+                                <label>Business No.</label>
+                                <input type="text" class="form-control" placeholder="1xxxxxxxxxx" data-bind="value: PhoneNo">
+                            </div>
+                        </div>
+                        <div class="form_ac">
+                            <div class="form-group">
+                                <label>Mobile No.</label>
+                                <input type="text" class="form-control" placeholder="1xxxxxxxxxx" data-bind="value: MobileNo">
+                            </div>
+                            <div class="form-group">
+                                <label>Pass Template Id:</label>
+                                <input type="number" class="form-control" data-bind="value: PassTemplateId" min="1">
+                            </div>
+                        </div>
+                        <div class="page_info_conc">
+                            <label>Mobile Url:</label>
+                            <input type="text" class="form-control" readonly id="mobileUrl" style="width:736px;" data-bind="attr: {disabled: IsExpired, title: ExpiredTitle}" title="Expireed">
+                        </div>
+                        <div class="page_info_conc">
+                            <label>Short Url</label>
+                            <input type="text" class="form-control" placeholder="https://bit.ly/xyz987" data-bind="value: ShortUrl, attr: {disabled: IsExpired, title: ExpiredTitle}" style="width:736px" >
+                        </div>
+                        <div class="page_info_conc">
+                            <label>Staff Url:</label>
+                            <input type="text" class="form-control" readonly id="staffUrl" style="width:736px;" data-bind="attr: {disabled: IsExpired, title: ExpiredTitle}">
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="account_form content-body_prf">
+            <form>
+                <div class="form_ac">
+                    <div class="form-group">
+                        <label>QR Code</label>
+                        <div class="upload_pic">
+                            <div class="img_upld" style="width:240px">
+                                <img src="/images/noimage.png" alt="qrcode" id="qrcode">
+                            </div>
+                            <div class="uplod_btn_click">
+                                <a value="Download" class="btn btn_photo" onclick="downloadImage()">Download</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="account_form content-body_prf">
+            <form>
+                <div class="form_ac">
+                    <div class="form-group document_form-slide">
+                        <p class="heading_doc_profile_con">Documentation</p>
+                        <ul>
+                            <li>
+                                <div class="lf_doc">
+                                    <div class="check_box_grn con_p">
+                                        <input type="checkbox" data-bind="checked: EnablePrivacyPolicy">
+                                        <label class="checkmark"></label>
+                                    </div>
+                                    <p class="policy_p_con">Privacy Policy</p>
+                                </div>
+                                <div class="rt_doc" data-bind="css: { activation: EnablePrivacyPolicy() }">
+                                    <a data-bind="attr: { href: PrivacyPolicyFileFullPath }" target="_blank"><p class="policy_pdf_con" id="customtxt1" data-bind="text: PrivacyPolicyFileName">privacy_policy.pdf</p></a>
+
+                                    <div class="">
+                                        <div class="uplod_btn_click upload1">
+                                            <input type="file" class="btn over_in" placeholder="Upload file..." accept="images/" id="over_in_input1">
+                                            <button for="file" class="btn btn_photo" id="show_img1">Upload file...</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="lf_doc">
+                                    <div class="check_box_grn con_p">
+                                        <input type="checkbox" data-bind="checked: EnableServiceTerms">
+                                        <label class="checkmark"></label>
+                                    </div>
+                                    <p class="policy_p_con">Terms of Service</p>
+                                </div>
+                                <div class="rt_doc" data-bind="css: { activation: EnableServiceTerms() }">
+
+                                    <a data-bind="attr: { href: ServiceTermsFileFullPath }" target="_blank">
+                                        <p class="policy_pdf_con" id="customtxt2" data-bind="text: ServiceTermsFileName">terms.pdf</p>
+                                    </a>
+
+                                    <div class="">
+                                        <div class="uplod_btn_click upload2">
+                                            <input type="file" class="btn over_in" placeholder="Upload file..." accept="images/" id="over_in_input2">
+                                            <button for="file" class="btn btn_photo" id="show_img2">Upload file...</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="lf_doc">
+                                    <div class="check_box_grn con_p">
+                                        <input type="checkbox" data-bind="checked: EnableCommunityGuidelines">
+                                        <label class="checkmark"></label>
+                                    </div>
+
+                                    <p class="policy_p_con">Community Guidelines</p>
+                                </div>
+                                <div class="rt_doc" data-bind="css: { activation: EnableCommunityGuidelines() }">
+                                    <a data-bind="attr: { href: CummunityGuidelinesFileFullPath }" target="_blank">
+                                        <p class="policy_pdf_con" id="customtxt3" data-bind="text: CummunityGuidelinesFileName">Community Guidelines.pdf</p>
+                                    </a>
+                                    <div class="">
+                                        <div class="uplod_btn_click upload3">
+                                            <input type="file" class="btn over_in" placeholder="Upload file..." accept="images/" id="over_in_input3">
+                                            <button for="file" class="btn btn_photo" id="show_img3">Upload file...</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+
+</div>
+
+<environment include="Development">
+    <script src="~/Scripts/app/concert/eventbusinessprofile.js"></script>
+</environment>
+<environment exclude="Development">
+    <script src="~/Scripts/app/concert/eventbusinessprofile.min.js"></script>
+</environment>

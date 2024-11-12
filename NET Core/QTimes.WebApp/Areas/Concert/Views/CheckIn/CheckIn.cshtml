@@ -1,0 +1,160 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1,user-scalable=0" />
+    <title></title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,600,700,800,900&display=swap"
+          rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+    <link href="~/Content/mReservation/style.css" rel="stylesheet" />
+    <link href="~/Content/mReservation/checkin.css" rel="stylesheet" />
+    <script src="~/Scripts/knockout-3.5.1.js"></script>
+</head>
+<body class="desktop_checkin2">
+    <div class="loader hidden">
+        <div class="loader_txt_wrap">
+            <div class="loader_txt"></div>
+            <span class="lode">Loading....</span>
+        </div>
+    </div>
+    <section class="section1">
+        <div class="wrapper">
+            <table class="table data_co table-borderless">
+                <thead>
+                    <tr class="table_head_search">
+                        <th colspan="2" class="table_title">
+                            <p>Guest Check-In</p>
+                        </th>
+                        <th colspan="3" class="search_input">
+                            <div class="search_input_context">
+                                <div class="search_input_context_inner">
+                                    <img src="/content/mReservation/img/search.svg" alt="">
+                                    <input type="text" class="form-control" placeholder="Search Guest" data-bind="textInput: SearchText">
+                                </div>
+                            </div>
+                        </th>
+                    </tr>
+                    <tr class="table_heading">
+                        <th scope="col" width="20">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Photo&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Name</th>
+                        <th scope="col" width="20">Mobile No.</th>
+                        <th scope="col" width="20">Size</th>
+                        <th scope="col" width="20">Seat No.</th>
+                        <th scope="col" width="20">Confirmation No.</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!--ko foreach: Reservations-->
+                    <tr class="head_tr border_bottom_down">
+                        <td>
+                            <div class="person_name_lf">
+                                <a href="#">
+                                    <svg class="plus_more_f ico_svg" xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 11 11">
+                                        <path id="prefix__plus" fill="#fff" d="M-284 40v-4h-4v-3h4v-4h3v4h4v3h-4v4z" transform="translate(288 -29)" />
+                                    </svg>
+                                    <svg class="minus_less_f ico_svg" xmlns="http://www.w3.org/2000/svg" width="11" height="3" viewBox="0 0 11 3">
+                                        <path id="prefix__minus" fill="#fff" d="M0 0H3V11H0z" transform="rotate(90 5.5 5.5)" />
+                                    </svg>
+                                </a>
+                                <img data-bind="attr: {src: PhotoFullPath}" class="img_per_co">
+                                <p data-bind="text: MainGuestName"></p>
+                            </div>
+                        </td>
+                        <td data-bind="text: MainGuestMobileNo">+</td>
+                        <td data-bind="text: Size"></td>
+                        <td class="r_seat" data-bind="text: SeatNo"></td>
+                        <td data-bind="text: ConfirmationNo"></td>
+                    </tr>
+                    <tr class="togg" id="#">
+                        <td colspan="5">
+                            <table class="table inner_drop1 one_row_table table-borderless">
+                                <thead>
+                                    <tr>
+                                        <th scope="col" class="name_title" width="20">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Guest List</th>
+                                        <th scope="col" class="mob_title" width="20">Check-In Time</th>
+                                        <th scope="col" class="temp_title" width="20">Temperature</th>
+                                        <th scope="col" width="20"></th>
+                                        <th scope="col" width="20"></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!--ko foreach:Guests -->
+                                    <tr>
+                                        <td>
+                                            <div class="li_div_drop">
+                                                <div class="lr_input_gr_chk">
+                                                    <label class="big_grn">
+                                                        <input type="checkbox" class="form-check-input" data-bind="checked: IsCheckedIn, attr: {id: 'chk' + ConcertGuestId()}, event: {change: function(){$root.AddReservation(this)}}">
+                                                        <div class="big-chk-tog"></div>
+                                                    </label>
+                                                </div>
+                                                <div class="rt_input_gr_txt activation">
+                                                    <p class="person_name_rt" data-bind="text: Name"></p>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="chk_in_time" data-bind="text: CheckInTime"></td>
+                                        <td class="temp_body_input"><input type="text" placeholder="0.0" data-bind="value: Temperature, event: {blur: function(){$root.AddReservation(this)}}"></td>
+                                        <td class="person_shedule_td">
+                                            <div class="person_shedule-div">
+                                                <span class="with_per">
+                                                    <label class="small_chk">
+                                                        <input type="radio" class="form-check-input_s" data-bind="checked: IsSolo, checkedValue: false, attr: {name: 'chk' + ConcertGuestId()}, event: {change: function(){$root.AddReservation(this)}}">
+                                                        <div class="small-chk-tog1"></div>
+                                                    </label>
+                                                    <p>W/Someone</p>
+                                                </span>
+                                            </div>
+                                        </td>
+                                        <td class="person_solo_td">
+                                            <div class="person_solo_div">
+                                                <span class="sol_per">
+                                                    <label class="small_chk">
+                                                        <input type="radio" class="form-check-input_s" data-bind="checked: IsSolo, checkedValue: true,  attr: {name: 'chk' + ConcertGuestId()}, event: {change: function(){$root.AddReservation(this)}}">
+                                                        <div class="small-chk-tog1"></div>
+                                                    </label>
+                                                    <p>Solo</p>
+                                                </span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <!--/ko-->
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+                    <!--/ko-->
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
+            integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
+    <script src="~/Scripts/moment.min.js"></script>
+    <script src="~/Scripts/notify.min.js"></script>
+    <script src="~/Scripts/utility.js"></script>
+</body>
+</html>
+<script>
+    var concertId = '@ViewBag.concertId';
+    var eventId = '@ViewBag.eventId';
+    var webserviceURL = "@ViewBag.CoreApiEndpoint";
+</script>
+<environment include="Development">
+    <script src="~/Scripts/app/concert/checkin/checkin.js"></script>
+</environment>
+<environment exclude="Development">
+    <script src="~/Scripts/app/concert/checkin/checkin.min.js"></script>
+</environment>

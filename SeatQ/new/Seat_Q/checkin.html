@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1,user-scalable=0"/>
+   <title></title>
+   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"
+   integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+   <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,600,700,800,900&display=swap"
+   rel="stylesheet">
+   <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
+   <link rel="stylesheet" href="assets/dist/css/bootstrap-select.min.css">
+   <link rel="stylesheet" href="assets/dist/css/intlTelInput.css">
+   <link rel="stylesheet" type="text/css" href="assets/dist/css/style.css">
+   <link rel="stylesheet" type="text/css" href="assets/dist/css/checkin.css">
+</head>
+<body class="desktop_checkin">
+   <section class="section1">
+    <div class="wrapper">
+      <table class="table data_co table-borderless">
+       <thead>
+         <tr class="table_head_search">
+            <th colspan="2" class="table_title"><p>Guest Check-In</p></th>
+            <th colspan="4" class="search_input">
+               <div class="search_input_context">
+                  <div class="search_input_context_inner">
+                     <img src="assets/img/search.svg" alt="">
+                     <input type="text" class="form-control" placeholder="Search guest">
+                  </div>
+               </div>
+            </th>
+         </tr>
+         <tr class="table_heading">
+            <th scope="col">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Photo</th>
+            <th scope="col">Name</th>
+            <th scope="col">Mobile No.</th>
+            <th scope="col">Size</th>
+            <th scope="col">Seat No.</th>
+            <th scope="col">Confirmation No.</th>
+         </tr>
+      </thead>
+      <tbody>
+        <tr class="head_tr border_bottom_down show">
+         <td>
+          <a href="#">
+           <svg class="plus_more_f ico_svg" xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 11 11">
+              <path id="prefix__plus" fill="#fff" d="M-284 40v-4h-4v-3h4v-4h3v4h4v3h-4v4z" transform="translate(288 -29)"/>
+           </svg>
+           <svg class="minus_less_f ico_svg" xmlns="http://www.w3.org/2000/svg" width="11" height="3" viewBox="0 0 11 3">
+              <path id="prefix__minus" fill="#fff" d="M0 0H3V11H0z" transform="rotate(90 5.5 5.5)"/>
+           </svg>
+        </a>
+        <img src="assets/img/image_pic1.png" alt="image_pic1" class="img_per_co">
+     </td>
+     <td>Thomas Griffin</td>
+     <td>+16025551212</td>
+     <td>3</td>
+     <td class="r_seat">R1-08</td>
+     <td>6210SR05424</td>
+  </tr>
+  <tr class="togg show" id="#">
+     <td colspan="6">
+       <div class="drop_tl">
+         <h4>Guest List</h4>
+         <ul>
+            <li>
+               <div class="li_div_drop">
+                  <div class="lr_input_gr_chk">
+                     <label class="big_grn">
+                        <input type="checkbox" class="form-check-input" id="big-chk-lf">
+                        <div class="big-chk-tog"></div>
+                     </label>
+                  </div>
+                  <div class="rt_input_gr_txt">
+                     <p class="person_name_rt">Thomas Griffin</p>
+                     <div class="person_shedule">
+                        <div class="person_shedule_flex">
+                        <span class="time_per">
+                           <p>9:02 AM</p>
+                        </span>
+                        <span class="with_per">
+                           <label class="small_chk">
+                              <input type="checkbox" class="form-check-input_s" id="someone">
+                              <div class="small-chk-tog1"></div>
+                           </label><p>With Someone</p></span>
+                           <span class="sol_per">
+                              <label class="small_chk">
+                                 <input type="checkbox" class="form-check-input_s" id="solo">
+                                 <div class="small-chk-tog1"></div>
+                              </label><p>Solo</p></span>
+                           </div>
+                           </div>
+                        </div>
+                     </div></li>
+                     <li>
+                        <div class="li_div_drop">
+                           <div class="lr_input_gr_chk">
+                              <label class="big_grn">
+                                 <input type="checkbox" class="form-check-input" id="big-chk-lf">
+                                 <div class="big-chk-tog"></div>
+                              </label>
+                           </div>
+                           <div class="rt_input_gr_txt">
+                              <p class="person_name_rt">Olivia Jacob</p>
+                              <div class="person_shedule">
+                                 <div class="person_shedule_flex">
+                                 <span class="time_per">
+                                    <p>9:02 AM</p>
+                                 </span>
+                                 <span class="with_per">
+                                    <label class="small_chk">
+                                       <input type="checkbox" class="form-check-input_s" id="someone">
+                                       <div class="small-chk-tog1"></div>
+                                    </label><p>With Someone</p></span>
+                                    <span class="sol_per">
+                                       <label class="small_chk">
+                                          <input type="checkbox" class="form-check-input_s" id="solo">
+                                          <div class="small-chk-tog1"></div>
+                                       </label><p>Solo</p></span>
+                                    </div>
+                                    </div>
+                                 </div>
+                              </div></li>
+                              <li>
+               <div class="li_div_drop">
+                  <div class="lr_input_gr_chk">
+                     <label class="big_grn">
+                        <input type="checkbox" class="form-check-input" id="big-chk-lf">
+                        <div class="big-chk-tog"></div>
+                     </label>
+                  </div>
+                  <div class="rt_input_gr_txt">
+                     <p class="person_name_rt">Oscar Khan</p>
+                     <div class="person_shedule">
+                        <div class="person_shedule_flex">
+                        <span class="time_per">
+                           <p>9:02 AM</p>
+                        </span>
+                        <span class="with_per">
+                           <label class="small_chk">
+                              <input type="checkbox" class="form-check-input_s" id="someone">
+                              <div class="small-chk-tog1"></div>
+                           </label><p>With Someone</p></span>
+                           <span class="sol_per">
+                              <label class="small_chk">
+                                 <input type="checkbox" class="form-check-input_s" id="solo">
+                                 <div class="small-chk-tog1"></div>
+                              </label><p>Solo</p></span>
+                           </div>
+                           </div>
+                        </div>
+                     </div></li>
+                           </ul>
+                        </div>
+                     </td>
+                  </tr>
+                  <tr class="head_tr border_bottom_down">
+                   <td>
+                    <a href="#togg">
+                     <svg class="plus_more_f ico_svg" xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 11 11">
+              <path id="prefix__plus" fill="#fff" d="M-284 40v-4h-4v-3h4v-4h3v4h4v3h-4v4z" transform="translate(288 -29)"/>
+           </svg>
+           <svg class="minus_less_f ico_svg" xmlns="http://www.w3.org/2000/svg" width="11" height="3" viewBox="0 0 11 3">
+              <path id="prefix__minus" fill="#fff" d="M0 0H3V11H0z" transform="rotate(90 5.5 5.5)"/>
+           </svg></a>
+              <img src="assets/img/image_pic2.png" alt="image_pic2" class="img_per_co"></td>
+              <td>Melissa Gomez</td>
+              <td>+16021860214</td>
+              <td>5</td>
+              <td class="r_seat">R4-05</td>
+              <td>6210SR01824</td>
+           </tr>
+           <tr class="togg" id="#">
+            <td colspan="6">
+             <div class="drop_tl">
+         <h4>Guest List</h4>
+         <ul>
+            <li>
+               <div class="li_div_drop">
+                  <div class="lr_input_gr_chk">
+                     <label class="big_grn">
+                        <input type="checkbox" class="form-check-input" id="big-chk-lf">
+                        <div class="big-chk-tog"></div>
+                     </label>
+                  </div>
+                  <div class="rt_input_gr_txt">
+                     <p class="person_name_rt">Thomas Griffin</p>
+                     <div class="person_shedule">
+                        <div class="person_shedule_flex">
+                        <span class="time_per">
+                           <p>9:02 AM</p>
+                        </span>
+                        <span class="with_per">
+                           <label class="small_chk">
+                              <input type="checkbox" class="form-check-input_s" id="someone">
+                              <div class="small-chk-tog1"></div>
+                           </label><p>With Someone</p></span>
+                           <span class="sol_per">
+                              <label class="small_chk">
+                                 <input type="checkbox" class="form-check-input_s" id="solo">
+                                 <div class="small-chk-tog1"></div>
+                              </label><p>Solo</p></span>
+                           </div>
+                           </div>
+                        </div>
+                     </div></li>
+                     <li>
+                        <div class="li_div_drop">
+                           <div class="lr_input_gr_chk">
+                              <label class="big_grn">
+                                 <input type="checkbox" class="form-check-input" id="big-chk-lf">
+                                 <div class="big-chk-tog"></div>
+                              </label>
+                           </div>
+                           <div class="rt_input_gr_txt">
+                              <p class="person_name_rt">Olivia Jacob</p>
+                              <div class="person_shedule">
+                                 <div class="person_shedule_flex">
+                                 <span class="time_per">
+                                    <p>9:02 AM</p>
+                                 </span>
+                                 <span class="with_per">
+                                    <label class="small_chk">
+                                       <input type="checkbox" class="form-check-input_s" id="someone">
+                                       <div class="small-chk-tog1"></div>
+                                    </label><p>With Someone</p></span>
+                                    <span class="sol_per">
+                                       <label class="small_chk">
+                                          <input type="checkbox" class="form-check-input_s" id="solo">
+                                          <div class="small-chk-tog1"></div>
+                                       </label><p>Solo</p></span>
+                                    </div>
+                                    </div>
+                                 </div>
+                              </div></li>
+                              <li>
+               <div class="li_div_drop">
+                  <div class="lr_input_gr_chk">
+                     <label class="big_grn">
+                        <input type="checkbox" class="form-check-input" id="big-chk-lf">
+                        <div class="big-chk-tog"></div>
+                     </label>
+                  </div>
+                  <div class="rt_input_gr_txt">
+                     <p class="person_name_rt">Oscar Khan</p>
+                     <div class="person_shedule">
+                        <div class="person_shedule_flex">
+                        <span class="time_per">
+                           <p>9:02 AM</p>
+                        </span>
+                        <span class="with_per">
+                           <label class="small_chk">
+                              <input type="checkbox" class="form-check-input_s" id="someone">
+                              <div class="small-chk-tog1"></div>
+                           </label><p>With Someone</p></span>
+                           <span class="sol_per">
+                              <label class="small_chk">
+                                 <input type="checkbox" class="form-check-input_s" id="solo">
+                                 <div class="small-chk-tog1"></div>
+                              </label><p>Solo</p></span>
+                           </div>
+                           </div>
+                        </div>
+                     </div></li>
+                           </ul>
+                        </div>
+         </td>
+      </tr>
+      <tr class="head_tr border_bottom_down">
+        <td>
+         <a href="#">
+            <svg class="plus_more_f ico_svg" xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 11 11">
+              <path id="prefix__plus" fill="#fff" d="M-284 40v-4h-4v-3h4v-4h3v4h4v3h-4v4z" transform="translate(288 -29)"/>
+           </svg>
+           <svg class="minus_less_f ico_svg" xmlns="http://www.w3.org/2000/svg" width="11" height="3" viewBox="0 0 11 3">
+              <path id="prefix__minus" fill="#fff" d="M0 0H3V11H0z" transform="rotate(90 5.5 5.5)"/>
+           </svg></a>
+
+   <img src="assets/img/image_pic3.png" alt="image_pic3" class="img_per_co"></td>
+   <td>Victor Hansen</td>
+   <td>+16021860214</td>
+   <td>5</td>
+   <td class="r_seat">R8-02</td>
+   <td>6210SR01628</td>
+</tr>
+<tr class="togg" id="togg_three">
+  <td colspan="6">
+    <div class="drop_tl">
+         <h4>Guest List</h4>
+         <ul>
+            <li>
+               <div class="li_div_drop">
+                  <div class="lr_input_gr_chk">
+                     <label class="big_grn">
+                        <input type="checkbox" class="form-check-input" id="big-chk-lf">
+                        <div class="big-chk-tog"></div>
+                     </label>
+                  </div>
+                  <div class="rt_input_gr_txt">
+                     <p class="person_name_rt">Thomas Griffin</p>
+                     <div class="person_shedule">
+                        <div class="person_shedule_flex">
+                        <span class="time_per">
+                           <p>9:02 AM</p>
+                        </span>
+                        <span class="with_per">
+                           <label class="small_chk">
+                              <input type="checkbox" class="form-check-input_s" id="someone">
+                              <div class="small-chk-tog1"></div>
+                           </label><p>With Someone</p></span>
+                           <span class="sol_per">
+                              <label class="small_chk">
+                                 <input type="checkbox" class="form-check-input_s" id="solo">
+                                 <div class="small-chk-tog1"></div>
+                              </label><p>Solo</p></span>
+                           </div>
+                           </div>
+                        </div>
+                     </div></li>
+                     <li>
+                        <div class="li_div_drop">
+                           <div class="lr_input_gr_chk">
+                              <label class="big_grn">
+                                 <input type="checkbox" class="form-check-input" id="big-chk-lf">
+                                 <div class="big-chk-tog"></div>
+                              </label>
+                           </div>
+                           <div class="rt_input_gr_txt">
+                              <p class="person_name_rt">Olivia Jacob</p>
+                              <div class="person_shedule">
+                                 <div class="person_shedule_flex">
+                                 <span class="time_per">
+                                    <p>9:02 AM</p>
+                                 </span>
+                                 <span class="with_per">
+                                    <label class="small_chk">
+                                       <input type="checkbox" class="form-check-input_s" id="someone">
+                                       <div class="small-chk-tog1"></div>
+                                    </label><p>With Someone</p></span>
+                                    <span class="sol_per">
+                                       <label class="small_chk">
+                                          <input type="checkbox" class="form-check-input_s" id="solo">
+                                          <div class="small-chk-tog1"></div>
+                                       </label><p>Solo</p></span>
+                                    </div>
+                                    </div>
+                                 </div>
+                              </div></li>
+                              <li>
+               <div class="li_div_drop">
+                  <div class="lr_input_gr_chk">
+                     <label class="big_grn">
+                        <input type="checkbox" class="form-check-input" id="big-chk-lf">
+                        <div class="big-chk-tog"></div>
+                     </label>
+                  </div>
+                  <div class="rt_input_gr_txt">
+                     <p class="person_name_rt">Oscar Khan</p>
+                     <div class="person_shedule">
+                        <div class="person_shedule_flex">
+                        <span class="time_per">
+                           <p>9:02 AM</p>
+                        </span>
+                        <span class="with_per">
+                           <label class="small_chk">
+                              <input type="checkbox" class="form-check-input_s" id="someone">
+                              <div class="small-chk-tog1"></div>
+                           </label><p>With Someone</p></span>
+                           <span class="sol_per">
+                              <label class="small_chk">
+                                 <input type="checkbox" class="form-check-input_s" id="solo">
+                                 <div class="small-chk-tog1"></div>
+                              </label><p>Solo</p></span>
+                           </div>
+                           </div>
+                        </div>
+                     </div></li>
+                           </ul>
+                        </div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+
+<script src="https://code.jquery.com/jquery-3.4.1.js"
+integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+crossorigin="anonymous"></script>
+<script src="assets/js/bootstrap-input-spinner.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+<script src="assets/js/bootstrap-select.js"></script>
+<script>
+    $('.plus_more_f').click(function(){
+      $('.plus_more_f').show();
+      $('.minus_less_f').hide();
+      $(this).hide();
+      $('.head_tr').removeClass('show');
+      $('.togg').removeClass('show');
+      $(this).parents('.head_tr').next('tr.togg').addClass('show');
+      $(this).parents('.head_tr').closest("tr.togg").addClass('show');
+      $(this).parents('.head_tr').find('.minus_less_f').show();
+   });
+
+    $('.minus_less_f').click(function(){
+      $(this).hide();
+      $('.togg.show').removeClass('show');
+      $(this).parents('.head_tr').find('.plus_more_f').show();
+   });
+   // $(document).ready(function () {
+   //      $(".big_grn").click(function () {
+   //        $(this)
+   //          .parents("li")
+   //          .find(".lr_input_gr_chk ~ div")
+   //          // .toggleClass("rt_input_gr_txt");
+   //          .toggleClass("x");
+   //      });
+   //    });
+
+     $(".big_grn").click(function () {
+          $(this)
+            .parents("li")
+            .find(".rt_input_gr_txt")
+            .toggleClass("activation");
+        });
+
+
+</script>
+</body>
+</html>

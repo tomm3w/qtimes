@@ -1,0 +1,49 @@
+.waittime_reserve_part {
+	.app__header {
+		padding: 0px 9px;
+
+		.imgHolder {
+			// max-width: 357px;
+			margin: 57px auto;
+
+			img {
+				width: 100%;
+				height: auto;
+				max-width: 100%;
+			}
+		}
+	}
+	.mob_body {
+		padding: 0px 9px;
+
+		.waittime_reserve_para {
+			display: table;
+			// vertical-align: middle;
+			width: 100%;
+			height: 100%;
+			margin-bottom: 50px;
+			padding: 0 19px;
+			.waittime_reserve_para_p {
+				display: table-cell;
+				width: 100%;
+				height: 100%;
+				vertical-align: middle;
+
+				p {
+					line-height: 1.71;
+					text-align: left;
+					color: #2a2f3a;
+				}
+			}
+		}
+	}
+
+}
+// 	.intro_body {
+// 	.waittime_reserve_part .app__header {
+// 		padding: 0 0;
+// 	}
+// 	.waittime_reserve_part .app__header .imgHolder {
+// 		margin: 0px auto 57px;
+// 	}
+// }

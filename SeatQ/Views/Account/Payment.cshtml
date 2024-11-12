@@ -1,0 +1,35 @@
+﻿@{
+    ViewBag.Title = "Payment";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="payment-box">
+    <ul class="form-design">
+        <li><h3 class="txt-center">PAYMENT</h3></li>
+        <li class="bullet">
+            <a href="#"><img src="~/Images/american-express.png" alt="" /></a>
+            <a href="#"><img src="~/Images/visa.png" alt="" /></a>
+            <a href="#"><img src="~/Images/master-card.png" alt="" /></a>
+            <a href="#"><img src="~/Images/discover.png" alt="" /></a>
+        </li>
+        <li>
+            <label>Credit Card No.</label>
+            <input type="number" />
+        </li>
+        <li>
+            <div class="left first">
+                <label>Expiration Date</label>
+                <input type="number" placeholder="MM" class="sm" />
+                <input type="number" placeholder="YYYY" class="sm" />
+            </div>
+            <div class="left">
+                <label>CVC</label>
+                <input type="text" class="sm" /><a href="#" class="help-icon">Info</a>
+            </div>
+        </li>
+        <li class="bullet">
+            <a href="#"><img src="~/Images/paypal.png" alt="" /></a>
+        </li>
+        <li><a href="#" class="button darkgray txt-center">PAY NOW!</a></li>
+    </ul>
+</div>

@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="91" height="91" viewBox="0 0 91 91">
+    <defs>
+        <filter id="prefix___10422494_10153192785969038_7671712596336553331_n" width="91" height="91" x="0" y="0" filterUnits="userSpaceOnUse">
+            <feOffset dy="1"/>
+            <feGaussianBlur result="blur" stdDeviation="1"/>
+            <feFlood flood-opacity=".161"/>
+            <feComposite in2="blur" operator="in"/>
+            <feComposite in="SourceGraphic"/>
+        </filter>
+        <style>
+            .prefix__cls-3{fill:#fff}
+        </style>
+    </defs>
+    <g id="prefix__Group_1141" data-name="Group 1141" transform="translate(-142 -243)">
+        <g filter="url(#prefix___10422494_10153192785969038_7671712596336553331_n)" transform="translate(142 243)">
+            <g id="prefix___10422494_10153192785969038_7671712596336553331_n-2" fill="#2bc783" stroke="#d3d9dc" data-name="10422494_10153192785969038_7671712596336553331_n" transform="translate(3 2)">
+                <rect width="85" height="85" stroke="none" rx="10"/>
+                <rect width="84" height="84" x=".5" y=".5" fill="none" rx="9.5"/>
+            </g>
+        </g>
+        <g id="prefix__Group_1" data-name="Group 1" transform="translate(148 247.329)">
+            <circle id="prefix__Ellipse_21_copy" cx="39" cy="39" r="39" fill="#2bc783" data-name="Ellipse 21 copy" transform="translate(0 -.329)"/>
+            <path id="prefix__Subtraction_1" d="M24.846 49.691A24.839 24.839 0 0 1 3.005 13.009l6.866 7.069a15.711 15.711 0 1 0 30.219.952l7.01-7.221a24.544 24.544 0 0 1 2.588 11.036 24.874 24.874 0 0 1-24.842 24.846zM37.966 16.2a15.853 15.853 0 0 0-5.319-5l4.913-7.7a24.941 24.941 0 0 1 6.64 5.779L37.967 16.2zm-25.717-.745l-6.18-6.864a24.911 24.911 0 0 1 6.938-5.585l4.929 7.725a15.835 15.835 0 0 0-5.687 4.723zm15.4-6.072a15.9 15.9 0 0 0-4.5-.158L18.323.869a24.907 24.907 0 0 1 14.066.3l-4.741 8.213z" class="prefix__cls-3" data-name="Subtraction 1" transform="translate(14.184 14.352)"/>
+            <rect id="prefix__Rectangle_42" width="10" height="15" class="prefix__cls-3" data-name="Rectangle 42" rx="3" transform="translate(34 31.671)"/>
+            <rect id="prefix__Rectangle_43" width="9.058" height="31.702" class="prefix__cls-3" data-name="Rectangle 43" rx="3" transform="rotate(-56 58.67 -8.875)"/>
+        </g>
+    </g>
+</svg>

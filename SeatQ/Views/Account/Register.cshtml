@@ -1,0 +1,81 @@
+﻿@model SeatQ.core.dal.Models.SignupModel
+@{
+    ViewBag.Title = "SIGN UP";
+}
+
+<section id="loginForm" class="form-design">
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary()
+
+        <fieldset>
+
+            @* Have an accout? -
+                <a href="@Url.Action("Login", "Account")">Login</a>*@
+
+            <ul class="list-unstyled">
+                <li class="text-center">
+                    <h2 class="link-gray">@ViewBag.Title</h2>
+                    <p>Adding your information about your restaurant or specials is always helpful when waiting to up sell</p>
+                </li>
+                <li>
+                    @Html.TextBoxFor(m => m.FullName, new { @placeholder = "Full Name" })
+                </li>
+                <li>
+                    @Html.TextBoxFor(m => m.BusinessName, new { @placeholder = "Business Name" })
+                </li>
+                <li>
+                    @Html.TextBoxFor(m => m.Email, new { @placeholder = "Email Address" })
+                </li>
+                <li>
+                    @Html.TextBoxFor(m => m.Address1, new { @placeholder = "Address 1" })
+                </li>
+                <li>
+                    @Html.TextBoxFor(m => m.Address2, new { @placeholder = "Address 2" })
+                </li>
+                <li>
+                    @Html.TextBoxFor(m => m.Phone, new { @placeholder = "Phone" })
+                </li>
+                <li>
+                    @Html.TextBoxFor(m => m.CityTown, new { @placeholder = "City/Town" })
+                </li>
+                <li>
+                    @Html.TextBoxFor(m => m.State, new { @placeholder = "State" })
+                </li>
+                <li>@Html.TextBoxFor(m => m.Zip, new { @placeholder = "Zip" })</li>
+                <li>
+                    @Html.TextBoxFor(m => m.Username, new { @placeholder = "Username" })
+                </li>
+                <li>
+                    @Html.PasswordFor(m => m.Password, new { @placeholder = "Password" })
+                </li>
+                <li>
+                    @Html.PasswordFor(m => m.ConfirmPassword, new { @placeholder = "Confirm Password" })
+                </li>
+                <!--li>
+                    @Html.TextBoxFor(m => m.Country, new { @placeholder = "Country" })
+                </!--li-->
+                <li>
+                    <div class="g-recaptcha" data-sitekey="6LdKKMcUAAAAAJnOkEimAbs1QaSrn6Hz9USp60ct"></div>
+                </li>
+                <li class="bot txt-center">
+                    @Html.CheckBoxFor(m => m.TermsAndConditions)
+                    @Html.ActionLink("Terms and Conditions", "Index", "TermAndCondition")
+                </li>
+                <li class="bot txt-center"><input type="submit" value="SIGNUP" class="button green" id="submitBtn" /></li>
+            </ul>
+        </fieldset>
+    }
+    <script>
+        $("#submitBtn").click(function () {
+            event.preventDefault();
+            var response = grecaptcha.getResponse();
+            if (response.length === 0) {
+                $.notify("Please check the reCAPTCHA");
+            } else {
+                $("#loginForm form").submit();
+            }
+        });
+    </script>

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 34 34">
+    <defs>
+        <linearGradient id="prefix__linear-gradient" x1=".5" x2=".5" y2="1" gradientUnits="objectBoundingBox">
+            <stop offset="0" stop-color="#fff"/>
+            <stop offset="1" stop-color="#ebefec"/>
+        </linearGradient>
+    </defs>
+    <path id="prefix__time-icon" fill="url(#prefix__linear-gradient)" fill-rule="evenodd" d="M36.992 52.99a17 17 0 1 0 17-17 17 17 0 0 0-17 17zm15.191-11.574a1.809 1.809 0 1 1 1.808 1.808 1.809 1.809 0 0 1-1.808-1.808zM40.609 52.99a1.808 1.808 0 1 1 1.808 1.81 1.809 1.809 0 0 1-1.808-1.81zm23.149 0a1.808 1.808 0 1 1 1.808 1.81 1.809 1.809 0 0 1-1.808-1.81zM52.183 64.564a1.809 1.809 0 1 1 1.808 1.809 1.809 1.809 0 0 1-1.808-1.809zm-.846-10.714c-.384-.376-5.252-5.331-5.252-5.331a1.407 1.407 0 0 1 1.989-1.989l4.774 4.788a1.11 1.11 0 0 0 1.549 0l6.959-6.959a1.407 1.407 0 0 1 1.989 1.989s-7.06 7.147-7.436 7.524a3.268 3.268 0 0 1-2.279.925 3.228 3.228 0 0 1-2.293-.947z" transform="translate(-36.992 -35.99)"/>
+</svg>

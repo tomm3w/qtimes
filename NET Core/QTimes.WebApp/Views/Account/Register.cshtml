@@ -1,0 +1,105 @@
+﻿@*@model SeatQ.core.dal.Models.SignupModel
+@{
+    ViewBag.Title = "SIGN UP";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    .field-validation-error, .validation-summary-errors {
+        color: red;
+    }
+
+    .signup_main, .signin_main, .forget_main {
+        height: unset;
+    }
+
+    .sign_form input[type=checkbox] {
+        height: unset;
+    }
+</style>
+<header class="header header_non-stick">
+    @Html.Partial("_HeaderLogo")
+</header>
+
+<main class="signup_main grey--bg">
+    <div class="wrapper">
+        <div class="sign_whole_wrap">
+            <div class="signup_page white--bg">
+                <p class="sign_head">Sign Up</p>
+                @using (Html.BeginForm("Register", "account", FormMethod.Post, new { @id = "loginForm", @class = "sign_form" }))
+                {
+                    @Html.AntiForgeryToken()
+                    @Html.ValidationSummary()
+
+                    <div class="form-group">
+                        <label for="signup_name">Full Name</label>
+                        @Html.TextBoxFor(m => m.FullName, new { @placeholder = "Full Name", @id = "signup_name", @class = "form-control" })
+                    </div>
+
+                    <div class="form-group">
+                        <label for="signup_name">Business Name</label>
+                        @Html.TextBoxFor(m => m.BusinessName, new { @placeholder = "Business Name", @id = "signup_businessname", @class = "form-control" })
+                    </div>
+                    <div class="form-group">
+                        <label for="signup_email">Email Address</label>
+                        @Html.TextBoxFor(m => m.Email, new { @placeholder = "Email", @id = "signup_email", @class = "form-control" })
+                    </div>
+                    <div class="form-group">
+                        <label for="signup_address">Address</label>
+                        @Html.TextBoxFor(m => m.Address1, new { @placeholder = "Address", @id = "signup_address", @class = "form-control" })
+                    </div>
+                    <div class="form-group">
+                        <label for="signup_city">City</label>
+                        @Html.TextBoxFor(m => m.CityTown, new { @placeholder = "City", @id = "signup_city", @class = "form-control" })
+                    </div>
+                    <div class="form-group">
+                        <label for="signup_state">State</label>
+                        @Html.TextBoxFor(m => m.State, new { @placeholder = "State", @id = "signup_state", @class = "form-control" })
+                    </div>
+                    <div class="form-group">
+                        <label for="signup_zip">Zip</label>
+                        @Html.TextBoxFor(m => m.Zip, new { @placeholder = "Zip", @id = "signup_email", @class = "form-control" })
+                    </div>
+                    <div class="form-group">
+                        <label for="signup_email">Mobile No.</label>
+                        @Html.TextBoxFor(m => m.Phone, new { @placeholder = "+1 Mobile No.", @id = "signup_email", @class = "form-control" })
+                    </div>
+                    <div class="form-group">
+                        <label for="signup_name">Username</label>
+                        @Html.TextBoxFor(m => m.Username, new { @placeholder = "Username", @id = "signup_name", @class = "form-control" })
+                    </div>
+                    <div class="form-group">
+                        <label for="signup_pswd">Password</label>
+                        @Html.PasswordFor(m => m.Password, new { @id = "signup_pswd", @class = "form-control" })
+                    </div>
+                    <div class="form-group">
+                        <label for="signup_pswd_conf">Confirm Password</label>
+                        @Html.PasswordFor(m => m.ConfirmPassword, new { @id = "signup_pswd_conf", @class = "form-control" })
+                    </div>
+                    <div class="form-group">
+                        @Html.CheckBoxFor(m => m.TermsAndConditions)
+                        @Html.ActionLink("Terms and Conditions", "Index", "TermAndCondition")
+                    </div>
+                    <div class="form-group">
+                        <div class="g-recaptcha" data-sitekey="6LdKKMcUAAAAAJnOkEimAbs1QaSrn6Hz9USp60ct"></div>
+                    </div>
+                    <button type="submit" class="btn btn-primary sign_btn sign_org" id="submitBtn">Sign Up</button>
+                }
+            </div>
+            <div class="sign_otions">
+                <a href="/account/login" class="already_a">I already have an account</a>
+            </div>
+        </div>
+    </div>
+</main>
+<script>
+    $("#submitBtn").click(function () {
+        event.preventDefault();
+        var response = grecaptcha.getResponse();
+        if (response.length === 0) {
+            $.notify("Please check the reCAPTCHA");
+        } else {
+            $("#loginForm").submit();
+        }
+    });
+</script>*@

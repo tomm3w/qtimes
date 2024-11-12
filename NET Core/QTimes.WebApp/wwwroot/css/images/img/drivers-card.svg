@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="208.427" height="131.985" viewBox="0 0 208.427 131.985">
+    <defs>
+        <linearGradient id="linear-gradient" x1=".5" x2=".5" y2="1" gradientUnits="objectBoundingBox">
+            <stop offset="0" stop-color="#2bc792"/>
+            <stop offset="1" stop-color="#20928a"/>
+        </linearGradient>
+        <linearGradient id="linear-gradient-2" x1=".5" x2=".5" y2="1" gradientUnits="objectBoundingBox">
+            <stop offset="0" stop-color="#fff"/>
+            <stop offset="1" stop-color="#ebefec"/>
+        </linearGradient>
+        <filter id="Rectangle_862" width="208.427" height="131.985" x="0" y="0" filterUnits="userSpaceOnUse">
+            <feOffset dy="3"/>
+            <feGaussianBlur result="blur" stdDeviation="3"/>
+            <feFlood flood-opacity=".161"/>
+            <feComposite in2="blur" operator="in"/>
+            <feComposite in="SourceGraphic"/>
+        </filter>
+        <style>
+            .cls-2{fill:#ebefec;opacity:.3}
+        </style>
+    </defs>
+    <g id="drivers-card" transform="translate(-269.573 -741)">
+        <g filter="url(#Rectangle_862)" transform="translate(269.57 741)">
+            <rect id="Rectangle_862-2" width="190.427" height="113.985" fill="url(#linear-gradient)" data-name="Rectangle 862" rx="10" transform="translate(9 6)"/>
+        </g>
+        <path id="Rectangle_863" d="M0 0H149V5H0z" class="cls-2" data-name="Rectangle 863" transform="translate(299 827)"/>
+        <path id="Rectangle_864" d="M0 0H149V5H0z" class="cls-2" data-name="Rectangle 864" transform="translate(299 813)"/>
+        <path id="Rectangle_865" d="M0 0H26V6H0z" class="cls-2" data-name="Rectangle 865" transform="translate(422 793)"/>
+        <path id="Rectangle_866" d="M0 0H97V5H0z" class="cls-2" data-name="Rectangle 866" transform="translate(351 779)"/>
+        <path id="Rectangle_867" d="M0 0H75V6H0z" class="cls-2" data-name="Rectangle 867" transform="translate(299 841)"/>
+        <rect id="Rectangle_868" width="38" height="38" fill="url(#linear-gradient-2)" data-name="Rectangle 868" rx="9" transform="translate(299 761)"/>
+        <path id="iconfinder_user_male_2639944" fill="#3e5b6a" d="M18 19v-2a5.223 5.223 0 0 0 1.872-2.952c.354-.027.91-.352 1.074-1.635a1.17 1.17 0 0 0-.474-1.2A5.292 5.292 0 0 0 21 9c0-2.428-.953-4.5-3-4.5A3.181 3.181 0 0 0 15 3c-4.242 0-6 2.722-6 6a5.96 5.96 0 0 0 .528 2.214 1.171 1.171 0 0 0-.474 1.2c.164 1.283.72 1.608 1.074 1.635A5.223 5.223 0 0 0 12 17v2c-1 3-9 1-9 8h24c0-7-8-5-9-8z" transform="translate(303 764.999)"/>
+    </g>
+</svg>

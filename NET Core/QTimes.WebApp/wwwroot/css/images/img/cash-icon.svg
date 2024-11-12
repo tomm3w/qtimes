@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="34.233" height="32.667" viewBox="0 0 34.233 32.667">
+    <defs>
+        <linearGradient id="prefix__linear-gradient" x1=".5" x2=".5" y2="1.984" gradientUnits="objectBoundingBox">
+            <stop offset="0" stop-color="#2bc792"/>
+            <stop offset="1" stop-color="#20928a"/>
+        </linearGradient>
+        <style>
+            .prefix__cls-1{fill:url(#prefix__linear-gradient)}
+        </style>
+    </defs>
+    <g id="prefix__cash-icon" transform="translate(-2.1 -3)">
+        <path id="prefix__Path_1437" d="M14.743 4a7.743 7.743 0 1 0 7.743 7.743A7.71 7.71 0 0 0 14.743 4zm1.2 11.184h-2.405v-4.646h-1.72l2.409-2.409h1.893v7.054z" class="prefix__cls-1" data-name="Path 1437" transform="translate(3.531 .721)"/>
+        <path id="prefix__Path_1438" d="M36 14.906a3.222 3.222 0 0 0-1.893-.86c-1.032-.172-6.538-.86-7.226-1.032-1.032-.172-2.237.344-3.785 1.376a27.582 27.582 0 0 1-3.269 1.893c.172.172 1.032.172 1.032.172h.172a3.267 3.267 0 0 1 3.269 3.269v.344a3.267 3.267 0 0 1-3.269 3.269h-3.618c-3.1 0-6.022-3.1-6.022-3.1a21.89 21.89 0 0 0 6.022 1.376h3.441a1.724 1.724 0 0 0 1.721-1.713 1.7 1.7 0 0 0-1.549-1.721 7.968 7.968 0 0 1-4.646-1.721 45.277 45.277 0 0 0-3.956-2.758C8.81 11.637 2.1 15.939 2.1 15.939l4.474 9.807a6.288 6.288 0 0 1 5.334-.172c2.065.86 3.269 1.549 5.334 2.237 2.925 1.032 3.957.86 5.85-.516 1.721-1.2 9.979-7.743 11.184-8.6C36 17.143 36.856 15.939 36 14.906z" class="prefix__cls-1" data-name="Path 1438" transform="translate(0 7.192)"/>
+        <path id="prefix__Path_1439" d="M18.085 3A6.013 6.013 0 0 0 14.3 4.376a12.582 12.582 0 0 1 2.753 2.409l.516-.516h1.376v6.194a13.281 13.281 0 0 1-.344 2.581 6.133 6.133 0 0 0 5.506-6.022A6.1 6.1 0 0 0 18.085 3z" class="prefix__cls-1" data-name="Path 1439" transform="translate(8.791)"/>
+    </g>
+</svg>

@@ -1,0 +1,474 @@
+﻿<div class="content-wrapper">
+
+    @Html.Partial("_PartialMenu")
+
+    <section class="content-header">
+        <div class="content_header_left">
+            <h2 class="uppercase">RESERVATION</h2>
+            <ul class="date_to select_opt full_concert_drop-select">
+                <li>
+                    <select class="form-control selectpicker" id="" data-bind="options: ConcertEvents,
+                            value:CurrentConcertEvent, optionsText: 'Name', optionsValue: 'Id', event:{ change: OnChangeEvent}, optionsCaption: 'Choose an event...'">
+                    </select>
+                </li>
+            </ul>
+        </div>
+        <div class="content_header_right">
+            <div class="search_bar_rft_con">
+                <input type="text" class="search_input" placeholder="search" data-bind="textInput: SearchText">
+            </div>
+            <a href="#" class="btn btn-primary green_right_btn" data-toggle="modal" data-bind="click: ShowNewReservationModal">
+                <span class="svg_add-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15">
+                        <path id="prefix__add_icon" d="M6 15V9H0V6h6V0h3v6h6v3H9v6z" style="fill:#fff" />
+                    </svg>
+                </span>
+                ADD RESERVATION
+            </a>
+        </div>
+    </section>
+
+    <section class="content-body clearfix con-met">
+        <div class="content-table custom-table-responsive">
+            <table class="table data_co table-borderless">
+                <thead>
+                    <tr class="table_heading">
+                        <th scope="col">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NAME</th>
+                        <th scope="col">SIZE:</th>
+                        <th scope="col">TYPE</th>
+                        <th scope="col">SEAT NO.</th>
+                        <th scope="col">CHECK-IN</th>
+                        <th scope="col">STATUS</th>
+                        <th scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!--ko foreach: Reservations-->
+                    <tr class="head_tr border_bottom_down">
+                        <td>
+                            <div class="person_abt_first">
+                                <a href="#" class="show_hide_icon_a">
+                                    <svg class="plus_more_f ico_svg" xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21">
+                                        <defs>
+                                            <linearGradient id="linear-gradient" x1=".5" x2=".5" y2="1" gradientUnits="objectBoundingBox">
+                                                <stop offset="0" stop-color="#1bbc66" />
+                                                <stop offset="1" stop-color="#27a544" />
+                                            </linearGradient>
+                                        </defs>
+                                        <g id="expand" transform="translate(-44 -107)">
+                                            <g id="Group_3" data-name="Group 3" transform="translate(44 107)">
+                                                <circle id="Ellipse_38" cx="10.5" cy="10.5" r="10.5" fill="url(#linear-gradient)" data-name="Ellipse 38" />
+                                            </g>
+                                            <path id="plus" fill="#fff" d="M-284 40v-4h-4v-3h4v-4h3v4h4v3h-4v4z" transform="translate(337 83)" />
+                                        </g>
+                                    </svg>
+                                    <svg class="minus_less_f ico_svg" xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21">
+                                        <defs>
+                                            <linearGradient id="linear-gradient" x1=".5" x2=".5" y2="1" gradientUnits="objectBoundingBox">
+                                                <stop offset="0" stop-color="#ff5757" />
+                                                <stop offset="1" stop-color="#d93434" />
+                                            </linearGradient>
+                                        </defs>
+                                        <g id="colapse" transform="translate(-44 -107)">
+                                            <g id="Group_3" data-name="Group 3" transform="translate(44 107)">
+                                                <circle id="Ellipse_38" cx="10.5" cy="10.5" r="10.5" fill="url(#linear-gradient)" data-name="Ellipse 38" />
+                                            </g>
+                                            <path id="minus" fill="#fff" d="M0 0H3V11H0z" transform="rotate(90 -28 88)" />
+                                        </g>
+                                    </svg>
+                                </a>
+                                <img data-bind="attr: {src: PhotoFullPath}" alt="image" class="img_per_co">
+                                <div class="person_ident">
+                                    <p class="per_name" data-bind="text: MainGuestName"></p>
+                                    <p class="per_numb" data-bind="text: MainGuestMobileNo"></p>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <p class="red_col" data-bind="text: Size">0</p>
+                        </td>
+                        <td>
+                            <p data-bind="text: GuestType, class: 'call_info ' + GuestTypeCss()"></p>
+                        </td>
+                        <td class="r_seat" data-bind="text: SeatNo"></td>
+                        <td>
+                            <p class="time_status" data-bind="text: CheckInTime"></p>
+                        </td>
+                        <td>
+                            <p class="know_status" data-bind="text: Status, class: StatusCss"></p>
+                        </td>
+                        <td>
+                            <a href="#" class="message-link message_ico" title="Message" data-bind="click: function(){$root.ShowMsg(this)}" style="display:inline-block">Message</a>
+                            <a href="#" data-bind="click: function(){$root.Edit(this)}" style="float:right">Edit</a>
+                        </td>
+
+                    </tr>
+                    <tr class="togg" id="#">
+                        <td colspan="7">
+                            <h4 class="header_togg_dwn_min">Guest List</h4>
+                            <table class="table inner_drop1 one_row_table table-borderless">
+                                <thead>
+                                    <tr>
+                                        <th scope="col" class="name_title">NAME</th>
+                                        <th scope="col" class="mob_title">MOBILE NO.</th>
+                                        <th scope="col" class="temp_title">TEMP.</th>
+                                        <th scope="col" class="check_title">CHECK-IN TIME</th>
+                                        <th scope="col"></th>
+                                        <th scope="col"></th>
+                                        <th scope="col"></th>
+                                        <th scope="col"></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!--ko foreach:Guests -->
+                                    <tr>
+                                        <td data-bind="text: Name"></td>
+                                        <td data-bind="text: MobileNo"></td>
+                                        <td data-bind="text: Temperature"></td>
+                                        <td data-bind="text: CheckInTime"></td>
+                                    </tr>
+                                    <!--/ko-->
+                                </tbody>
+                            </table>
+                            <h4 class="header_togg_dwn_min">INFORMATION:</h4>
+                            <table class="table inner_drop2 one_row_table table-borderless">
+                                <thead>
+                                    <tr>
+                                        <th scope="col" class="name_title">BIRTHDATE</th>
+                                        <th scope="col" class="mob_title">STREET</th>
+                                        <th scope="col" class="temp_title">CITY</th>
+                                        <th scope="col" class="check_title">STATE</th>
+                                        <th scope="col">ZIP</th>
+                                        <th scope="col">EMAIL</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td data-bind="text: DOB"></td>
+                                        <td data-bind="text: MainGuestAddress"></td>
+                                        <td data-bind="text: MainGuestCity"></td>
+                                        <td data-bind="text: MainGuestState"></td>
+                                        <td data-bind="text: MainGuestZip"></td>
+                                        <td data-bind="text: MainGuestEmail"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+                    <!--/ko-->
+                </tbody>
+            </table>
+            <!-- end of content-table -->
+        </div>
+    </section>
+
+</div>
+
+<span class="chat-overlay"></span>
+<div class="chat-box">
+    <div class="chat-header">
+        <h2 class="chat-title" data-bind="text:MyGuestName"></h2>
+        <a href="javascript:;" class="chat-close"><span></span></a>
+    </div><!--end of chat-header -->
+
+    <ul class="chat-msgs" data-bind="foreach: GuestMessages">
+        <!-- ko ifnot: MessageFrom -->
+        <li class="chat-details from-msg" style="clear:both">
+            <div class="from-details clearfix">
+                <h3 class="pull-left color-green" data-bind="text:GuestName"></h3>
+                <span class="pull-right" data-bind="text:MessageTime" style="margin-left:10px;"></span>
+            </div>
+            <div class="chat-content" data-bind="text:Message">
+            </div>
+        </li>
+        <!-- /ko -->
+        <!-- ko if: MessageFrom -->
+        <li class="chat-details own-msg" style="clear:both">
+            <div class="own-details clearfix">
+                <h3 class="pull-right">You</h3>
+                <span clas="pull-left" data-bind="text:MessageTime" style="margin-right:10px;"></span>
+            </div>
+            <div class="chat-content" data-bind="text:Message">
+            </div>
+        </li>
+        <!-- /ko -->
+    </ul><!-- end of chat-msgs -->
+
+
+    <form action="#" class="chat-textbox">
+        <input type="text" class="chat-input" placeholder="Enter reply here.." data-bind="textInput: Message" id="txtReply" />
+        <input type="submit" class="chat-submit" value="Reply" data-bind="click: function(){$root.Reply()}">
+    </form><!-- end of chat-textbox -->
+</div>
+
+<!-- Modal -->
+<div class="reserve_modal modal fade" id="add-new-reserve_id" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-backdrop="static">
+    <div class="modal-dialog" role="document">
+        <!-- <div class="mode_bdy">
+        </div> -->
+        <div class="modal-content">
+            <div type="button" class="btn-default close-popup" data-dismiss="modal">
+                <svg class="map-cross btn_toggle" xmlns="http://www.w3.org/2000/svg" width="11.882" height="11.882" viewBox="0 0 11.882 11.882">
+                    <g id="cross" transform="rotate(45 10.142 4.2)">
+                        <path id="Union_37" fill="#2a2f3a" d="M5.941 8.524l-3.357 3.358L0 9.3l3.358-3.359L0 2.582 2.584 0l3.357 3.358L9.3 0l2.584 2.582-3.36 3.359L11.882 9.3 9.3 11.882z" data-name="Union 37" transform="rotate(-45 10.142 4.201)" />
+                    </g>
+                </svg>
+            </div>
+            <div class="wrap_map_popup">
+                <div class="wrap_map">
+                    <img data-bind="attr: {src: SeatMap }" class="seatmap_tri_svg" style="max-height:1000px;top:unset;" />
+                </div>
+                <div class="right_form_pop">
+                    <div class="over_images_abs reserve_absolute1 active">
+                        <div class="modal-header">
+                            <h4 class="modal-title uppercase" id="myModalLabel" data-bind="text: Title()"></h4>
+                            <div class="right_coner select_opt">
+                                <select class="form-control selectpicker" id="select_type_resrve" data-bind="value: GuestTypeId">
+                                    <option value="1">Call-In</option>
+                                    <option value="2">Walk-In</option>
+                                    <option value="3">Mobile</option>
+                                </select>
+                            </div>
+                        </div>
+                        <!-- end of modal-header -->
+                        <div class="modal-body">
+                            <form action="#" class="theme-black-form">
+
+                                <div class="right_coner select_opt sel_con">
+                                    @*<p class="sel_p_add">Select Concert</p>
+                                        <select class="form-control selectpicker" id="" data-bind="options: ConcertEvents, value:CurrentConcertEvent, optionsText: 'Name', optionsValue: 'Id', event:{ change: OnChangeEvent}, optionsCaption: 'Choose an event...'">
+                                        </select>*@
+                                    <h4 class="modal-title uppercase" style="color:unset" id="myModalLabel" data-bind="text: CurrentConcertEventName()"></h4>
+                                </div>
+                                <div class="form-group form_second">
+                                    <nav class="pull-right">
+                                        <label>Size:</label>
+                                        <ul class="pagination" data-bind="foreach: new Array(LimitSize())">
+                                            <li>
+                                                <a href="#" data-bind="text:$index()+1, attr: {id: 'size' + ($index()+1) }, click: $root.SetSizeValue"></a>
+                                            </li>
+                                        </ul>
+                                        <!--ko if: LimitSize() == 0 -->
+                                        <p id="info"><b>SIZE NOT DEFINED</b></p>
+                                        <!--/ko-->
+                                    </nav>
+                                </div>
+
+
+                                <div class="form-group form_second">
+                                    <label>Main Guest(You)</label>
+                                    <input type="text" class="form-control" placeholder="Enter your name" data-bind="value: GuestName">
+                                </div>
+                                <div class="form-group form_second">
+                                    <span>Phone No</span>
+                                    <input type="text" class="form-control" id="mob_id" placeholder="+1" autocomplete="off" data-bind="value: MobileNumber">
+                                </div>
+                                <div class="form-group form_second">
+                                    <span>Email</span>
+                                    <input type="text" class="form-control" placeholder="Email" autocomplete="off" data-bind="value: Email">
+                                </div>
+
+                                <div class="right_coner select_opt sel_con">
+                                    <p class="sel_p_add">Select Seating</p>
+                                    <!--ko if: Seatings().length > 0 -->
+                                    <div class="r1_drop_wrap">
+                                        <select class="form-control selectpicker" id="ddSeatName" data-bind="options: Seatings, value:SpotValue, optionsText: 'Name', optionsValue: 'Spots', event:{ change: OnChangeSpot}, optionsCaption: 'Choose...'">
+                                        </select>
+                                        <select class="form-control selectpicker spots" id="ddSeatNo" data-bind="value: SeatNo, event:{change:OnSeatSelect}">
+                                        </select>
+                                    </div>
+                                    <!--/ko-->
+                                    <!--ko if: Seatings().length == 0 -->
+                                    <p id="info"><b>SEATINGS NOT ADDED.</b></p>
+                                    <!--/ko-->
+                                </div>
+
+
+                                <p class="div_con_note sel_p_add" style="margin-top: 50px!important">Please review your details before continuing, we will ask for <br><strong>Guest Details</strong> on the next page</p>
+                            </form>
+                            <!-- end of theme-black-form -->
+                        </div>
+                        <!-- end of modal-body -->
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary transpart">
+                                <a href="#" class="first_show1">NEXT</a>
+                            </button>
+                            <button type="button" class="btn btn-default close-popup" data-dismiss="modal">CANCEL</button>
+                        </div>
+                    </div>
+                    <!-- over_images reserve absolute1 -->
+                    <div class="over_images_abs reserve_absolute2">
+                        <div class="app__container">
+                            <div class="waittime">
+                                <div class="app__header">
+                                    <h4 class="head_top">GUEST DETAILS</h4>
+                                </div>
+                                <div class="mob_body">
+                                    <form action="#" class="theme-black-form">
+                                        <div class="form_first">
+
+                                            <!--ko foreach:Guests -->
+                                            <div class="form-group res_fr_1">
+                                                <label data-bind="text: 'Guest ' + ($index()+2)">Guest 2</label>
+                                                <span>Full Name</span>
+                                                <input type="text" class="form-control" placeholder="" data-bind="value: Name">
+                                            </div>
+                                            <div class="form-group res_fr_1 pn_1_con">
+                                                <span>Phone No</span>
+                                                <input type="tel" class="form-control" autocomplete="off" data-bind="value: MobileNo, attr: {id:'mob_id' + ($index()+2)}">
+                                            </div>
+
+                                            <div class="right_coner select_opt sel_con">
+                                                <p class="sel_p_add">Select Seating</p>
+                                                <div class="r1_drop_wrap">
+                                                    <select class="form-control selectpicker" data-bind="attr: {id:'ddSeatName' + ConcertGuestId()}, options: $root.Seatings, value:SpotValue, optionsText: 'Name', optionsValue: 'Spots', event:{ change: OnChangeSpot}, optionsCaption: 'Choose...'">
+                                                    </select>
+                                                    <select class="form-control selectpicker spots" data-bind="attr: {id:'ddSeatNo' + ConcertGuestId()}, value: SeatNo, event:{change:OnSeatSelect}">
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <!--/ko-->
+                                        </div>
+                                        <div class="form-group form_second select_opt">
+                                            <p class="watlist4_notice">Please review your details before continuing,we will ask for <strong>Guest Details</strong> on the next page</p>
+                                            <div class="fixed_btn">
+                                                <a href="#" class="front_arrow"><img src="/content/assets/images/arrow.svg" alt=""></a>
+                                                <button class="btn btn--grn"><a href="#" class="first_show2" data-bind="click: AddReservation">SUBMIT</a></button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- over_images reserve absolute2 -->
+                    @*<div class="over_images_abs reserve_absolute3">
+                            <div class="wrapper-mobile">
+                                <div class="body_single_person_info">
+                                    <div class="body_mobile_middle__sec_1">
+                                        <div class="dls_person_img">
+                                            <img src="/content/assets/images/img/02@2x.png" alt="">
+                                        </div>
+                                        <div class="table person_info_phone">
+                                            <table class="table">
+                                                <tbody>
+                                                    <tr>
+                                                        <td>First Name:</td>
+                                                        <td>Thomas</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Last Name:</td>
+                                                        <td>Griffin</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Birthdate:</td>
+                                                        <td>Sep 2 1965</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Street:</td>
+                                                        <td>9152</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>City:</td>
+                                                        <td>Avon</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>State:</td>
+                                                        <td>CO</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Zip:</td>
+                                                        <td>81657</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <div class="wrap_mobile_info__form">
+                                            <p>
+                                                Confirm your details by providing your phone number
+                                                and email address below.
+                                            </p>
+                                            <form>
+                                                <div class="form-group">
+                                                    <label>Phone No.</label>
+                                                    <input type="tel" class="form-control" id="mob_id3" placeholder="+1" autocomplete="off">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>Email</label>
+                                                    <input type="email" class="form-control" placeholder="Enter a valid email address">
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="footer_mobile_last">
+                                    <div class="forward_backward">
+                                        <ul class="row_ul">
+                                            <li class="row_ul__li">
+                                                <div class="backward equal_row">
+                                                    <a href="#" class="first_show3">Back</a>
+                                                </div>
+                                            </li>
+                                            <li class="row_ul__li">
+                                                <div class="forward equal_row">
+                                                    <a href="#">Submit</a>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>*@
+                    <!-- over_images reserve absolute3 -->
+
+
+                </div>
+                <!-- -- -->
+                <!-- end of modal-footer -->
+            </div>
+        </div>
+        <!-- end of modal-content -->
+    </div>
+    <!-- end of modal-dialog -->
+</div>
+
+<style>
+    .reserve_absolute1,
+    .reserve_absolute2,
+    .reserve_absolute3 {
+        pointer-events: none;
+        opacity: 0;
+    }
+
+        .reserve_absolute1.active,
+        .reserve_absolute2.active,
+        .reserve_absolute3.active {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+    .iti {
+        width: 100%;
+    }
+
+    #add-new-reserve_id .reserve_absolute2 .form-group.res_fr_1 span {
+        display: unset;
+    }
+
+    #info {
+        text-align: center;
+        color: #1898db;
+        line-height: 1.5;
+        font-size: 12px;
+        font-weight: normal;
+        font-family: "Roboto", sans-serif !important;
+        background-color: #eaf1f5;
+        padding: 13px 8px;
+    }
+</style>
+<environment include="Development">
+    <script src="~/Scripts/app/concert/reservation.js"></script>
+</environment>
+<environment exclude="Development">
+    <script src="~/Scripts/app/concert/reservation.min.js"></script>
+</environment>

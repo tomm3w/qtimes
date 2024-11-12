@@ -1,0 +1,35 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="app__header">
+    <div class="imgHolder">
+        <img id="logo">
+    </div>
+</div>
+<div class="mob_body">
+    <div class="waittime_reserve_body">
+        <div class="waittime_reserve_txt_wrap app__form">
+            <div class="waittime_reserve_para">
+                <div class="waittime_reserve_para_p">
+                    <h2 class="businessName"></h2>
+                    <p class="businessDesc">
+                    </p>
+                    <ul class="splash_ul">
+                        <li><a href="#" id="privayPolicy" target="_blank">Privacy Policy</a></li>
+                        <li><a href="#" id="termsService" target="_blank">Terms Of Service</a></li>
+                        <li><a href="#" id="communityGuidelines" target="_blank">Community Guidelines</a></li>
+                    </ul>
+                    <span class="splash_rule">By continuing you agree and read our rules and guidelines. </span>
+                </div>
+            </div>
+        </div>
+        <button class="btn btn--grn" onclick="location.href='/m/concert/reservation/@ViewBag.id'">CONTINUE</button>
+    </div>
+</div>
+<script>
+    var id = '@ViewBag.id';
+</script>
+<script src="~/Scripts/app/concert/m/business.js"></script>
+

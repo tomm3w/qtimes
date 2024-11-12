@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="bd22d485ef104942a6fb5340483c0930" Name="Diagram1" ZoomLevel="86">
+        <EntityTypeShape EntityType="SeatQModel.GuestType" Width="1.5" PointX="10.5" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SeatQModel.MessageReply" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SeatQModel.MessageReplyType" Width="1.5" PointX="10.5" PointY="28.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SeatQModel.MessageSent" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SeatQModel.PlanType" Width="1.5" PointX="0.75" PointY="17.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SeatQModel.ReadyMessage" Width="1.5" PointX="7.5" PointY="16.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SeatQModel.Restaurant" Width="1.5" PointX="3" PointY="17" IsExpanded="true" />
+        <EntityTypeShape EntityType="SeatQModel.VisitMessage" Width="1.5" PointX="7.5" PointY="29.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SeatQModel.VisitMessageSent" Width="1.5" PointX="9.75" PointY="17.25" IsExpanded="true" />
+        <AssociationConnector Association="SeatQModel.FK_Restaurant_PlanType" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="SeatQModel.DeliveryStatu" Width="1.5" PointX="4.75" PointY="0.75" />
+        <EntityTypeShape EntityType="SeatQModel.SeatedMessageSent" Width="1.5" PointX="15" PointY="14.75" />
+        <EntityTypeShape EntityType="SeatQModel.UserInfo" Width="1.5" PointX="7.5" PointY="20.375" />
+        <EntityTypeShape EntityType="SeatQModel.UsersInRestaurant" Width="1.5" PointX="9.75" PointY="22.75" />
+        <AssociationConnector Association="SeatQModel.FK_UsersInRestaurant_UserInfo" />
+        <EntityTypeShape EntityType="SeatQModel.UserProfile" Width="1.5" PointX="4.75" PointY="4.75" />
+        <EntityTypeShape EntityType="SeatQModel.RestaurantChain" Width="1.5" PointX="5.25" PointY="15.125" />
+        <AssociationConnector Association="SeatQModel.FK_ManageMessage_RestaurantChain" />
+        <AssociationConnector Association="SeatQModel.FK_RestaurantChain_Restaurant" />
+        <AssociationConnector Association="SeatQModel.FK_UserInfo_RestaurantChain" />
+        <AssociationConnector Association="SeatQModel.FK_UsersInRestaurant_RestaurantChain" />
+        <AssociationConnector Association="SeatQModel.FK_VisitMessage_RestaurantChain" />
+        <AssociationConnector Association="SeatQModel.FK_VisitMessageSent_RestaurantChain" />
+        <EntityTypeShape EntityType="SeatQModel.RestaurantClosedDay" Width="1.5" PointX="7.5" PointY="32.375" />
+        <AssociationConnector Association="SeatQModel.FK_RestaurantClosedDay_RestaurantChain" />
+        <EntityTypeShape EntityType="SeatQModel.TableType" Width="1.5" PointX="10.5" PointY="26" />
+        <EntityTypeShape EntityType="SeatQModel.RestaurantTable" Width="1.5" PointX="12.75" PointY="23.375" />
+        <AssociationConnector Association="SeatQModel.FK_RestaurantTable_RestaurantTable" />
+        <AssociationConnector Association="SeatQModel.FK_RestaurantTable_TableType" />
+        <EntityTypeShape EntityType="SeatQModel.WaitList" Width="1.5" PointX="12.75" PointY="15.125" />
+        <AssociationConnector Association="SeatQModel.FK_WaitList_GuestType" />
+        <AssociationConnector Association="SeatQModel.FK_WaitList_WaitList1" />
+        <AssociationConnector Association="SeatQModel.FK_WaitList_RestaurantChain" />
+        <AssociationConnector Association="SeatQModel.FK_WaitList_RestaurantTable" />
+        <AssociationConnector Association="SeatQModel.FK_SeatedMessageSent_WaitList" />
+        <AssociationConnector Association="SeatQModel.FK_WaitList_UserInfo" />
+        <EntityTypeShape EntityType="SeatQModel.GuestMessage" Width="1.5" PointX="15" PointY="18.875" />
+        <AssociationConnector Association="SeatQModel.FK_GuestMessage_WaitList" />
+        <EntityTypeShape EntityType="SeatQModel.LoyaltyMessage" Width="1.5" PointX="9.75" PointY="12.25" />
+        <EntityTypeShape EntityType="SeatQModel.GuestInfo" Width="1.5" PointX="7.5" PointY="12.625" />
+        <AssociationConnector Association="SeatQModel.FK_GuestInfo_RestaurantChain" />
+        <AssociationConnector Association="SeatQModel.FK_LoyaltyMessage_LoyaltyMessage" />
+        <AssociationConnector Association="SeatQModel.FK_VisitMessageSent_VisitMessageSent" />
+        <AssociationConnector Association="SeatQModel.FK_WaitList_GuestInfo" />
+        <EntityTypeShape EntityType="SeatQModel.StaffType" Width="1.5" PointX="5.25" PointY="22.5" />
+        <AssociationConnector Association="SeatQModel.FK_UserInfo_StaffType" />
+        <AssociationConnector Association="SeatQModel.FK_RestaurantTable_UserInfo" />
+        <EntityTypeShape EntityType="SeatQModel.ReservationMessage" Width="1.5" PointX="23.25" PointY="23.875" />
+        <EntityTypeShape EntityType="SeatQModel.ConcertReservation" Width="1.5" PointX="15.75" PointY="24.5" />
+        <EntityTypeShape EntityType="SeatQModel.ConcertGuest" Width="1.5" PointX="18" PointY="25.625" />
+        <AssociationConnector Association="SeatQModel.FK_ConcertGuest_ConcertReservation" />
+        <EntityTypeShape EntityType="SeatQModel.ConcertMessageRule" Width="1.5" PointX="9.75" PointY="47.625" />
+        <EntityTypeShape EntityType="SeatQModel.ConcertSeating" Width="1.5" PointX="9.75" PointY="44.5" />
+        <EntityTypeShape EntityType="SeatQModel.ConcertReservationMessage" Width="1.5" PointX="18" PointY="22.125" />
+        <AssociationConnector Association="SeatQModel.FK_ConcertReservation_GuestType" />
+        <AssociationConnector Association="SeatQModel.FK_ConcertReservationMessage_ConcertReservation" />
+        <EntityTypeShape EntityType="SeatQModel.ConcertSeatLock" Width="1.5" PointX="9.75" PointY="51.125" />
+        <EntityTypeShape EntityType="SeatQModel.BusinessType" Width="1.5" PointX="11.25" PointY="31.875" />
+        <EntityTypeShape EntityType="SeatQModel.Reservation" Width="1.5" PointX="21" PointY="22.75" />
+        <AssociationConnector Association="SeatQModel.FK_Reservation_GuestType" />
+        <AssociationConnector Association="SeatQModel.FK_ReservationMessage_Reservation" />
+        <EntityTypeShape EntityType="SeatQModel.ReservationGuest" Width="1.5" PointX="15.75" PointY="37" />
+        <EntityTypeShape EntityType="SeatQModel.ReservationMessageRule" Width="1.5" PointX="15.75" PointY="33.5" />
+        <AssociationConnector Association="SeatQModel.FK_Reservation_ReservationGuest" />
+        <EntityTypeShape EntityType="SeatQModel.BusinessDetail" Width="1.5" PointX="13.5" PointY="27.125" />
+        <EntityTypeShape EntityType="SeatQModel.ReservationBusiness" Width="1.5" PointX="5.25" PointY="24.875" />
+        <AssociationConnector Association="SeatQModel.FK_BusinessDetail_BusinessType" />
+        <AssociationConnector Association="SeatQModel.FK_BusinessDetail_ReservationBusiness" />
+        <AssociationConnector Association="SeatQModel.FK_Reservation_BusinessDetail" />
+        <AssociationConnector Association="SeatQModel.FK_ReservationGuest_BusinessDetail" />
+        <AssociationConnector Association="SeatQModel.FK_ReservationMessageRule_BusinessDetail" />
+        <AssociationConnector Association="SeatQModel.FK_UserInfo_ReservationBusiness" />
+        <EntityTypeShape EntityType="SeatQModel.Concert" Width="1.5" PointX="7.5" PointY="35.75" />
+        <AssociationConnector Association="SeatQModel.FK_Concert_ReservationBusiness" />
+        <AssociationConnector Association="SeatQModel.FK_ConcertMessageRule_Concert" />
+        <AssociationConnector Association="SeatQModel.FK_ConcertReservation_Concert" />
+        <AssociationConnector Association="SeatQModel.FK_ConcertSeating_Concert" />
+        <AssociationConnector Association="SeatQModel.FK_ConcertSeatLock_Concert" />
+        </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,172 @@
+﻿@{
+    ViewBag.Title = "Business Setup";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<style>
+    .fileinput-button {
+        position: relative;
+        overflow: hidden;
+    }
+
+        .fileinput-button input {
+            position: absolute;
+            top: 0;
+            right: 0;
+            margin: 0;
+            opacity: 0;
+            -ms-filter: 'alpha(opacity=0)';
+            font-size: 200px;
+            direction: ltr;
+            cursor: pointer;
+            width: 100% !important;
+        }
+
+    .button {
+        border-radius: 5px;
+        border-bottom: 2px solid transparent;
+        color: #fff;
+        display: inline-block;
+        height: 41px;
+        line-height: 41px;
+        text-align: center;
+        width: 160px;
+    }
+
+    .darkgray {
+        background: #2d353d;
+    }
+
+    .form_ac .form-group img {
+        max-height: 130px;
+        max-width: 100%;
+    }
+
+    #logo {
+        height: unset;
+    }
+</style>
+<script src="~/Scripts/jQuery.FileUpload/jquery.fileupload.js"></script>
+
+<section class="content-header">
+    <div class="content_header_left">
+        <h2 class="uppercase">SETTINGS</h2>
+        <div class="navigation_lft">
+            <ul>
+                <li><a href="/admin/accountinfo">Account Setup</a></li>
+                <li><a href="/admin/preferences">Preferences</a></li>
+                <li class="active"><a href="#">Business Profile</a></li>
+                <li><a href="/admin/tables">Tables</a></li>
+            </ul>
+        </div>
+    </div>
+</section>
+<section class="content-header_prf">
+    <h2 class="uppercase">ACCOUNT SETUP</h2>
+    <a href="#" class="btn btn-primary" data-bind="click:Update">
+        SAVE CHANGES
+    </a>
+</section>
+
+<section class="content-body clearfix">
+    <div class="account_form content-body_prf">
+        <div class="form_ac">
+            <div class="form-group">
+                <label>Business Image</label>
+                <div class="upload_pic">
+                    <div class="img_upld">
+                        <img src="/images/noimage.png" id="logo" data-bind="attr:{src:ImageSrc}">
+                    </div>
+                    <div class="uplod_btn_click">
+                        <div class="form-group">
+                            <form class="col-xs-10" id="formimageupload" data-exclude-bind="true" method="post" action="@Url.Action("Upload", "File", new { area = "Webservice" })" enctype="multipart/form-data">
+                                <div class="desc">
+                                    <span class="button darkgray fileinput-button">
+                                        <span>Choose File..</span>
+                                        <input type="file" name="Image">
+                                    </span>
+                                    <span class="link-gray in-block h6">JPEG,GIF,PNG - <br />Recommended file size is 420 kb.</span>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form_ac">
+            <div class="form-group">
+                <label>Full Name</label>
+                <input type="text" class="form-control" data-bind="value:FullName">
+            </div>
+            <div class="form-group">
+                <label>Business Name</label>
+                <input type="text" class="form-control" data-bind="value:BusinessName">
+            </div>
+        </div>
+        <div class="form_ac">
+            <div class="form-group">
+                <label>Email</label>
+                <input type="email" class="form-control" data-bind="value:Email">
+            </div>
+            <div class="form-group">
+                <label>Contact No.</label>
+                <input type="text" class="form-control" data-bind="value:Phone">
+            </div>
+        </div>
+        <div class="form_ac">
+            <div class="form-group">
+                <label>Address Line 1</label>
+                <input type="text" class="form-control" data-bind="value:Address1">
+            </div>
+            <div class="form-group">
+                <label>Address Line 2</label>
+                <input type="text" class="form-control" data-bind="value:Address2">
+            </div>
+        </div>
+        <div class="form_ac">
+            <div class="form-group">
+                <label>City</label>
+                <input type="text" class="form-control" data-bind="value:CityTown">
+            </div>
+            <div class="form-group">
+                <label>State</label>
+                <input type="text" class="form-control" data-bind="value:State">
+            </div>
+            <div class="form-group">
+                <label>Zip</label>
+                <input type="text" class="form-control" data-bind="value:Zip">
+            </div>
+        </div>
+        <div class="form_ac">
+            <div class="form-group">
+                <label>Restaurant Number</label>
+                <input type="text" class="form-control" data-bind="value:RestaurantNumber">
+            </div>
+        </div>
+        <div class="form_ac">
+            <div class="form-group">
+                <label>Table Layout</label>
+                <div class="upload_pic">
+                    <div class="img_upld">
+                        <img src="/images/noimage.png" id="tableLayout" data-bind="attr:{src:TableLayoutSrc}">
+                    </div>
+                    <div class="uplod_btn_click">
+                        <div class="form-group">
+                            <form class="col-xs-10" id="formtableimageupload" data-exclude-bind="true" method="post" action="@Url.Action("Upload", "File", new { area = "Webservice" })" enctype="multipart/form-data">
+                                <div class="desc">
+                                    <span class="button darkgray fileinput-button">
+                                        <span>Choose File..</span>
+                                        <input type="file" name="Image">
+                                    </span>
+                                    <span class="link-gray in-block h6">JPEG,GIF,PNG - <br />Recommended file size is 420 kb.</span>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+@*<script src="~/Scripts/app/restaurant.js"></script>*@
+@Scripts.Render("~/scripts/restaurant")

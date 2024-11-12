@@ -1,0 +1,83 @@
+﻿@{
+    ViewBag.Title = "Waitlist";
+    Layout = "~/Areas/Mobile/Views/Shared/_LayoutMobile.cshtml";
+}
+
+<div class="waittime">
+    <div class="app__header">
+        <h1 data-bind="text:BusinessName"></h1>
+        <p><span data-bind="text:CityTown"></span>, <span data-bind="text:State"></span></p>
+    </div>
+    <div class="app__pageImg">
+        <div class="app__imgHolder">
+            <img data-bind="attr: {src: LogoPath}">
+        </div>
+    </div>
+    <div class="app__contentHolder">
+        <div class="title">
+            <p><img src="/content/assets/img/clock.svg" class="clockimg" alt="clock"> Current wait time </p>
+        </div>
+        <div class="text">Click below to place your name on the list!</div>
+        <div class="timer">
+            <div class="timer__content">
+                <span class="digit" data-bind="text:AverageWaitTime">3</span>
+                <span class="txt">min</span>
+            </div>
+        </div>
+        <button class="btn btn--orng">GET ON THE LIST</button>
+    </div>
+</div>
+
+<div class="waitlist">
+    <div class="app__header">
+        <div class="title">
+            <p>Waitlist</p>
+        </div>
+    </div>
+    <div class="app__spinner">
+        <label>Group Size</label>
+        <input type="number" value="1" min="1" max="100" step="1" data-bind="value: GroupSize" />
+    </div>
+    <div class="app__form">
+        <form>
+            <div class="form-group">
+                <label for="">Guest Name:</label>
+                <input type="text" placeholder="Enter your name" data-bind="value: GuestName">
+            </div>
+            <div class="form-group">
+                <label for="">Mobile Number:</label>
+                <input type="text" placeholder="(+00) 0000 00000" data-bind="value: MobileNumber">
+            </div>
+            <div class="form-group col-half">
+                <label for="">Est. Time:</label>
+                <input type="text" placeholder="00:00" data-bind="value: EstimatedTime"> 
+            </div>
+            <div class="form-group col-half">
+                <label for="">Act. Time:</label>
+                <input type="text" placeholder="00:00" data-bind="value: ActualTime">
+            </div>
+            <div class="form-group">
+                <label for="">Comments/Special Request</label>
+                <input type="text" placeholder="Ex: Additional Chair, anniversary, birthday etc" data-bind="value: Comments">
+            </div>
+            <button class="btn btn--green" id="btnSubmit" data-bind="click: function(){$root.AddWaitlist()}">GET ON THE LIST</button>
+        </form>
+    </div>
+</div>
+
+<div class="thankyou">
+    <div class="container__center">
+        <div class="container">
+            <div class="imgHolder">
+                <img src="/content/assets/img/like.svg">
+            </div>
+            <p><span class="green-txt">Thank You!</span></p>
+            <p>
+                Wait List is confirmed, we will text you once
+                your table is ready!
+            </p>
+        </div>
+    </div>
+</div>
+@*<script src="~/Scripts/app/mobile/waitlist.js"></script>*@
+@Scripts.Render("~/scripts/mobile")

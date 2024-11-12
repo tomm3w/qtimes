@@ -1,0 +1,16 @@
+﻿@model SeatQ.Areas.Admin.Models.MenuListModel
+
+<a class="open" href="#nav"></a>
+<ul class="nav nav-sidebar" id="nav">
+    @foreach (var item in Model.Menus)
+    {
+        if (Model.selectedMenu == null)
+        {
+            <li><a href="@item.URL" class="side-@item.Name.Replace(" ", "").ToLower()">@item.Name</a></li>
+        }
+        else
+        {
+            <li class="@(Model.selectedMenu.Name == item.Name ? "active" : "")"><a href="@item.URL" class="side-@item.Name.Replace(" ", "").ToLower()">@item.Name</a></li>
+        }
+    }
+</ul>

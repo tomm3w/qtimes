@@ -1,0 +1,35 @@
+﻿@{
+    string baseUrl = Request.Url.GetLeftPart(UriPartial.Authority);
+}
+<!DOCTYPE html>
+<!-- This site was created in Webflow. http://www.webflow.com-->
+<!-- Last Published: Tue Sep 08 2015 03:04:26 GMT+0000 (UTC) -->
+<html data-wf-site="55c2d33e9337b47665416a8b" data-wf-page="55c2d33e9337b47665416a8c">
+<head>
+    <meta charset="utf-8">
+    <title>SeatQ</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="Webflow">
+    <link rel="stylesheet" type="text/css" href="https://daks2k3a4ib2z.cloudfront.net/55c2d33e9337b47665416a8b/css/seatq.webflow.fffe9953a.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js"></script>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryui")
+    @Scripts.Render("~/bundles/jqueryval")
+    <script src="~/Scripts/utility.js"></script>
+    <script>
+        WebFont.load({
+            google: {
+                families: ["Montserrat:400,700", "Open Sans:300,300italic,400,400italic,600,600italic,700,700italic,800,800italic"]
+            }
+        });</script>
+    <script type="text/javascript" src="https://daks2k3a4ib2z.cloudfront.net/0globals/modernizr-2.7.1.js"></script>
+    <link rel="shortcut icon" type="image/x-icon" href="https://daks2k3a4ib2z.cloudfront.net/55c2d33e9337b47665416a8b/55efaf4831274b657d2626c7_seatq-favicon%402x.png">
+    <link rel="apple-touch-icon" href="https://daks2k3a4ib2z.cloudfront.net/55c2d33e9337b47665416a8b/55efaf4e0726da0c29fb6b44_seatq-webclip%402x.png">
+    <script src='https://www.google.com/recaptcha/api.js'></script>
+</head>
+<body>
+    @RenderBody()
+
+    <script src="~/Scripts/notify.min.js"></script>
+</body>
+</html>

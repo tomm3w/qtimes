@@ -1,0 +1,319 @@
+﻿@{
+    ViewBag.Title = "Table";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<link href="~/Content/assets/css/custom.css" rel="stylesheet" />
+<style>
+    .scaled {
+        transform: scale(0.8);
+    }
+
+</style>
+<div class="background scaled" style="margin-top:0">
+    <div class="container">
+        <div class="content">
+            <div class="denotes">
+                <div class="container">
+                    <ul>
+                        <li>
+                            <label class="customCheckbox">
+                                <input type="checkbox" class="pickup">Not Available
+                                <span class="checkmark not-avai"></span>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="customCheckbox">
+                                <input type="checkbox" class="pickup">Available
+                                <span class="checkmark avaiable"></span>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="customCheckbox">
+                                <input type="checkbox" class="pickup">occupied
+                                <span class="checkmark occupid"></span>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="customCheckbox">
+                                <input type="checkbox" class="pickup">Ready to leave
+                                <span class="checkmark leave"></span>
+                            </label>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- denotes -->
+            <div class="column one">
+                <ul class="first-ul">
+                    <li class="reservation">
+                        <div class="rectangle rotatebg" id="table-P1">
+                            <div class="place rotatep c-1">P1</div>
+                        </div>
+                    </li>
+                    <!-- c-1 -->
+                    <li class="reservation">
+                        <div class="rectangle rotatebg" id="table-P2">
+                            <div class="place rotatep c-2">P2</div>
+                        </div>
+                    </li>
+                    <!-- c-2 -->
+                    <li class="reservation">
+                        <div class="rectangle rotatebg" id="table-P3">
+                            <div class="place rotatep c-3">P3</div>
+                        </div>
+                    </li>
+                    <!-- c-3 -->
+                </ul>
+                <!-- first-ul -->
+                <ul class="second-ul">
+                    <li class="reservation">
+                        <div class="rectangle rotatebg" id="table-P4">
+                            <div class="place rotatep c-4">P4</div>
+                        </div>
+                    </li>
+                    <!-- c-4 -->
+                    <li class="reservation">
+                        <div class="rectangle rotatebg" id="table-P5">
+                            <div class="place rotatep c-5">P5</div>
+                        </div>
+                    </li>
+                    <!-- c-4 -->
+                </ul>
+                <!-- second-ul -->
+            </div>
+            <!-- column one -->
+            <div class="column two">
+                <ul class="third-ul">
+                    <li class="reservation">
+                        <div class="rectangle" id="table-21">
+                            <div class="place c-6">21</div>
+                        </div>
+                    </li>
+                    <!-- c-6 -->
+                    <li class="reservation">
+                        <div class="rectangle" id="table-22">
+                            <div class="place c-7">22</div>
+                        </div>
+                    </li>
+                    <!-- c-7 -->
+                    <li class="reservation">
+                        <div class="rectangle" id="table-23">
+                            <div class="place c-8">23</div>
+                        </div>
+                    </li>
+                    <!-- c-8 -->
+                </ul>
+                <ul class="fouth-ul">
+                    <li class="reservation">
+                        <div class="rectangle" id="table-20">
+                            <div class="place c-9">20</div>
+                        </div>
+                    </li>
+                    <!-- c-9 -->
+                </ul>
+            </div>
+            <!-- column two -->
+            <div class="column three">
+                <ul class="fifth-ul">
+                    <li class="reservation">
+                        <div class="rectangle" id="table-24">
+                            <div class="place c-10">24</div>
+                        </div>
+                    </li>
+                    <!-- c-10 -->
+                    <li class="reservation">
+                        <div class="rectangle rotatebg" id="table-25">
+                            <div class="place rotatep c-11">25</div>
+                        </div>
+                    </li>
+                    <!-- c-11 -->
+                    <li class="reservation">
+                        <div class="rectangle rotatebg" id="table-26">
+                            <div class="place rotatep c-12">26</div>
+                        </div>
+                    </li>
+                    <!-- c-12 -->
+                    <li class="reservation">
+                        <div class="rectangle" id="table-27">
+                            <div class="place c-13">27</div>
+                        </div>
+                    </li>
+                    <!-- c-11 -->
+                </ul>
+                <!-- fifth-ul -->
+                <ul class="sixth-ul">
+                    <li class="reservation">
+                        <div class="rectangle" id="table-36">
+                            <div class="place c-14">36</div>
+                        </div>
+                    </li>
+                    <!-- c-14 -->
+                    <li class="reservation">
+                        <div class="rectangle rotatebg" id="table-35">
+                            <div class="place rotatep c-17">35</div>
+                        </div>
+                    </li>
+                    <!-- c-17 -->
+                    <li class="reservation">
+                        <div class="rectangle rotatebg" id="table-34">
+                            <div class="place rotatep c-18">34</div>
+                        </div>
+                    </li>
+                    <!-- c-18 -->
+                </ul>
+                <!-- sixth-ul -->
+            </div>
+            <!-- column three -->
+            <div class="column four">
+                <ul class="seventh-ul">
+                    <li class="reservation">
+                        <div class="rectangle" id="table-28">
+                            <div class="place c-19">28</div>
+                        </div>
+                    </li>
+                    <!-- c-19 -->
+                    <li class="reservation">
+                        <div class="rectangle" id="table-29">
+                            <div class="place c-20">29</div>
+                        </div>
+                    </li>
+                    <!-- c-20 -->
+                    <li class="reservation">
+                        <div class="rectangle" id="table-30">
+                            <div class="place c-21">30</div>
+                        </div>
+                    </li>
+                    <!-- c-21 -->
+                </ul>
+                <!-- seventh-ul -->
+                <ul class="eighth-ul">
+                    <li class="reservation">
+                        <div class="rectangle" id="table-33">
+                            <div class="place c-22">33</div>
+                        </div>
+                    </li>
+                    <!-- c-22 -->
+                </ul>
+                <!-- eighth-ul -->
+                <ul class="nineth-ul">
+                    <li class="reservation">
+                        <div class="rectangle" id="table-31">
+                            <div class="place c-23">31</div>
+                        </div>
+                    </li>
+                    <!-- c-23 -->
+                    <li class="reservation">
+                        <div class="rectangle" id="table-32">
+                            <div class="place c-24">32</div>
+                        </div>
+                    </li>
+                    <!-- c-24 -->
+                </ul>
+                <!-- nineth-ul -->
+            </div>
+            <!-- column one -->
+        </div>
+        <!-- content -->
+        <div class="relative">
+            <div class="left-reserve" style="left: 25rem;">
+                <ul class="tenth-ul">
+                    <li class="reservation">
+                        <div class="rectangle" id="table-8">
+                            <div class="place c-25">8</div>
+                        </div>
+                    </li>
+                    <!-- c-25 -->
+                    <li class="reservation">
+                        <div class="rectangle" id="table-7">
+                            <div class="place c-26">7</div>
+                        </div>
+                    </li>
+                    <!-- c-26 -->
+                    <li class="reservation">
+                        <div class="rectangle" id="table-6">
+                            <div class="place c-27">6</div>
+                        </div>
+                    </li>
+                    <!-- c-27 -->
+                    <li class="reservation">
+                        <div class="rectangle" id="table-5">
+                            <div class="place c-28">5</div>
+                        </div>
+                    </li>
+                    <!-- c-28 -->
+                    <li class="reservation">
+                        <div class="rectangle" id="table-4">
+                            <div class="place c-29">4</div>
+                        </div>
+                    </li>
+                    <!-- c-29 -->
+                    <li class="reservation">
+                        <div class="rectangle" id="table-3">
+                            <div class="place c-30">3</div>
+                        </div>
+                    </li>
+                    <!-- c-30 -->
+                </ul>
+                <ul class="eleventh-ul">
+                    <li class="reservation">
+                        <div class="rectangle">
+                            <div class="place c-25"></div>
+                        </div>
+                    </li>
+                    <!-- c-25 -->
+                </ul>
+                <!-- eleventh-ul -->
+                <ul class="twelveth-ul">
+                    <li class="reservation">
+                        <div class="rectangle" id="table-2">
+                            <div class="place c-26">2</div>
+                        </div>
+                        <!-- c-26 -->
+                    </li>
+                    <li class="reservation">
+                        <div class="rectangle" id="table-1">
+                            <div class="place c-30">1</div>
+                        </div>
+                    </li>
+                    <!-- c-30 -->
+                </ul>
+                <!-- twelveth-ul -->
+            </div>
+            <!-- left-reserve -->
+            <div class="right-reserve">
+                <ul class="thirdtheenth-ul">
+                    <li class="reservation">
+                        <div class="rectangle" id="table-37">
+                            <div class="place c-31">37</div>
+                        </div>
+                    </li>
+                    <!-- c-31 -->
+                </ul>
+                <!-- thirdtheen-ul -->
+                <ul class="fourteenth-ul">
+                    <li class="reservation">
+                        <div class="rectangle rotatebg" id="table-38">
+                            <div class="place rotatep c-33">38</div>
+                        </div>
+                    </li>
+                    <!-- c-33 -->
+                </ul>
+                <!-- fourteenth-ul -->
+                <ul class="fivethenth-ul">
+                    <li class="reservation">
+                        <div class="rectangle">
+                            <div class="place c-25"></div>
+                        </div>
+                    </li>
+                    <!-- c-25 -->
+                </ul>
+                <!-- fivethenth-ul -->
+            </div>
+            <!-- right-reserve -->
+        </div>
+        <!-- container -->
+    </div>
+</div>
+@*<script src="~/Scripts/app/table-layouts.js"></script>*@
+@Scripts.Render("~/scripts/table-layouts")

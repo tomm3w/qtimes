@@ -1,0 +1,5 @@
+﻿body {
+}
+#logo, #input_baseUrl, #input_apiKey, #explore{
+    display:none!important;
+}

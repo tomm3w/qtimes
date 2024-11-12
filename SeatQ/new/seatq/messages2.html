@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>SeatQ</title>
+      <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+      <!-- styles -->
+      <link rel="stylesheet" type="text/css" href="assets/bootstrap/css/bootstrap.min.css">
+      <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-select.min.css">
+      <link rel="stylesheet" type="text/css" href="assets/css/app.css">
+      <link rel="stylesheet" type="text/css" href="assets/css/custom.css">
+      <!-- scripts -->
+      <script type="text/javascript" src="assets/js/jquery.js"></script>
+      <script type="text/javascript" src="assets/bootstrap/js/bootstrap.min.js"></script>
+      <script src="assets/bootstrap/js/bootstrap-select.js"></script>
+      <script type="text/javascript" src="assets/js/app.js"></script>
+   </head>
+   <body class="updated_new message2_body">
+      <div class="loader">
+         <div class="loader_txt_wrap">
+            <div class="loader_txt"></div>
+            <span class="lode">Loading....</span>
+         </div>
+      </div>
+      <div id="wrapper">
+         <div class="header-container">
+            <header id="header" class="container">
+               <div class="logo-time">
+                  <div id="logo">
+                     <h1><a href="index.html" title="Logo">WOW Alley Bowling
+                        </a>
+                     </h1>
+                     <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button"><span class="menu-icon"></span></a>
+                  </div>
+                  <!--end of logo-time-->
+                  <div class="time">
+                     9:15:53 AM
+                  </div>
+                  <!--end of time-->
+               </div>
+               <!--end of logo-time-->
+               <div class="header-table">
+                  <span class="bg-gray bg-only"></span>
+                  <table class="table">
+                     <thead>
+                        <tr>
+                           <th class="">TOTAL SPOTS</th>
+                           <th class="">AVAILABLE</th>
+                           <th class="">Waiting</th>
+                           <th class="">IN PLACE</th>
+                           <th class="align-right">SIZE</th>
+                           <th>1-4</th>
+                           <th>5-6</th>
+                           <th>7-8</th>
+                           <th>9+</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr>
+                           <td class="" rowspan="2"><span class="medium-text color-white">30</span></td>
+                           <td class="" rowspan="2"><span class="medium-text color-white">7</span></td>
+                           <td class="" rowspan="2"><span class="medium-text color-white">9</span></td>
+                           <td class="" rowspan="2"><span class="medium-text color-white">10</span></td>
+                           <td class="align-right"><span class="smallest-text color-halfwhite">Inline</span></td>
+                           <td>1</td>
+                           <td>1</td>
+                           <td>0</td>
+                           <td>0</td>
+                        </tr>
+                        <tr>
+                           <td class="align-right"><span class="smallest-text color-halfwhite">Turnline</span></td>
+                           <td>0</td>
+                           <td>0</td>
+                           <td>0</td>
+                           <td>0</td>
+                        </tr>
+                     </tbody>
+                  </table>
+                  <!-- end of table -->
+               </div>
+               <!--end of header-table-->
+               <a href="#" class="settings" title="Settings">Settings</a>
+               <a href="#" class="logout" title="Logout">Logout</a>
+            </header>
+            <!--end of header-->
+         </div>
+         <!--end of header-container-->
+         <div class="content-wrapper">
+            <aside id="sidebar" class="main-sidebar bg-darkgray">
+               <ul class="sidebar-menu">
+                  <li>
+                     <a href="#">
+                        <span class="seatq-icon_svg">
+                           <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="61" height="61" viewBox="0 0 61 61">
+                              <defs>
+                                 <linearGradient id="a" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+                                    <stop offset="0" stop-color="#6a6f7d"/>
+                                    <stop offset="1" stop-color="#64697a"/>
+                                 </linearGradient>
+                              </defs>
+                              <path d="M30.5,61A30.508,30.508,0,0,1,18.628,2.4,30.508,30.508,0,0,1,42.372,58.6,30.309,30.309,0,0,1,30.5,61Zm-.141-49.967a19.326,19.326,0,1,0,0,38.651,19.154,19.154,0,0,0,11.45-3.766l1.209,1.106a3.126,3.126,0,1,0,4.22-4.612l-1.058-.968A19.317,19.317,0,0,0,30.359,11.034Zm0,31.546a12.217,12.217,0,1,1,10.516-5.991l-3.281-3A3.126,3.126,0,0,0,33.373,38.2l3.037,2.779A12.22,12.22,0,0,1,30.359,42.58Z" transform="translate(0 0)" fill="url(#a)"/>
+                           </svg>
+                        </span>
+                     </a>
+                  </li>
+                  <li class="sidebar-menu_li"><a href="#"><span class="resv-icon grey_i"></span>Loyalty</a></li>
+                  <li class="sidebar-menu_li active"><a href="#"><span class="message-icon show"></span>Messages</a></li>
+                  <li class="sidebar-menu_li"><a href="#" title="Metrics"><span class="metrics-icon"></span>Metrics</a></li>
+               </ul>
+               <!-- end of sidebar-menu -->
+            </aside>
+            <!-- end of sidebar -->
+            <section class="content-header">
+               <div class="content_header_left">
+                  <h2 class="uppercase">MESSAGES</h2>
+               </div>
+               <div class="content_header_right">
+                  <a href="#" class="btn btn-primary add-new-reserve blue_right_btn" data-toggle="modal" data-target="#add-new-reserve_id">
+                     <span class="svg_add-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15">
+                           <path id="prefix__add_icon" d="M6 15V9H0V6h6V0h3v6h6v3H9v6z" style="fill:#fff"/>
+                        </svg>
+                     </span>
+                     ADD RULES
+                  </a>
+               </div>
+            </section>
+            <!-- end of content-header -->
+            <section class="content-body clearfix">
+               <div class="content-table custom-table-responsive">
+                  <table class="table">
+                     <thead>
+                        <tr class="shadow-bottom">
+                           <th width="20%">RULES</th>
+                           <th>TEXT</th>
+                           <th></th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr>
+                           <td>
+                              <p class="time_show_msg">
+                                 <svg class="grn_mg" xmlns="http://www.w3.org/2000/svg" width="23" height="23" viewBox="0 0 23 23">
+                                    <g id="prefix__iconfinder__message_2560342" transform="translate(-.5 -.5)">
+                                       <path id="prefix__Path_303" d="M19.7.5H4.3A3.8 3.8 0 0 0 .5 4.3v15.4a3.8 3.8 0 0 0 3.8 3.8h15.4a3.8 3.8 0 0 0 3.8-3.8V4.3A3.8 3.8 0 0 0 19.7.5zM12 17a4.484 4.484 0 0 1-1.1-.1 4.6 4.6 0 0 1-3 1.2 1.949 1.949 0 0 1-.8-.1l-.6-.3-.1-.1a.758.758 0 0 1-.2-.4c0-.2.1-.3.3-.4a2.345 2.345 0 0 0 1.1-1.1A5.181 5.181 0 0 1 5 11.4c0-3.1 3.1-5.6 7-5.6s7 2.5 7 5.6-3.1 5.6-7 5.6z" data-name="Path 303" style="fill:#2bb277"/>
+                                    </g>
+                                 </svg>
+                                 <span>30 minutes Before Time-In</span>
+                              </p>
+                           </td>
+                           <td>
+                              <p>Heads Up! Your game will start in 30 minutes please be ready.</p>
+                           </td>
+                           <td><a class="edit-msg">Edit</a></td>
+                        </tr>
+                        <tr>
+                           <td>
+                              <p class="time_show_msg">
+                                 <svg class="grn_mg" xmlns="http://www.w3.org/2000/svg" width="23" height="23" viewBox="0 0 23 23">
+                                    <g id="prefix__iconfinder__message_2560342" transform="translate(-.5 -.5)">
+                                       <path id="prefix__Path_303" d="M19.7.5H4.3A3.8 3.8 0 0 0 .5 4.3v15.4a3.8 3.8 0 0 0 3.8 3.8h15.4a3.8 3.8 0 0 0 3.8-3.8V4.3A3.8 3.8 0 0 0 19.7.5zM12 17a4.484 4.484 0 0 1-1.1-.1 4.6 4.6 0 0 1-3 1.2 1.949 1.949 0 0 1-.8-.1l-.6-.3-.1-.1a.758.758 0 0 1-.2-.4c0-.2.1-.3.3-.4a2.345 2.345 0 0 0 1.1-1.1A5.181 5.181 0 0 1 5 11.4c0-3.1 3.1-5.6 7-5.6s7 2.5 7 5.6-3.1 5.6-7 5.6z" data-name="Path 303" style="fill:#2bb277"/>
+                                    </g>
+                                 </svg>
+                                 <span>30 minutes Before Time-In</span>
+                              </p>
+                           </td>
+                           <td>
+                              <p>While you enjoying your game, please maintain a social distancing for everyone's safety, have a nice game!</p>
+                           </td>
+                           <td><a class="edit-msg">Edit</a></td>
+                        </tr>
+                        <tr>
+                           <td>
+                              <p class="time_show_msg">
+                                 <svg class="grn_mg" xmlns="http://www.w3.org/2000/svg" width="23" height="23" viewBox="0 0 23 23">
+                                    <g id="prefix__iconfinder__message_2560342" transform="translate(-.5 -.5)">
+                                       <path id="prefix__Path_303" d="M19.7.5H4.3A3.8 3.8 0 0 0 .5 4.3v15.4a3.8 3.8 0 0 0 3.8 3.8h15.4a3.8 3.8 0 0 0 3.8-3.8V4.3A3.8 3.8 0 0 0 19.7.5zM12 17a4.484 4.484 0 0 1-1.1-.1 4.6 4.6 0 0 1-3 1.2 1.949 1.949 0 0 1-.8-.1l-.6-.3-.1-.1a.758.758 0 0 1-.2-.4c0-.2.1-.3.3-.4a2.345 2.345 0 0 0 1.1-1.1A5.181 5.181 0 0 1 5 11.4c0-3.1 3.1-5.6 7-5.6s7 2.5 7 5.6-3.1 5.6-7 5.6z" data-name="Path 303" style="fill:#2bb277"/>
+                                    </g>
+                                 </svg>
+                                 <span>30 minutes After Time-Out</span>
+                              </p>
+                           </td>
+                           <td>
+                              <p>Thank you for visiting us, hope you enjoy your game with WOW Alley Bowling! Leave us review here: https://WowAlleyReview.bitly.com</p>
+                           </td>
+                           <td><a class="edit-msg">Edit</a></td>
+                        </tr>
+                        <tr>
+                           <td>
+                              <p class="time_show_msg">
+                                 <svg class="grn_mg" xmlns="http://www.w3.org/2000/svg" width="23" height="23" viewBox="0 0 23 23">
+                                    <g id="prefix__iconfinder__message_2560342" transform="translate(-.5 -.5)">
+                                       <path id="prefix__Path_303" d="M19.7.5H4.3A3.8 3.8 0 0 0 .5 4.3v15.4a3.8 3.8 0 0 0 3.8 3.8h15.4a3.8 3.8 0 0 0 3.8-3.8V4.3A3.8 3.8 0 0 0 19.7.5zM12 17a4.484 4.484 0 0 1-1.1-.1 4.6 4.6 0 0 1-3 1.2 1.949 1.949 0 0 1-.8-.1l-.6-.3-.1-.1a.758.758 0 0 1-.2-.4c0-.2.1-.3.3-.4a2.345 2.345 0 0 0 1.1-1.1A5.181 5.181 0 0 1 5 11.4c0-3.1 3.1-5.6 7-5.6s7 2.5 7 5.6-3.1 5.6-7 5.6z" data-name="Path 303" style="fill:#2bb277"/>
+                                    </g>
+                                 </svg>
+                                 <span>0 minutes after Confirmation</span>
+                              </p>
+                           </td>
+                           <td>
+                              <p>Thank you, your reservation was confirmed see you then!</p>
+                           </td>
+                           <td><a class="edit-msg">Edit</a></td>
+                        </tr>
+                     </tbody>
+                  </table>
+                  <!-- end of table -->
+               </div>
+               <!-- end of content-table -->
+            </section>
+            <!-- end of content-body -->
+         </div>
+         <!-- end of content-wrapper -->
+         <!-- Chat section -->
+         <span class="chat-overlay"></span>
+         <div class="chat-box">
+            <div class="chat-header">
+               <h2 class="chat-title">Johnathan Go</h2>
+               <a href="javascript:;" class="chat-close"><span></span></a>
+            </div>
+            <!--end of chat-header -->
+            <ul class="chat-msgs">
+               <li class="chat-details from-msg">
+                  <div class="from-details clearfix">
+                     <h3 class="pull-left color-green">Jonathan Go</h3>
+                     <span class="pull-right">7:00PM</span>
+                  </div>
+                  <div class="chat-content">
+                     Hello, we are five minutes late. Thanks
+                  </div>
+               </li>
+               <li class="chat-details own-msg">
+                  <div class="own-details clearfix">
+                     <h3 class="pull-right">You</h3>
+                     <span clas="pull-left">7:00PM</span>
+                  </div>
+                  <div class="chat-content">
+                     Hello, we are five minutes late. Thanks
+                  </div>
+               </li>
+               <li class="chat-details from-msg">
+                  <div class="from-details clearfix">
+                     <h3 class="pull-left color-green">Jonathan Go</h3>
+                     <span class="pull-right">7:00PM</span>
+                  </div>
+                  <div class="chat-content">
+                     Hello, we are five minutes late. Thanks
+                  </div>
+               </li>
+               <li class="chat-details own-msg">
+                  <div class="own-details clearfix">
+                     <h3 class="pull-right">You</h3>
+                     <span clas="pull-left">7:00PM</span>
+                  </div>
+                  <div class="chat-content">
+                     Hello, we are five minutes late. Thanks
+                  </div>
+               </li>
+               <li class="chat-details from-msg">
+                  <div class="from-details clearfix">
+                     <h3 class="pull-left color-green">Jonathan Go</h3>
+                     <span class="pull-right">7:00PM</span>
+                  </div>
+                  <div class="chat-content">
+                     Hello, we are five minutes late. Thanks
+                  </div>
+               </li>
+               <li class="chat-details own-msg">
+                  <div class="own-details clearfix">
+                     <h3 class="pull-right">You</h3>
+                     <span clas="pull-left">7:00PM</span>
+                  </div>
+                  <div class="chat-content">
+                     Hello, we are five minutes late. Thanks
+                  </div>
+               </li>
+               <li class="chat-details from-msg">
+                  <div class="from-details clearfix">
+                     <h3 class="pull-left color-green">Jonathan Go</h3>
+                     <span class="pull-right">7:00PM</span>
+                  </div>
+                  <div class="chat-content">
+                     Hello, we are five minutes late. Thanks
+                  </div>
+               </li>
+               <li class="chat-details own-msg">
+                  <div class="own-details clearfix">
+                     <h3 class="pull-right">You</h3>
+                     <span clas="pull-left">7:00PM</span>
+                  </div>
+                  <div class="chat-content">
+                     Hello, we are five minutes late. Thanks
+                  </div>
+               </li>
+               <li class="chat-details from-msg">
+                  <div class="from-details clearfix">
+                     <h3 class="pull-left color-green">Jonathan Go</h3>
+                     <span class="pull-right">7:00PM</span>
+                  </div>
+                  <div class="chat-content">
+                     Hello, we are five minutes late. Thanks
+                  </div>
+               </li>
+               <li class="chat-details own-msg">
+                  <div class="own-details clearfix">
+                     <h3 class="pull-right">You</h3>
+                     <span clas="pull-left">7:00PM</span>
+                  </div>
+                  <div class="chat-content">
+                     Hello, we are five minutes late. Thanks
+                  </div>
+               </li>
+               <li class="chat-details from-msg">
+                  <div class="from-details clearfix">
+                     <h3 class="pull-left color-green">Jonathan Go</h3>
+                     <span class="pull-right">7:00PM</span>
+                  </div>
+                  <div class="chat-content">
+                     Hello, we are five minutes late. Thanks
+                  </div>
+               </li>
+               <li class="chat-details own-msg">
+                  <div class="own-details clearfix">
+                     <h3 class="pull-right">You</h3>
+                     <span clas="pull-left">7:00PM</span>
+                  </div>
+                  <div class="chat-content">
+                     Hello, we are five minutes late. Thanks
+                  </div>
+               </li>
+            </ul>
+            <!-- end of chat-msgs -->
+            <form action="#" class="chat-textbox">
+               <input type="text" class="chat-input" placeholder="Enter reply here.." />
+               <input type="submit" class="chat-submit" value="Reply">
+            </form>
+            <!-- end of chat-textbox -->
+         </div>
+         <!--end of chat-box -->
+         <!-- Modal -->
+         <div class="modal fade new_rule" id="add-new-reserve_id" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+               <div class="modal-content">
+                  <div class="modal-header topic_only">
+                     <h4 class="modal-title uppercase" id="myModalLabel">NEW RULE</h4>
+                  </div>
+                  <!-- end of modal-header -->
+                  <div class="modal-body">
+                     <form action="#" class="theme-black-form">
+                        <div class="form_first">
+                           <div class="form-group res_fr_1 select_opt">
+                              <!-- <label>Name:</label> -->
+                              <label>Seating Preference</label>
+                              <select class="selectpicker">
+                                 <option>First Available</option>
+                                 <option>Second</option>
+                                 <option>Third</option>
+                              </select>
+                              <p class="noticep">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Send an automatic response using a certain parameter<br>
+                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ex.30 minutes - Before - Time In
+                              </p>
+                           </div>
+                        </div>
+                        <div class="form-group form_third select_opt">
+                           <label>Parameter</label>
+                           <div class="parameter_slct_wrap">
+                              <div class="parameter_slct">
+                                 <input type="text" placeholder="0">
+                              </div>
+                              <div class="parameter_slct">
+                                 <select class="selectpicker">
+                                    <option>Minutes</option>
+                                    <option>Second</option>
+                                    <option>Hours</option>
+                                 </select>
+                              </div>
+                              <div class="parameter_slct">
+                                 <select class="selectpicker">
+                                    <option>Before</option>
+                                    <option>After</option>
+                                 </select>
+                              </div>
+                              <div class="parameter_slct">
+                                 <select class="selectpicker">
+                                    <option>Time In</option>
+                                    <option>Time Out</option>
+                                 </select>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="form-group form_fourth">
+                           <label>Message</label>
+                           <textarea name="comments" cols="30" rows="5" class="form-control" placeholder="Compose your message..."></textarea>
+                        </div>
+                     </form>
+                     <!-- end of theme-black-form -->
+                  </div>
+                  <!-- end of modal-body -->
+                  <div class="modal-footer">
+                     <button type="button" class="btn btn-primary">
+                     ADD RULE</button>
+                     <button type="button" class="btn btn-default close-popup" data-dismiss="modal">Cancel</button>
+                  </div>
+                  <!-- end of modal-footer -->
+               </div>
+               <!-- end of modal-content -->
+            </div>
+            <!-- end of modal-dialog -->
+         </div>
+         <!-- end of modal -->
+      </div>
+      <!--end of wrapper-->
+   </body>
+</html>

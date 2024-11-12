@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SeatQ</title>
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+
+    <!-- styles -->
+    <link rel="stylesheet" type="text/css" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-select.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/app.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/custom.css">
+    <!-- scripts -->
+    <script type="text/javascript" src="assets/js/jquery.js"></script>
+    <script type="text/javascript" src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap-select.js"></script>
+    <script type="text/javascript" src="assets/js/app.js"></script>
+</head>
+<body class="updated_new message2_body staff_body">
+    <div class="loader">
+        <div class="loader_txt_wrap">
+            <div class="loader_txt"></div>
+            <span class="lode">Loading....</span>
+        </div>
+    </div>
+    <div id="wrapper">
+        <div class="header-container">
+            <header id="header" class="container">
+                <div class="logo-time">
+                    <div id="logo">
+                        <h1><a href="index.html" title="Logo">WOW Alley Bowling
+                        </a></h1>
+                        <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button"><span class="menu-icon"></span></a>
+                    </div><!--end of logo-time-->
+                    <div class="time">
+                        9:15:53 AM
+                    </div><!--end of time-->
+                </div><!--end of logo-time-->
+
+                <div class="header-table">
+                    <span class="bg-gray bg-only"></span>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th class="center_no">TOTAL SPOTS</th>
+                                <th class="center_no">AVAILABLE</th>
+                                <th class="center_no">Waiting</th>
+                                <th class="center_no">IN PLACE</th>
+                                <th class="align-right">SIZE</th>
+                                <th>1-4</th>
+                                <th>5-6</th>
+                                <th>7-8</th>
+                                <th>9+</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="center_no" rowspan="2"><span class="medium-text color-white">0</span></td>
+                                <td class="center_no" rowspan="2"><span class="medium-text color-white">0</span></td>
+                                <td class="center_no" rowspan="2"><span class="medium-text color-white">0</span></td>
+                                <td class="center_no" rowspan="2"><span class="medium-text color-white">0</span></td>
+                                <td class="align-right"><span class="smallest-text color-halfwhite">Inline</span></td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                            </tr>
+                            <tr>
+                                <td class="align-right"><span class="smallest-text color-halfwhite">Turnline</span></td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                            </tr>
+                        </tbody>
+                    </table><!-- end of table -->
+                </div><!--end of header-table-->
+                <a href="#" class="settings" title="Settings">Settings</a>
+                <a href="#" class="logout" title="Logout">Logout</a>
+            </header><!--end of header-->
+        </div><!--end of header-container-->
+
+
+        <div class="content-wrapper">
+            <aside id="sidebar" class="main-sidebar bg-darkgray">
+               <ul class="sidebar-menu">
+                <li><a href="#">
+                    <span class="seatq-icon_svg">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="61" height="61" viewBox="0 0 61 61"><defs><linearGradient id="a" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox"><stop offset="0" stop-color="#6a6f7d"/><stop offset="1" stop-color="#64697a"/></linearGradient></defs><path d="M30.5,61A30.508,30.508,0,0,1,18.628,2.4,30.508,30.508,0,0,1,42.372,58.6,30.309,30.309,0,0,1,30.5,61Zm-.141-49.967a19.326,19.326,0,1,0,0,38.651,19.154,19.154,0,0,0,11.45-3.766l1.209,1.106a3.126,3.126,0,1,0,4.22-4.612l-1.058-.968A19.317,19.317,0,0,0,30.359,11.034Zm0,31.546a12.217,12.217,0,1,1,10.516-5.991l-3.281-3A3.126,3.126,0,0,0,33.373,38.2l3.037,2.779A12.22,12.22,0,0,1,30.359,42.58Z" transform="translate(0 0)" fill="url(#a)"/></svg>
+                    </span>
+                </a></li>
+                <li class="sidebar-menu_li"><a href="#"><span class="seat-icon-grey"></span>wait List</a></li>
+                <li class="sidebar-menu_li"><a href="#"><span class="seat-icon"></span>Seating</a></li>
+                <li class="sidebar-menu_li"><a href="#"><span class="resv-icon grey_i"></span>Loyalty</a></li>
+                <li class="sidebar-menu_li"><a href="#"><span class="message-icon"></span>Messages</a></li>
+                <li class="sidebar-menu_li"><a href="#"><span class="loyal-icon"></span>Loyalty</a></li>
+                <li class="sidebar-menu_li"><a href="#"><span class="metrics-icon"></span>Metrics</a></li>
+                <li class="sidebar-menu_li active"><a href="#"><span class="staff-icon show"></span>Staff</a></li>
+            </ul><!-- end of sidebar-menu -->
+        </aside><!-- end of sidebar -->
+        <section class="content-header">
+            <div class="content_header_left">
+                <h2 class="uppercase">MESSAGES</h2>
+            </div>
+            <div class="content_header_right">
+                <a href="#" class="btn btn-primary add-new-reserve blue_right_btn" data-toggle="modal" data-target="#add-new-reserve_id">
+                  <span class="svg_add-icon"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15">
+                    <path id="prefix__add_icon" d="M6 15V9H0V6h6V0h3v6h6v3H9v6z" style="fill:#fff"/>
+                </svg></span>ADD STAFF</a>
+            </div>
+        </section><!-- end of content-header -->
+
+        <section class="content-body clearfix">
+            <div class="content-table custom-table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                        <tr class="shadow-bottom">
+                            <th>NAME</th>
+                            <th>TYPE</th>
+                            <th>EMAIL</th>
+                            <th>LAST ACCESS</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                           <td>
+                            <p>
+                            Angelina Winn</p></td>
+                            <td><p>Hostess</p></td>
+                            <td><p>angelina@mail.com</p></td>
+                            <td><p>04/30/2020 08:08:49</p></td>
+                            <td><a class="edit-msg">Edit</a></td>
+                        </tr>
+                        <tr>
+                           <td><p>Joshua Mcnair</p></td>
+                           <td><p>Wait Staff</p></td>
+                           <td><p>joshua@mail.com</p></td>
+                           <td><p>04/30/2020 08:08:49</p></td>
+                           <td><a class="edit-msg">Edit</a></td>
+                       </tr>
+                       <tr>
+                           <td><p>
+                           Anita Cruz</p></td>
+                           <td><p>Wait Staff</p></td>
+                           <td><p>anitac@mail.com</p></td>
+                           <td><p>04/30/2020 08:08:49</p></td>
+                           <td><a class="edit-msg">Edit</a></td>
+                       </tr>
+                       <tr>
+                           <td><p>Alec Whitten</p></td>
+                           <td><p>Wait Staff</p></td>
+                           <td><p>alecc@mail.com</p></td>
+                           <td><p>04/30/2020 08:08:49</p></td>
+                           <td><a class="edit-msg">Edit</a></td>
+                       </tr>
+                   </tbody>
+               </table><!-- end of table -->
+           </div><!-- end of content-table -->
+       </section><!-- end of content-body -->
+   </div><!-- end of content-wrapper -->
+   <!-- Chat section -->
+   <span class="chat-overlay"></span>
+   <div class="chat-box">
+    <div class="chat-header">
+        <h2 class="chat-title">Johnathan Go</h2>
+        <a href="javascript:;" class="chat-close"><span></span></a>
+    </div><!--end of chat-header -->
+
+    <ul class="chat-msgs">
+        <li class="chat-details from-msg">
+            <div class="from-details clearfix">
+                <h3 class="pull-left color-green">Jonathan Go</h3>
+                <span class="pull-right">7:00PM</span>
+            </div>
+            <div class="chat-content">
+                Hello, we are five minutes late. Thanks
+            </div>
+        </li>
+        <li class="chat-details own-msg">
+            <div class="own-details clearfix">
+                <h3 class="pull-right">You</h3>
+                <span clas="pull-left">7:00PM</span>
+            </div>
+            <div class="chat-content">
+                Hello, we are five minutes late. Thanks
+            </div>
+        </li>
+        <li class="chat-details from-msg">
+            <div class="from-details clearfix">
+                <h3 class="pull-left color-green">Jonathan Go</h3>
+                <span class="pull-right">7:00PM</span>
+            </div>
+            <div class="chat-content">
+                Hello, we are five minutes late. Thanks
+            </div>
+        </li>
+        <li class="chat-details own-msg">
+            <div class="own-details clearfix">
+                <h3 class="pull-right">You</h3>
+                <span clas="pull-left">7:00PM</span>
+            </div>
+            <div class="chat-content">
+                Hello, we are five minutes late. Thanks
+            </div>
+        </li>
+        <li class="chat-details from-msg">
+            <div class="from-details clearfix">
+                <h3 class="pull-left color-green">Jonathan Go</h3>
+                <span class="pull-right">7:00PM</span>
+            </div>
+            <div class="chat-content">
+                Hello, we are five minutes late. Thanks
+            </div>
+        </li>
+        <li class="chat-details own-msg">
+            <div class="own-details clearfix">
+                <h3 class="pull-right">You</h3>
+                <span clas="pull-left">7:00PM</span>
+            </div>
+            <div class="chat-content">
+                Hello, we are five minutes late. Thanks
+            </div>
+        </li>
+
+        <li class="chat-details from-msg">
+            <div class="from-details clearfix">
+                <h3 class="pull-left color-green">Jonathan Go</h3>
+                <span class="pull-right">7:00PM</span>
+            </div>
+            <div class="chat-content">
+                Hello, we are five minutes late. Thanks
+            </div>
+        </li>
+        <li class="chat-details own-msg">
+            <div class="own-details clearfix">
+                <h3 class="pull-right">You</h3>
+                <span clas="pull-left">7:00PM</span>
+            </div>
+            <div class="chat-content">
+                Hello, we are five minutes late. Thanks
+            </div>
+        </li>
+        <li class="chat-details from-msg">
+            <div class="from-details clearfix">
+                <h3 class="pull-left color-green">Jonathan Go</h3>
+                <span class="pull-right">7:00PM</span>
+            </div>
+            <div class="chat-content">
+                Hello, we are five minutes late. Thanks
+            </div>
+        </li>
+        <li class="chat-details own-msg">
+            <div class="own-details clearfix">
+                <h3 class="pull-right">You</h3>
+                <span clas="pull-left">7:00PM</span>
+            </div>
+            <div class="chat-content">
+                Hello, we are five minutes late. Thanks
+            </div>
+        </li>
+        <li class="chat-details from-msg">
+            <div class="from-details clearfix">
+                <h3 class="pull-left color-green">Jonathan Go</h3>
+                <span class="pull-right">7:00PM</span>
+            </div>
+            <div class="chat-content">
+                Hello, we are five minutes late. Thanks
+            </div>
+        </li>
+        <li class="chat-details own-msg">
+            <div class="own-details clearfix">
+                <h3 class="pull-right">You</h3>
+                <span clas="pull-left">7:00PM</span>
+            </div>
+            <div class="chat-content">
+                Hello, we are five minutes late. Thanks
+            </div>
+        </li>
+    </ul><!-- end of chat-msgs -->
+
+
+    <form action="#" class="chat-textbox">
+        <input type="text" class="chat-input" placeholder="Enter reply here.." />
+        <input type="submit" class="chat-submit" value="Reply">
+    </form><!-- end of chat-textbox -->
+</div><!--end of chat-box -->
+<!-- Modal -->
+<div class="modal fade add_staff" id="add-new-reserve_id" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title uppercase" id="myModalLabel">NEW STAFF</h4>
+                <div class="right_coner">
+                   <ul>
+                    <li class="active"> <div class="input_radio">
+                        <input type="radio" name="radio">
+                        <span class="input_chk"></span></div>Active</li>
+                        <li>
+                            <div class="input_radio">
+                                <input type="radio" name="radio">
+                                <span class="input_chk"></span></div>Block</li>
+                            </ul>
+                        </div>
+                    </div><!-- end of modal-header -->
+                    <div class="modal-body">
+                        <form action="#" class="theme-black-form">
+                            <div class="form_first">
+                                <div class="form-group res_fr_1">
+                                    <label>Name</label>
+                                    <input type="text" class="form-control" placeholder="Enter name">
+                                </div>
+                                <div class="form-group res_fr_2">
+                                    <label>Mobile No.</label>
+                                    <input type="text" class="form-control" placeholder="+1">
+                                </div>
+                                <div class="form-group res_fr_1 select_opt">
+                                    <label>Type</label>
+                                    <div class="parameter_slct">
+                                        <select class="selectpicker">
+                                            <option>Choose type</option>
+                                            <option>Choose type</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group res_fr_2">
+                                    <label>Password.</label>
+                                    <input type="text" class="form-control" placeholder="">
+                                </div>
+                            </div>
+                        </form><!-- end of theme-black-form -->
+                    </div><!-- end of modal-body -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary">
+                        SUBMIT</button>
+                        <button type="button" class="btn btn-default close-popup" data-dismiss="modal">Cancel</button>
+                    </div><!-- end of modal-footer -->
+                </div><!-- end of modal-content -->
+            </div><!-- end of modal-dialog -->
+        </div><!-- end of modal -->
+
+    </div><!--end of wrapper-->
+</body>
+</html>

@@ -1,0 +1,91 @@
+﻿@{
+    string CurrentURL = Url.Action();
+}
+
+<style>
+    .notifyjs-corner {
+        z-index: 999999;
+    }
+</style>
+@if (!CurrentURL.ToLower().Contains("/admin/accounts"))
+{
+    <div class="header-container">
+        <header id="header" class="container">
+            <div class="logo-time">
+                <div id="logo">
+                    <h1>
+                        <a href="#" title="Logo" id="businessName">
+                        </a>
+                    </h1>
+                    <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button"><span class="menu-icon"></span></a>
+                </div>
+                <!--end of logo-time-->
+                <div class="time" id="time">
+                </div>
+                <!--end of time-->
+            </div>
+            <!--end of logo-time-->
+            <div class="header-table">
+                <span class="bg-gray bg-only"></span>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th class="center_no">TOTAL SPOTS</th>
+                            <th class="center_no">AVAILABLE</th>
+                            <th class="center_no">Waiting</th>
+                            <th class="center_no">IN PLACE</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="center_no" rowspan="2"><span class="medium-text color-white" id="totalSpots">0</span></td>
+                            <td class="center_no" rowspan="2"><span class="medium-text color-white" id="available">0</span></td>
+                            <td class="center_no" rowspan="2"><span class="medium-text color-white" id="waiting">0</span></td>
+                            <td class="center_no" rowspan="2"><span class="medium-text color-white" id="inPlace">0</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <!-- end of table -->
+            </div>
+            <!--end of header-table-->
+            <a href="/admin/accounts" class="account" title="Account">Account</a>
+            <a href="/admin/settings/account" class="settings" title="Settings">Settings</a>
+            <a href="@Url.Action("Logout", "Account", new { area = "Identity" })" class="logout">Logout</a>
+        </header>
+    </div>
+}
+else
+{
+    <style>
+        content-wrapper {
+            margin-left: 0;
+        }
+
+        .concert__event #header {
+            height: 44px !important;
+        }
+
+        .updated_new .header-container {
+            width: 100% !important;
+            margin-left: 0;
+        }
+        .updated_new .content-wrapper {
+            top: 44px;
+            margin-left: 0px;
+        }
+        .logout{
+            top:12px;
+        }
+    </style>
+    <div class="header-container">
+        <header id="header" class="container">
+            <a href="@Url.Action("Logout", "Account", new { area = "Identity" })" class="logout">Logout</a>
+        </header>
+    </div>
+}
+<environment include="Development">
+    <script src="~/Scripts/app/reservation/header.js"></script>
+</environment>
+<environment exclude="Development">
+    <script src="~/Scripts/app/reservation/header.min.js"></script>
+</environment>

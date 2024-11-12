@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>SeatQ</title>
+      <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+      <!-- styles -->
+      <link rel="stylesheet" type="text/css" href="assets/bootstrap/css/bootstrap.min.css">
+      <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-select.min.css">
+      <link rel="stylesheet" type="text/css" href="assets/css/app.css">
+      <link rel="stylesheet" type="text/css" href="assets/css/custom.css">
+      <!-- scripts -->
+      <script type="text/javascript" src="assets/js/jquery.js"></script>
+      <script type="text/javascript" src="assets/bootstrap/js/bootstrap.min.js"></script>
+      <script src="assets/bootstrap/js/bootstrap-select.js"></script>
+      <script type="text/javascript" src="assets/js/app.js"></script>
+   </head>
+   <body class="updated_new preference_body accont_coms">
+      <div class="loader">
+         <div class="loader_txt_wrap">
+            <div class="loader_txt"></div>
+            <span class="lode">Loading....</span>
+         </div>
+      </div>
+      <div id="wrapper">
+         <div class="header-container">
+            <header id="header" class="container">
+               <div class="logo-time">
+                  <div id="logo">
+                     <h1>
+                        <a href="index.html" title="Logo">
+                           WOW Alley Bowling
+                           <!-- <span class="username">Brianne!</span> -->
+                        </a>
+                     </h1>
+                     <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button"><span class="menu-icon"></span></a>
+                  </div>
+                  <!--end of logo-time-->
+                  <div class="time">
+                     <!-- <span class="time-icon"></span>  -->
+                     9:15:53 AM
+                  </div>
+                  <!--end of time-->
+               </div>
+               <!--end of logo-time-->
+               <div class="header-table">
+                  <span class="bg-gray bg-only"></span>
+                  <table class="table">
+                     <thead>
+                        <tr>
+                           <th>TOTAL SPOTS</th>
+                           <th>AVAILABLE</th>
+                           <th>Waiting</th>
+                           <th>IN PLACE</th>
+                           <th class="align-right">SIZE</th>
+                           <th>1-4</th>
+                           <th>5-6</th>
+                           <th>7-8</th>
+                           <th>9+</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr>
+                           <td rowspan="2"><span class="medium-text color-white">30</span></td>
+                           <td rowspan="2"><span class="medium-text color-white">7</span></td>
+                           <td rowspan="2"><span class="medium-text color-white">9</span></td>
+                           <td rowspan="2"><span class="medium-text color-white">10</span></td>
+                           <td class="align-right"><span class="smallest-text color-halfwhite">Inline</span></td>
+                           <td>1</td>
+                           <td>1</td>
+                           <td>0</td>
+                           <td>0</td>
+                        </tr>
+                        <tr>
+                           <td class="align-right"><span class="smallest-text color-halfwhite">Turnline</span></td>
+                           <td>0</td>
+                           <td>0</td>
+                           <td>0</td>
+                           <td>0</td>
+                        </tr>
+                     </tbody>
+                  </table>
+                  <!-- end of table -->
+               </div>
+               <!--end of header-table-->
+               <a href="#" class="settings" title="Settings">Settings</a>
+               <a href="#" class="logout" title="Logout">Logout</a>
+            </header>
+            <!--end of header-->
+         </div>
+         <!--end of header-container-->
+         <div class="content-wrapper">
+            <aside id="sidebar" class="main-sidebar bg-darkgray">
+               <ul class="sidebar-menu">
+                  <li>
+                     <a href="#">
+                        <span class="seatq-icon_svg">
+                           <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="61" height="61" viewBox="0 0 61 61">
+                              <defs>
+                                 <linearGradient id="a" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+                                    <stop offset="0" stop-color="#6a6f7d"/>
+                                    <stop offset="1" stop-color="#64697a"/>
+                                 </linearGradient>
+                              </defs>
+                              <path d="M30.5,61A30.508,30.508,0,0,1,18.628,2.4,30.508,30.508,0,0,1,42.372,58.6,30.309,30.309,0,0,1,30.5,61Zm-.141-49.967a19.326,19.326,0,1,0,0,38.651,19.154,19.154,0,0,0,11.45-3.766l1.209,1.106a3.126,3.126,0,1,0,4.22-4.612l-1.058-.968A19.317,19.317,0,0,0,30.359,11.034Zm0,31.546a12.217,12.217,0,1,1,10.516-5.991l-3.281-3A3.126,3.126,0,0,0,33.373,38.2l3.037,2.779A12.22,12.22,0,0,1,30.359,42.58Z" transform="translate(0 0)" fill="url(#a)"/>
+                           </svg>
+                        </span>
+                     </a>
+                  </li>
+                  <li class="sidebar-menu_li"><a href="#"><span class="resv-icon grey_i"></span>Loyalty</a></li>
+                  <li class="sidebar-menu_li"><a href="#"><span class="message-icon"></span>Messages</a></li>
+                  <li class="sidebar-menu_li"><a href="#"><span class="metrics-icon"></span>Metrics</a></li>
+               </ul>
+               <!-- end of sidebar-menu -->
+            </aside>
+            <!-- end of sidebar -->
+            <section class="content-header">
+               <div class="content_header_left">
+                  <h2 class="uppercase">SETTINGS</h2>
+                  <div class="navigation_lft">
+                     <ul>
+                        <li><a href="#">Account Setup</a></li>
+                        <li class="active"><a href="#">Preferences</a></li>
+                        <li><a href="#">Business Profile</a></li>
+                     </ul>
+                  </div>
+               </div>
+            </section>
+            <!-- end of content-header -->
+            <section class="content-header_prf">
+               <h2 class="uppercase">PREFERENCES</h2>
+               <a href="#" class="btn btn-primary">
+               SAVE CHANGES</a>
+            </section>
+            <section class="content-body clearfix">
+               <div class="account_form content-body_prf">
+                  <label class="avai_label">Availability</label>
+                  <form>
+                     <div class="form_ac">
+                        <div class="form-group">
+                           <label class="select_lbl">Open Days</label>
+                           <ul class="select_from_to select_opt">
+                              <li>
+                                 <div class="select_from_to_wrap">
+                                    <select class="form-control selectpicker" id="select_day_from">
+                                       <option>Monday</option>
+                                       <option>Tuesday</option>
+                                       <option>Wednesday</option>
+                                       <option>Thursday</option>
+                                       <option>Friday</option>
+                                       <option>Saturday</option>
+                                       <option>Sunday</option>
+                                    </select>
+                                 </div>
+                              </li>
+                              <!-- <span class="sepreate_to">to</span> -->
+                              to
+                              <li>
+                                 <!-- <label class="select_lbl">Open Hour</label> -->
+                                 <div class="select_from_to_wrap">
+                                    <select class="form-control selectpicker" id="select_day_to">
+                                       <option>Friday</option>
+                                       <option>Saturday</option>
+                                       <option>Sunday</option>
+                                       <option>Monday</option>
+                                       <option>Tuesday</option>
+                                       <option>Wednesday</option>
+                                       <option>Thursday</option>
+                                    </select>
+                                 </div>
+                              </li>
+                           </ul>
+                        </div>
+                        <div class="form-group">
+                           <label class="select_lbl">Open Hour</label>
+                           <ul class="select_am_pm select_opt">
+                              <li>
+                                 <input type="text" class="form-control" placeholder="06:00">
+                                 <div class="select_am_pm_wrap">
+                                    <select class="form-control selectpicker" id="select_day_to">
+                                       <option>AM</option>
+                                       <option>PM</option>
+                                    </select>
+                                 </div>
+                              </li>
+                              to
+                              <li>
+                                 <input type="text" class="form-control" placeholder="07:00">
+                                 <div class="select_am_pm_wrap">
+                                    <select class="form-control selectpicker" id="select_day_to">
+                                       <option>PM</option>
+                                       <option>AM</option>
+                                    </select>
+                                 </div>
+                              </li>
+                           </ul>
+                        </div>
+                     </div>
+                  </form>
+               </div>
+               <div class="account_form content-body_prf">
+                  <form>
+                     <div class="form_ac">
+                        <div class="form-group limiteshow_wrap">
+                           <label class="avai_label">LIMITATATION</label>
+                           <ul class="limiteshow">
+                              <li>
+                                 <div class="checkbox_head">
+                                    <div class="check_box_grn">
+                                       <input type="checkbox">
+                                       <label class="checkmark"></label>
+                                    </div>
+                                    <span class="ck_txt">LIMIT SIZE PER HOUR</span>
+                                 </div>
+                                 <div class="lft_limit_wrap">
+                                    <label class="lft_limit">LIMIT</label>
+                                    <input type="text" class="form-control" placeholder="24">
+                                 </div>
+                              </li>
+                              <li class="limiteshow_ul_two">
+                                 <div class="checkbox_head">
+                                    <div class="check_box_grn">
+                                       <input type="checkbox">
+                                       <label class="checkmark"></label>
+                                    </div>
+                                    <span class="ck_txt">LIMIT TIME per reservation</span>
+                                 </div>
+                                 <div class="lft_limit_wrap">
+                                    <label class="lft_limit min_max">Minimum</label>
+                                    <input type="text" class="form-control" placeholder="1">
+                                    <div class="select_am_pm_wrap select_opt">
+                                       <select class="form-control selectpicker" id="select_day_to">
+                                          <option>Hrs</option>
+                                          <option>Hrs</option>
+                                       </select>
+                                    </div>
+                                 </div>
+                                 <div class="lft_limit_wrap">
+                                    <label class="lft_limit min_max">Maximum</label>
+                                    <input type="text" class="form-control" placeholder="3">
+                                    <div class="select_am_pm_wrap select_opt">
+                                       <select class="form-control selectpicker" id="select_day_to">
+                                          <option>Hrs</option>
+                                          <option>Hrs</option>
+                                       </select>
+                                    </div>
+                                 </div>
+                              </li>
+                              <li>
+                                 <div class="checkbox_head">
+                                    <div class="check_box_grn">
+                                       <input type="checkbox">
+                                       <label class="checkmark"></label>
+                                    </div>
+                                    <span class="ck_txt">LIMIT SIZE PER GROUP</span>
+                                 </div>
+                                 <div class="lft_limit_wrap">
+                                    <label class="lft_limit">LIMIT</label>
+                                    <input type="text" class="form-control" placeholder="5">
+                                 </div>
+                              </li>
+                           </ul>
+                        </div>
+                        
+                       
+                     </div>
+                  </form>
+               </div>
+                <div class="account_form content-body_prf">
+                           <div class="form-group limiteshow_wrap know_info_opt">
+                              <label class="avai_label">BOOKING OPTIONS</label>
+                              <ul class="limiteshow">
+                                 <li>
+                                    <div class="checkbox_head">
+                                       <div class="check_box_grn">
+                                          <input type="checkbox">
+                                          <label class="checkmark"></label>
+                                       </div>
+                                       <span class="ck_txt">Drivers License</span>
+                                    </div>
+                                    <div class="lft_limit_wrap">
+                                       <label class="lft_limit">Add drivers License during signup</label>
+                                    </div>
+                                 </li>
+                                 <li class="limiteshow_ul_two">
+                                    <div class="checkbox_head">
+                                       <div class="check_box_grn">
+                                          <input type="checkbox">
+                                          <label class="checkmark"></label>
+                                       </div>
+                                       <span class="ck_txt">Tickets &amp; Payments</span>
+                                    </div>
+                                    <div class="lft_limit_wrap">
+                                       <label class="lft_limit">Setup ticket pricing and payment options</label>
+                                    </div>
+                                 </li>
+                                 <li>
+                                    <div class="checkbox_head">
+                                       <div class="check_box_grn">
+                                          <input type="checkbox">
+                                          <label class="checkmark"></label>
+                                       </div>
+                                       <span class="ck_txt">Use Seating Methods</span>
+                                    </div>
+                                    <div class="lft_limit_wrap">
+                                       <label class="lft_limit">Include &amp; use seatmap</label>
+                                    </div>
+                                 </li>
+                              </ul>
+                           </div>
+                        </div>
+            </section>
+            <!-- end of content-body -->
+         </div>
+         <!-- end of content-wrapper -->
+         <!-- Chat section -->
+         <span class="chat-overlay"></span>
+         <div class="chat-box">
+            <div class="chat-header">
+               <h2 class="chat-title">Johnathan Go</h2>
+               <a href="javascript:;" class="chat-close"><span></span></a>
+            </div>
+            <!--end of chat-header -->
+            <ul class="chat-msgs">
+               <li class="chat-details from-msg">
+                  <div class="from-details clearfix">
+                     <h3 class="pull-left color-green">Jonathan Go</h3>
+                     <span class="pull-right">7:00PM</span>
+                  </div>
+                  <div class="chat-content">
+                     Hello, we are five minutes late. Thanks
+                  </div>
+               </li>
+               <li class="chat-details own-msg">
+                  <div class="own-details clearfix">
+                     <h3 class="pull-right">You</h3>
+                     <span clas="pull-left">7:00PM</span>
+                  </div>
+                  <div class="chat-content">
+                     Hello, we are five minutes late. Thanks
+                  </div>
+               </li>
+               <li class="chat-details from-msg">
+                  <div class="from-details clearfix">
+                     <h3 class="pull-left color-green">Jonathan Go</h3>
+                     <span class="pull-right">7:00PM</span>
+                  </div>
+                  <div class="chat-content">
+                     Hello, we are five minutes late. Thanks
+                  </div>
+               </li>
+               <li class="chat-details own-msg">
+                  <div class="own-details clearfix">
+                     <h3 class="pull-right">You</h3>
+                     <span clas="pull-left">7:00PM</span>
+                  </div>
+                  <div class="chat-content">
+                     Hello, we are five minutes late. Thanks
+                  </div>
+               </li>
+               <li class="chat-details from-msg">
+                  <div class="from-details clearfix">
+                     <h3 class="pull-left color-green">Jonathan Go</h3>
+                     <span class="pull-right">7:00PM</span>
+                  </div>
+                  <div class="chat-content">
+                     Hello, we are five minutes late. Thanks
+                  </div>
+               </li>
+               <li class="chat-details own-msg">
+                  <div class="own-details clearfix">
+                     <h3 class="pull-right">You</h3>
+                     <span clas="pull-left">7:00PM</span>
+                  </div>
+                  <div class="chat-content">
+                     Hello, we are five minutes late. Thanks
+                  </div>
+               </li>
+               <li class="chat-details from-msg">
+                  <div class="from-details clearfix">
+                     <h3 class="pull-left color-green">Jonathan Go</h3>
+                     <span class="pull-right">7:00PM</span>
+                  </div>
+                  <div class="chat-content">
+                     Hello, we are five minutes late. Thanks
+                  </div>
+               </li>
+               <li class="chat-details own-msg">
+                  <div class="own-details clearfix">
+                     <h3 class="pull-right">You</h3>
+                     <span clas="pull-left">7:00PM</span>
+                  </div>
+                  <div class="chat-content">
+                     Hello, we are five minutes late. Thanks
+                  </div>
+               </li>
+               <li class="chat-details from-msg">
+                  <div class="from-details clearfix">
+                     <h3 class="pull-left color-green">Jonathan Go</h3>
+                     <span class="pull-right">7:00PM</span>
+                  </div>
+                  <div class="chat-content">
+                     Hello, we are five minutes late. Thanks
+                  </div>
+               </li>
+               <li class="chat-details own-msg">
+                  <div class="own-details clearfix">
+                     <h3 class="pull-right">You</h3>
+                     <span clas="pull-left">7:00PM</span>
+                  </div>
+                  <div class="chat-content">
+                     Hello, we are five minutes late. Thanks
+                  </div>
+               </li>
+               <li class="chat-details from-msg">
+                  <div class="from-details clearfix">
+                     <h3 class="pull-left color-green">Jonathan Go</h3>
+                     <span class="pull-right">7:00PM</span>
+                  </div>
+                  <div class="chat-content">
+                     Hello, we are five minutes late. Thanks
+                  </div>
+               </li>
+               <li class="chat-details own-msg">
+                  <div class="own-details clearfix">
+                     <h3 class="pull-right">You</h3>
+                     <span clas="pull-left">7:00PM</span>
+                  </div>
+                  <div class="chat-content">
+                     Hello, we are five minutes late. Thanks
+                  </div>
+               </li>
+            </ul>
+            <!-- end of chat-msgs -->
+            <form action="#" class="chat-textbox">
+               <input type="text" class="chat-input" placeholder="Enter reply here.." />
+               <input type="submit" class="chat-submit" value="Reply">
+            </form>
+            <!-- end of chat-textbox -->
+         </div>
+         <!--end of chat-box -->
+      </div>
+      <!--end of wrapper-->
+   </body>
+</html>

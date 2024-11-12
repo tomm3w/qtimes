@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        QTimes
+    </title>
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+    <environment include="Development">
+        <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+        <!-- styles -->
+        <link rel="stylesheet" type="text/css" href="~/content/assets/bootstrap/3.3.5/bootstrap.min.css">
+        <link rel="stylesheet" href="~/content/assets/bootstrap/css/bootstrap-select.min.css">
+        <link href="/Content/intl-tel-input/css/intlTelInput.min.css" rel="stylesheet" />
+        <link rel="stylesheet" type="text/css" href="~/content/assets/css/app.css">
+        <link rel="stylesheet" type="text/css" href="~/content/assets/css/custom.css">
+        <link rel="stylesheet" type="text/css" href="/content/assets/css/style.css">
+    </environment>
+    <environment exclude="Development">
+        <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,800;1,900&display=swap" rel="stylesheet">
+        <link href="/css/vendor.min.css" rel="stylesheet" />
+        <link href="/css/admin.min.css" rel="stylesheet" />
+    </environment>
+    @Html.Raw(JavaScriptSnippet.FullScript)
+    <script>
+        var webserviceURL = "@ViewBag.CoreApiEndpoint";
+    </script>
+    <environment include="Development">
+        <script src="/Content/assets/js/jquery-3.5.1.js"></script>
+        <script src="/Content/assets/bootstrap/3.3.5/bootstrap.min.js"></script>
+        <script src="/Content/assets/bootstrap/js/bootstrap-select.js"></script>
+        <script type="text/javascript" src="/Content/assets/js/app.js"></script>
+        <script src="/Content/intl-tel-input/js/intlTelInput.min.js"></script>
+        <script src="/Scripts/knockout-3.5.1.js"></script>
+        <script src="/Scripts/jquery.cookie.js"></script>
+        <script src="/Scripts/notify.min.js"></script>
+        <script src="/Scripts/moment.min.js"></script>
+        <script src="/Scripts/utility.js"></script>
+        <script src="/Scripts/timezones.full.min.js"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="/js/vendor.min.js"></script>
+        <script src="/js/site.min.js"></script>
+    </environment>
+    <style>
+        .updated_new .content-wrapper {
+            top: 85px;
+        }
+    </style>
+</head>
+<body class="updated_new">
+    @Html.Partial("_Loading")
+    <div id="wrapper">
+        @Html.Partial("_PartialHeader")
+        @RenderBody()
+    </div>
+</body>
+</html>

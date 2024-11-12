@@ -1,0 +1,50 @@
+﻿@{
+    ViewBag.Title = "Log In";
+    Layout = "~/Views/Shared/_LayoutHomeNew.cshtml";
+}
+@model SeatQ.core.dal.Models.LoginModel
+
+<section id="loginForm" class="form-design">
+    @using (Html.BeginForm(new { ReturnUrl = ViewBag.ReturnUrl }))
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+        <fieldset>
+            <legend>SIGN IN FORM</legend>
+            <ul class="list-unstyled">
+                <li class="text-center"><h2 class="link-gray">SIGN IN</h2></li>
+                <li>
+                    @Html.TextBoxFor(m => m.UserName, new { @placeholder = "Username" })
+                    @Html.ValidationMessageFor(m => m.UserName)
+                </li>
+                <li>
+                    @Html.PasswordFor(m => m.Password, new { @placeholder = "Password" })
+                    @Html.ValidationMessageFor(m => m.Password)
+                </li>
+                <li>
+                    <div class="g-recaptcha" data-sitekey="6LdKKMcUAAAAAJnOkEimAbs1QaSrn6Hz9USp60ct"></div>
+                </li>
+                <li class="text-center">
+                    <a href="@Url.Action("ForgotPassword", "Account")" class="link-gray">Forgot Password?</a>
+                </li>
+
+                <li><input type="submit" value="SIGN IN" class="button green" id="submitBtn" /></li>
+                <li class="text-center">
+                    <a href="@Url.Action("Register", "Account")" class="link-gray no-acc">Don't have an account?</a>
+                </li>
+            </ul>
+
+        </fieldset>
+    }
+</section>
+<script>
+    $("#submitBtn").click(function () {
+        event.preventDefault();
+        var response = grecaptcha.getResponse();
+        if (response.length === 0) {
+            $.notify("Please check the reCAPTCHA");
+        } else {
+            $("#loginForm form").submit();
+        }
+    });
+</script>

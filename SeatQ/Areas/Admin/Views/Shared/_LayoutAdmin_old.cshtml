@@ -1,0 +1,163 @@
+﻿@using SeatQ.Areas.Admin.Models;
+@{
+    MenuListModel menu = new SeatQ.Helpers.MenuHelper().GetMenu();
+    string selectedMenu = ViewBag.selectedMenu ?? "Metrics";
+    menu.selectedMenu = menu.Menus.FirstOrDefault(m => m.Name.ToLower() == selectedMenu.ToLower());
+
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>@ViewBag.Title</title>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="shortcut icon" href="~/Images/favicon.ico" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/jquery.pageslide.css" rel="stylesheet" />
+    <link href="~/Content/slider.css" rel="stylesheet" />
+
+    @Styles.Render("~/Content/themes/base/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryui")
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/ko")
+    @Styles.Render("~/Content/cssadmin")
+    <link href="~/Content/bootstrap-switch.css" rel="stylesheet" />
+    <script src="~/Scripts/utility.js"></script>
+    <script src="~/Scripts/form2js.js"></script>
+    <script src="~/Scripts/jquery.toObject.js"></script>
+    <script src="~/Scripts/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="~/Scripts/jquery.cookie.js"></script>
+    <script src="~/Scripts/notify.min.js"></script>
+    <script src="~/Scripts/bootstrap-switch.js"></script>
+
+    <script>
+        var rcid = "@ViewBag.rcid";
+        var webserviceURL = "@ViewBag.CoreApiEndpoint";
+        var webserviceCoreURL = "@ViewBag.CORE_API_URL";
+    </script>
+    @if (ViewBag.User.RoleName != "User" && ViewBag.User.RoleName != "Regional Manager")
+    {
+        @Scripts.Render("~/scripts/header");
+    }
+</head>
+<body>
+    <div class="overlay" id="overlay" style="display:none"></div>
+
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header col-sm-3 col-md-1">
+                <a class="navbar-brand" href="#">Project name</a>
+            </div>
+            <div class="navbar-collapse collapse" id="divWaitlist">
+                <div class="pull-left">
+                    <img data-bind="attr:{src:ImageSrc}" alt="" class="pull-left" />
+                    <h4 data-bind="text:BusinessName"></h4>
+                    <div data-bind="text: RestaurantNumber" class="link-gray h6"></div>
+                    <a href="@Url.Action("index", "Restaurant", new { area = "Admin" })" class="button sm gray h6">Change</a>
+                </div>
+
+                <div class="pull-right">
+                    <div class="welcome-info">Welcome <strong>@ViewBag.User.BusinessName</strong> | <a href="@Url.Action("logoff", "Account", new { area = "" })" class="txt-green">Logoff</a></div>
+                    <a href="#" class="button green pull-right" id="addList">ADD NEW LIST</a>
+                </div>
+                <div class="pull-right">
+                    <select class="selectbox" id="selectCompany" style="display:none">
+                        <option value="0">Choose Restaurant...</option>
+                    </select>
+                </div>
+
+                <div class="center-block w270 link-gray">
+
+                    <div style="position:relative;" data-bind="visible:DisplayBusiness">
+                        <button id="btndstntn" class="btn btn-destination" alt="c" data-bind="text:SelectedBusiness"><span class="caret"></span></button>
+                        <div class="destination-wrap-main" style="width:400px; top:40px!important;right:-60px!important;">
+                            <h2><b>Business Settings</b></h2>
+                            <h6><b>Note:</b> Use this section to select your business</h6>
+                            <br />
+                            <span>Region:</span>
+                            <select class="bselector" data-bind="options: Regions, value:RegionName, optionsText: 'text', optionsValue: 'value', optionsCaption: 'Select Region...',event:{change : LoadBusiness }"></select>
+                            <br /><br />
+                            <span>Business:</span>
+                            <select class="bselector" data-bind="options: Businesses, value:SelectedRegionBusiness, optionsText: 'text', optionsValue: 'value', optionsCaption: 'Select Business...'"></select>
+                            <br /><br />
+                            <button class="btn btn-edit btn-save-destination" data-bind="click:SaveBusiness">Save</button>
+                            <button class="btn btn-reset btn-save-destination float-right" data-bind="click:ResetBusiness">Reset</button>
+                        </div>
+                    </div>
+
+                    <div style="margin-top:5px;"> Avg. Wait Time <span class="avg-time"><strong data-bind="text: AverageWaitTime"></strong>&nbsp;Mins</span></div>
+                </div>
+            </div>
+            <div class="navbar-collapse collapse" id="divOther">
+                <div class="pull-right">
+                    <div class="welcome-info"> Welcome <strong>@ViewBag.User.BusinessName</strong> | <a href="@Url.Action("logoff", "Account", new { area = "" })" class="txt-green">Logoff</a></div>
+                    <a href="#" class="button green pull-right" id="addBtn">NEW MESSAGE</a>
+                    <a href="#" id="filter" onclick="ShowFilter()" class="btn-filter pull-right">Filter</a>
+                    <a href="#" id="customDate" class="btn-custom pull-right" onclick="ShowCustom()">Custom</a>
+                </div>
+                <div class="pull-right">
+                    <select class="selectbox" id="selectCompany" style="display:none">
+                        <option value="0">Choose Restaurant...</option>
+                    </select>
+                </div>
+
+                <h3 class="center-block w270" id="divHeader"></h3>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-3 col-md-1 sidebar">
+                @Html.Partial("_PartialMenu_old", menu)
+            </div>
+            <div class="col-sm-9 col-sm-offset-3 col-md-11 col-md-offset-1 main">
+                <div id="header">
+
+                </div>
+                @RenderBody()
+            </div>
+        </div>
+    </div>
+
+
+    <script src="~/Scripts/jquery.pageslide.min.js"></script>
+    <script>
+        $(".open").pageslide({ direction: 'right' });
+    </script>
+
+    @*@if (ViewBag.User.RestaurantId == null)
+        {
+            <script>
+                NotifyErrorMessage('Please setup your account first.');
+            </script>
+        }*@
+
+    <script>
+        $("#btndstntn").click(function () {
+            if ($(this).attr("alt") == "c") {
+                $(".destination-wrap-main").css({ display: "block" });
+                $(".destination-wrap-main").animate({ opacity: "1", top: "60px" }, 300);
+                $(this).attr("alt", "o");
+            } else {
+                $(".destination-wrap-main").animate({ opacity: "0", top: "70px" }, 300, function () {
+                    $(".destination-wrap-main").css({ display: "none" });
+                });
+                $(this).attr("alt", "c");
+            }
+        });
+
+        function cswm() {
+            $(".destination-wrap-main").animate({ opacity: "0", top: "70px" }, 300, function () {
+                $(".destination-wrap-main").css({ display: "none" });
+            });
+            $("#btndstntn").attr("alt", "c");
+        }
+        //$(".btn-save-destination").click(function () { cswm(); });
+
+    </script>
+
+</body>
+</html>

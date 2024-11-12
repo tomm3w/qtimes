@@ -1,0 +1,375 @@
+[
+  {
+    "outputFileName": "wwwroot/css/confirmation.min.css",
+    "inputFiles": [
+      "wwwroot/Content/assets/bootstrap/css/bootstrap.min.css",
+      "wwwroot/Content/mReservation/style.css",
+      "wwwroot/Content/mReservation/custom.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/css/vendor.min.css",
+    "inputFiles": [
+      "wwwroot/Content/assets/bootstrap/3.3.5/bootstrap.min.css",
+      "wwwroot/Content/assets/bootstrap/css/bootstrap-select.min.css",
+      "wwwroot/Content/assets/css/animate.css",
+      "wwwroot/Content/assets/slick-1.8.1/slick/slick.css",
+      "wwwroot/Content/intl-tel-input/css/intlTelInput.min.css",
+      "wwwroot/Content/fonts/font-awesome.min.css",
+      "wwwroot/Content/assets/daterangepicker/daterangepicker.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/css/site.min.css",
+    "inputFiles": [
+      "wwwroot/Content/assets/css/style.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/css/mreservation.min.css",
+    "inputFiles": [
+      "wwwroot/Content/mReservation/style.css",
+      "wwwroot/Content/mReservation/custom.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/css/admin.min.css",
+    "inputFiles": [
+      "wwwroot/content/assets/css/app.css",
+      "wwwroot/content/assets/css/custom.css",
+      "wwwroot/content/assets/css/style.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/vendor.min.js",
+    "inputFiles": [
+      "wwwroot/Content/assets/js/jquery-3.5.1.js",
+      "wwwroot/Content/assets/bootstrap/3.3.5/bootstrap.min.js",
+      "wwwroot/Content/assets/bootstrap/js/bootstrap-select.js",
+      "wwwroot/Scripts/knockout-3.5.1.js",
+      "wwwroot/Scripts/jquery.cookie.js",
+      "wwwroot/Scripts/notify.min.js",
+      "wwwroot/Scripts/moment.min.js",
+      "wwwroot/Scripts/utility.js",
+      "wwwroot/Content/intl-tel-input/js/intlTelInput.min.js",
+      "wwwroot/Content/assets/daterangepicker/daterangepicker.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    }
+  },
+  {
+    "outputFileName": "wwwroot/js/site.min.js",
+    "inputFiles": [
+      "wwwroot/Content/assets/js/app.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    }
+  },
+  {
+    "outputFileName": "wwwroot/js/confirmation.min.js",
+    "inputFiles": [
+      "wwwroot/js/jquery/dist/jquery.min.js",
+      "wwwroot/Content/assets/bootstrap/js/bootstrap.min.js",
+      "wwwroot/Scripts/moment.min.js",
+      "wwwroot/Scripts/bwip-js-min.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    }
+  },
+  {
+    "outputFileName": "wwwroot/Scripts/app/reservation/message.min.js",
+    "inputFiles": [
+      "wwwroot/Scripts/app/reservation/message.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    }
+  },
+  {
+    "outputFileName": "wwwroot/Scripts/app/reservation/accountsetup.min.js",
+    "inputFiles": [
+      "wwwroot/Scripts/app/reservation/accountsetup.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    }
+  },
+  {
+    "outputFileName": "wwwroot/Scripts/app/reservation/businessprofile.min.js",
+    "inputFiles": [
+      "wwwroot/Scripts/app/reservation/businessprofile.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    }
+  },
+  {
+    "outputFileName": "wwwroot/Scripts/app/reservation/header.min.js",
+    "inputFiles": [
+      "wwwroot/Scripts/app/reservation/header.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    }
+  },
+  {
+    "outputFileName": "wwwroot/Scripts/app/reservation/metrics.min.js",
+    "inputFiles": [
+      "wwwroot/Scripts/app/reservation/metrics.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    }
+  },
+  {
+    "outputFileName": "wwwroot/Scripts/app/reservation/preference.min.js",
+    "inputFiles": [
+      "wwwroot/Scripts/app/reservation/preference.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    }
+  },
+  {
+    "outputFileName": "wwwroot/Scripts/app/reservation/reservation.min.js",
+    "inputFiles": [
+      "wwwroot/Scripts/app/reservation/reservation.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    }
+  },
+  {
+    "outputFileName": "wwwroot/Scripts/app/reservation/m/business.min.js",
+    "inputFiles": [
+      "wwwroot/Scripts/app/reservation/m/business.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    }
+  },
+  {
+    "outputFileName": "wwwroot/Scripts/app/reservation/m/thankyou.min.js",
+    "inputFiles": [
+      "wwwroot/Scripts/app/reservation/m/thankyou.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    }
+  },
+  {
+    "outputFileName": "wwwroot/Scripts/app/reservation/m/waitlist.min.js",
+    "inputFiles": [
+      "wwwroot/Scripts/app/reservation/m/waitlist.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    }
+  },
+  {
+    "outputFileName": "wwwroot/Scripts/app/concert/m/business.min.js",
+    "inputFiles": [
+      "wwwroot/Scripts/app/concert/m/business.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    }
+  },
+  {
+    "outputFileName": "wwwroot/Scripts/app/concert/m/waitlist.min.js",
+    "inputFiles": [
+      "wwwroot/Scripts/app/concert/m/waitlist.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    }
+  },
+  {
+    "outputFileName": "wwwroot/Scripts/app/concert/m/thankyou.min.js",
+    "inputFiles": [
+      "wwwroot/Scripts/app/concert/m/thankyou.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    }
+  },
+  {
+    "outputFileName": "wwwroot/Scripts/app/concert/m/confirmation.min.js",
+    "inputFiles": [
+      "wwwroot/Scripts/app/concert/m/confirmation.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    }
+  },
+  {
+    "outputFileName": "wwwroot/Scripts/app/reservation/m/confirmation.min.js",
+    "inputFiles": [
+      "wwwroot/Scripts/app/reservation/m/confirmation.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    }
+  },
+  {
+    "outputFileName": "wwwroot/Scripts/app/concert/checkin/checkin.min.js",
+    "inputFiles": [
+      "wwwroot/Scripts/app/concert/checkin/checkin.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    }
+  },
+  {
+    "outputFileName": "wwwroot/Scripts/app/concert/accountsetup.min.js",
+    "inputFiles": [
+      "wwwroot/Scripts/app/concert/accountsetup.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    }
+  },
+  {
+    "outputFileName": "wwwroot/Scripts/app/concert/businessaccount.min.js",
+    "inputFiles": [
+      "wwwroot/Scripts/app/concert/businessaccount.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    }
+  },
+  {
+    "outputFileName": "wwwroot/Scripts/app/concert/businessprofile.min.js",
+    "inputFiles": [
+      "wwwroot/Scripts/app/concert/businessprofile.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    }
+  },
+  {
+    "outputFileName": "wwwroot/Scripts/app/concert/eventbusinessprofile.min.js",
+    "inputFiles": [
+      "wwwroot/Scripts/app/concert/eventbusinessprofile.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    }
+  },
+  {
+    "outputFileName": "wwwroot/Scripts/app/concert/eventpreference.min.js",
+    "inputFiles": [
+      "wwwroot/Scripts/app/concert/eventpreference.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    }
+  },
+  {
+    "outputFileName": "wwwroot/Scripts/app/concert/events.min.js",
+    "inputFiles": [
+      "wwwroot/Scripts/app/concert/events.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    }
+  },
+  {
+    "outputFileName": "wwwroot/Scripts/app/concert/eventseatings.min.js",
+    "inputFiles": [
+      "wwwroot/Scripts/app/concert/eventseatings.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    }
+  },
+  {
+    "outputFileName": "wwwroot/Scripts/app/concert/header.min.js",
+    "inputFiles": [
+      "wwwroot/Scripts/app/concert/header.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    }
+  },
+  {
+    "outputFileName": "wwwroot/Scripts/app/concert/message.min.js",
+    "inputFiles": [
+      "wwwroot/Scripts/app/concert/message.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    }
+  },
+  {
+    "outputFileName": "wwwroot/Scripts/app/concert/metrics.min.js",
+    "inputFiles": [
+      "wwwroot/Scripts/app/concert/metrics.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    }
+  },
+  {
+    "outputFileName": "wwwroot/Scripts/app/concert/preference.min.js",
+    "inputFiles": [
+      "wwwroot/Scripts/app/concert/preference.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    }
+  },
+  {
+    "outputFileName": "wwwroot/Scripts/app/concert/reservation.min.js",
+    "inputFiles": [
+      "wwwroot/Scripts/app/concert/reservation.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    }
+  },
+  {
+    "outputFileName": "wwwroot/Scripts/app/concert/seatings.min.js",
+    "inputFiles": [
+      "wwwroot/Scripts/app/concert/seatings.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    }
+  }
+]

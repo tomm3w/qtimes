@@ -1,0 +1,56 @@
+﻿@page
+@model LoginModel
+
+@{
+    ViewData["Title"] = "Log in";
+}
+
+
+
+@{ ViewBag.Title = "Log In";
+    Layout = "~/Views/Shared/_Layout.cshtml"; }
+<h1>@ViewData["Title"]</h1>
+<style>
+    .field-validation-error, .validation-summary-errors {
+        color: red;
+    }
+</style>
+<header class="header header_non-stick">
+    @Html.Partial("_HeaderLogo")
+</header>
+<main class="signin_main grey--bg">
+    <div class="wrapper">
+        <div class="sign_whole_wrap">
+            <div class="signin_page white--bg">
+                <p class="sign_head">Sign In</p>
+
+                <form id="account" method="post" class="sign_form" asp-route-returnUrl="/admin/accounts">
+                    <div asp-validation-summary="All" class="text-danger"></div>
+                    <div class="form-group">
+                        <label asp-for="Input.Email"></label>
+                        <input asp-for="Input.Email" class="form-control" />
+                        <span asp-validation-for="Input.Email" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Input.Password"></label>
+                        <input asp-for="Input.Password" class="form-control" />
+                        <span asp-validation-for="Input.Password" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary sign_btn sign_grn ladda-button">Sign in</button>
+                    </div>
+
+                </form>
+
+            </div>
+            <div class="sign_otions">
+                <a href="/identity/account/register" class="signup_a">Sign Up</a>
+                <a href="/identity/account/forgotpassword" class="forget_a">I forgot my password</a>
+            </div>
+        </div>
+    </div>
+</main>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

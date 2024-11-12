@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1,user-scalable=0"/>
+   <title></title>
+   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"
+   integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+   <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,600,700,800,900&display=swap"
+   rel="stylesheet">
+   <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
+   <link rel="stylesheet" href="assets/dist/css/bootstrap-select.min.css">
+   <link rel="stylesheet" type="text/css" href="assets/dist/css/style.css">
+   <link rel="stylesheet" type="text/css" href="assets/dist/css/custom.css">
+</head>
+<body class="commonctn waitlist2 waitlist3 waitlist4">
+   <div class="app">
+      <div class="container">
+         <div class="app__container">
+            <div class="waittime">
+               <div class="app__header">
+                  <h4 class="head_top">NEW RESERVATION</h4>
+               </div>
+               <div class="mob_body">
+                  <form action="#" class="theme-black-form">
+                     <div class="form_first">
+                        <div class="form-group res_fr_1">
+                           <label>Select Concert</label>
+                           <input type="text" class="form-control" placeholder="Enter your name">
+                        </div>
+                     </div>
+                     <nav class="pull-right">
+                        <label>Group Size:</label>
+                        <ul class="pagination">
+                           <li class="active">
+                              <a href="#">1 <span class="sr-only">(current)</span></a>
+                           </li>
+                           <li>
+                              <a href="#">2 <span class="sr-only">(current)</span></a>
+                           </li>
+                           <li>
+                              <a href="#">3 <span class="sr-only">(current)</span></a>
+                           </li>
+                           <li>
+                              <a href="#">4 <span class="sr-only">(current)</span></a>
+                           </li>
+                           <li>
+                              <a href="#">5 <span class="sr-only">(current)</span></a>
+                           </li>
+                        </ul>
+                     </nav>
+                     <div class="form-group form_second select_opt">
+                        <div class="select_to-seat">
+                           <label>Group Size:</label>
+                           <span class="seat-show">R1-08</span>
+                           <div class="seat-cg-btn">
+                              <a href="#">CHANGE SEATING</a>
+                           </div>
+                        </div>
+                           <p class="watlist4_notice">Please review your details before continuing, <br>we will ask for <strong>Guest Details</strong> on the next page</p>
+                        <button class="btn btn--grn">Next</button>
+                     </div>
+                  </form>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <script src="https://code.jquery.com/jquery-3.4.1.js"
+   integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+   integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+   crossorigin="anonymous"></script>
+   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+   integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+   crossorigin="anonymous"></script>
+   <script src="assets/js/bootstrap-input-spinner.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+   <script src="assets/js/bootstrap-select.js"></script>
+   <!-- <script type="text/javascript" src="assets/js/app.js"></script> -->
+   <script>
+      $("input[type='number']").inputSpinner();
+
+      $(document).ready(function() {
+         $('#datepicker').datepicker({
+            autoclose: true,
+            todayHighlight: true
+         }).datepicker('update', new Date());
+         
+         $('.date_picker_show').click(function() {
+            $('.datepicker-days').toggleClass('open');
+         });
+      });
+   </script>
+</body>
+</html>

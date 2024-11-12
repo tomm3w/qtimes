@@ -1,0 +1,74 @@
+﻿@model SeatQ.core.dal.Models.UserProfile
+@{
+    ViewBag.Title = "Congratulations!";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    .validation-summary-valid {
+        color: red;
+    }
+</style>
+<header class="header header_non-stick">
+    @Html.Partial("_HeaderLogo")
+</header>
+
+
+@Html.AntiForgeryToken()
+
+<main class="forget_main grey--bg">
+    <div class="wrapper">
+        <div class="sign_whole_wrap">
+            <div class="forget_page white--bg">
+                <p class="sign_head">@ViewBag.Title</p>
+                <p class="sign_p">
+                    Thank you for choosing QTimes. A confirmation link has been sent to your email.
+                    We also provide a temporary password for your account.
+                </p>
+                <form class="sign_form">
+                    <div class="form-group">
+                        @Html.TextBoxFor(m => m.Email, new { Name = "username", @placeholder = "youremail@email.com", disabled = "true", @class = "form-control" })
+                    </div>
+                    <button type="submit" class="btn btn-primary sign_btn sign_purp" onclick="ResendConfirmation()">Send</button>
+                    @Html.HiddenFor(m => m.UserId, new { Name = "UserId" })
+                </form>
+                <form class="sign_form">
+                    <div class="form-group">
+                        @Html.ValidationSummary()
+                    </div>
+                </form>
+                <div class="sign_otions">
+                    <a href="/account/login" class="signin_a">Sign In</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<script>
+        var webserviceURL = "@Url.Action("ResendConfirmation", "Account")";
+
+    function ResendConfirmation() {
+        event.preventDefault();
+            $.ajax({
+                type: "POST",
+                url: webserviceURL,
+                data: JSON.stringify({ Email: $("input[name=Email]").val(), UserId: $("input[name=UserId]").val() }),
+                contentType: "application/json; charset=utf-8",
+                dataType: 'json',
+                success: function (data) {
+                    if (data.status == "ok") {
+                        $(".validation-summary-valid").html("A confirmation link has been sent to your email");
+                        $(".validation-summary-valid").show();
+                    }
+                    if (data.status == "error") {
+                        showErrorOnElement(data, $(".validation-summary-valid"));
+                    }
+                },
+                error: function () {
+                    alert('error');
+                }
+            });
+        }
+
+</script>

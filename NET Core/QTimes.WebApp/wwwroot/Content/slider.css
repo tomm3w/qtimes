@@ -1,0 +1,78 @@
+﻿
+ul#nav {
+    padding-left: 0;
+    list-style: none;
+    margin-bottom: 40px;
+}
+
+    ul#nav:after {
+        content: "\0020";
+        display: block;
+        height: 0;
+        clear: both;
+        visibility: hidden;
+    }
+    #menu ul#nav a:hover, #menu ul#nav a.current {
+        background-color: #35424f;
+        color:#16a085;
+    }
+    #menu ul#nav a.dashboard, #menu ul#nav a.dashboard:hover, #menu ul#nav a.promotion, #menu ul#nav a.promotion:hover {
+        background:none;
+        color:#576473;
+        font-weight:bold;
+        padding:12px 0;
+        cursor:default;
+    }
+    #menu ul#nav a.promotion {
+        margin-top:40px;
+    }
+
+.open {
+    display: none;
+    width: 40px;
+    height: 30px;
+    margin-top: 10px;
+    background: url(../Images/icon-menu.png) center center no-repeat #333;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    text-indent: -999999px;
+}
+
+/* Mobile and iPad Portrait 
+@media only screen and (max-width: 959px) {
+    #menu {
+        width: 748px;
+    }
+}*/
+
+/* Mobile Landscape and Portrait */
+@media only screen and (max-width: 800px) {
+    
+        #menu h1 {
+            font-size: 22px;
+            line-height: 30px;
+            background-color: #000;
+            color: #FFF;
+            padding: 10px;
+        }
+
+        ul#nav {
+            display: none;
+        }
+
+    .open {
+        display: block;
+    }
+}
+
+/* Mobile Portrait */
+@media only screen and (max-width: 479px) {
+    #menu {
+        width: 280px;
+    }
+
+        #menu h1 {
+            font-size: 14px;
+        }
+}

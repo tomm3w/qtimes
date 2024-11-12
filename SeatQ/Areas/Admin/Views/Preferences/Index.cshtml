@@ -1,0 +1,70 @@
+﻿@{
+    ViewBag.Title = "Preferences";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<style>
+    .form_ac .form-group {
+        margin: 0 12px 30px 0 !important;
+    }
+</style>
+
+<section class="content-header">
+    <div class="content_header_left">
+        <h2 class="uppercase">SETTINGS</h2>
+        <div class="navigation_lft">
+            <ul>
+                <li><a href="/admin/accountinfo" ">Account Setup</a></li>
+                <li class="active"><a href="#">Preferences</a></li>
+                <li><a href="/admin/restaurant">Business Profile</a></li>
+                <li><a href="/admin/tables">Tables</a></li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section class="content-header_prf">
+    <h2 class="uppercase">ACCOUNT SETUP</h2>
+    <a href="#" class="btn btn-primary" data-bind="click:Update">
+        SAVE CHANGES
+    </a>
+</section>
+
+<section class="content-body clearfix">
+    <div class="account_form content-body_prf">
+        <form>
+            <div class="form_ac">
+                <div class="form-group">
+                    <label>Opening Hour</label>
+                    <input type="time" class="form-control" id="OpeningHour" placeholder="hh:mm" data-bind="value: OpeningHour">
+                </div>
+                <div class="form-group">
+                    <label>Closing Hour</label>
+                    <input type="time" class="form-control" id="ClosingHour" placeholder="hh:mm" data-bind="value: ClosingHour">
+                </div>
+            </div>
+            <div class="form_ac">
+                <div class="form-group">
+                    <label>Waittime Interval Day(s)</label>
+                    <input type="number" class="form-control" data-bind="value:WaittimeInterval">
+                </div>
+            </div>
+            <div class="form_ac" style="display:none">
+                <div class="form-group">
+                    <label>Closed Day(s)</label>
+                    <div>
+                        <input type="checkbox" value="Sunday">Sunday
+                        <input type="checkbox" value="Monday" />Monday
+                        <input type="checkbox" value="Tuesday" />Tuesday<br />
+                        <input type="checkbox" value="Wednesday">Wednesday
+                        <input type="checkbox" value="Thursday" />Thursday
+                        <input type="checkbox" value="Friday" />Friday<br />
+                        <input type="checkbox" value="Saturday" />Saturday
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>
+@*<script src="~/Scripts/app/preferences.js"></script>*@
+@Scripts.Render("~/scripts/preferences")

@@ -1,0 +1,92 @@
+﻿@{
+    ViewBag.Title = "Tables";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<section class="content-header">
+    <div class="content_header_left">
+        <h2 class="uppercase">SETTINGS</h2>
+        <div class="navigation_lft">
+            <ul>
+                <li><a href="/admin/accountinfo">Account Setup</a></li>
+                <li><a href="/admin/preferences">Preferences</a></li>
+                <li><a href="/admin/restaurant">Business Profile</a></li>
+                <li class="active"><a href="#">Tables</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="content_header_right" style="max-width:0px">
+        <a href="#" id="addList" class="btn btn-primary add-new-reserve blue_right_btn" data-toggle="modal" data-target="#add-waitlist">
+            <span class="svg_add-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15">
+                    <path id="prefix__add_icon" d="M6 15V9H0V6h6V0h3v6h6v3H9v6z" style="fill:#fff" />
+                </svg>
+            </span>ADD TABLE
+        </a>
+    </div>
+</section>
+
+<section class="content-body">
+    <div class="content-table custom-table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr class="shadow-bottom">
+                    <th>TABLE NUMBER</th>
+                    <th>TYPE</th>
+                    <th>OUT</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody data-bind="foreach: businesses, as: 'business'">
+                <tr>
+                    <td>
+                        <p class="time_show_msg" data-bind="text: TableNumber"></p>
+                    </td>
+                    <td><p data-bind="text: Title"></p></td>
+                    <td><p data-bind="text: IsOut">2</p></td>
+                    <td><p><a href="#" class="edit-msg" data-bind=" click:function(){$root.Edit(TableId())}">Edit</a></p></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</section>
+
+<div class="modal fade set_tab" id="add-waitlist" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-backdrop="static">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header topic_only">
+                <h4 class="modal-title uppercase" id="myModalLabel">New Table</h4>
+            </div>
+
+            <div class="modal-body">
+                <form action="#" class="theme-white-form">
+                    <div class="form_first">
+                        <div class="form-group res_fr_1">
+                            <label>Table Number</label>
+                            <input type="text" class="form-control" placeholder="Table Number" data-bind="value: TableNumber">
+                        </div>
+                        <div class="form-group res_fr_1 select_opt">
+                            <label>Type</label>
+                            <select class="form-control" data-bind="options: TableType, value:TableTypeId, optionsText: 'text', optionsValue: 'value', optionsCaption: 'Select Table Type'"></select>
+                        </div>
+                        <div class="form-group res_fr_2">
+                            <div>
+                                <input type="checkbox" data-bind="checked: IsOut">
+                            </div>
+                            <span style="margin-left:10px">Table Out</span>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-bind="click: Add" id="btnAdd"><span class="add-icon"></span> <span id="btnSubmit"> Add </span></button>
+                <button type="button" class="btn btn-default" data-dismiss="modal"><span class="cross-icon"></span> Cancel</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+@*<script src="~/Scripts/app/tables.js"></script>*@
+@Scripts.Render("~/scripts/tables")

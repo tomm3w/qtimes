@@ -1,0 +1,219 @@
+﻿<style>
+    input[type=time] {
+        width: 110px;
+        border: solid 1px #d1d1d2;
+        background: white;
+    }
+</style>
+<div class="content-wrapper">
+
+    @Html.Partial("_PartialMenu")
+
+    <section class="content-header">
+        <div class="content_header_left">
+            <h2 class="uppercase">SETTINGS</h2>
+            <div class="navigation_lft">
+                <ul>
+                    <li><a href="/concert/settings/account">Account Setup</a></li>
+                    <li><a href="/concert/settings/business">Business Profile</a></li>
+                    <li class="active"><a href="#">Preferences</a></li>
+                    <li><a href="/concert/settings/seatings">Seatings</a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <!-- end of content-header -->
+    <section class="content-header_prf">
+        <h2 class="uppercase">PREFERENCES</h2>
+        <a href="#" class="btn btn-primary grey-right_btn" data-bind="click: UpdatePreference">
+            Save
+        </a>
+    </section>
+    <section class="content-body clearfix">
+        <div class="account_form content-body_prf">
+            <label class="avai_label">Availability</label>
+            <form class="availability_div_form">
+                <div class="form_ac">
+                    <div class="form-group">
+                        <label class="select_lbl">Open Days</label>
+                        <ul class="select_from_to select_opt">
+                            <li>
+                                <div class="select_from_to_wrap">
+                                    <select class="form-control selectpicker" id="select_day_from" data-bind="value: OpenDayFrom">
+                                        <option value="Sunday">Sunday</option>
+                                        <option value="Monday">Monday</option>
+                                        <option value="Tuesday">Tuesday</option>
+                                        <option value="Wednesday">Wednesday</option>
+                                        <option value="Thursday">Thursday</option>
+                                        <option value="Friday">Friday</option>
+                                        <option value="Saturday">Saturday</option>
+                                    </select>
+                                </div>
+                            </li>
+                            to
+                            <li>
+                                <div class="select_from_to_wrap">
+                                    <select class="form-control selectpicker" id="select_day_to" data-bind="value: OpenDayTo">
+                                        <option value="Saturday">Saturday</option>
+                                        <option value="Friday">Friday</option>
+                                        <option value="Thursday">Thursday</option>
+                                        <option value="Wednesday">Wednesday</option>
+                                        <option value="Tuesday">Tuesday</option>
+                                        <option value="Monday">Monday</option>
+                                        <option value="Sunday">Sunday</option>
+                                    </select>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="form-group">
+                        <label class="select_lbl">Open Hour</label>
+                        <ul class="select_am_pm select_opt">
+                            <li>
+                                <input type="time" class="form-control" placeholder="06:00" data-bind="value: OpenHourFrom">
+                                <div class="select_am_pm_wrap">
+                                    @*<select class="form-control selectpicker" id="select_day_to">
+                                            <option>AM</option>
+                                            <option>PM</option>
+                                        </select>*@
+                                </div>
+                            </li>
+                            to
+                            <li>
+                                <input type="time" class="form-control" placeholder="07:00" data-bind="value: OpenHourTo">
+                                <div class="select_am_pm_wrap">
+                                    @*<select class="form-control selectpicker" id="select_day_to">
+                                            <option>PM</option>
+                                            <option>AM</option>
+                                        </select>*@
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="account_form content-body_prf">
+            <form>
+                <div class="form_ac">
+                    <div class="form-group document_form-slide">
+                        <p class="heading_doc_profile_con">BOOKING</p>
+                        <ul>
+                            <li>
+                                <div class="lf_doc">
+                                    <div class="check_box_grn con_p">
+                                        <input type="checkbox" data-bind="checked: EnableTotalCapacity">
+                                        <label class="checkmark"></label>
+                                    </div>
+                                    <div class="txt_lf_bk">
+                                        <p class="policy_p_con">Total Capacity</p>
+                                        <p class="policy_pp_con">Total number of available spots </p>
+                                    </div>
+                                </div>
+                                <div class="rt_doc" data-bind="css: { activation: EnableTotalCapacity() }">
+                                    <div class="input_book">
+                                        <input type="text" placeholder="000" data-bind="value: TotalCapacity">
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="lf_doc">
+                                    <div class="check_box_grn con_p">
+                                        <input type="checkbox" data-bind="checked: EnableGroupSize">
+                                        <label class="checkmark"></label>
+                                    </div>
+                                    <div class="txt_lf_bk">
+                                        <p class="policy_p_con">Group Size</p>
+                                        <p class="policy_pp_con">Minimum and maximum size per reservation</p>
+                                    </div>
+                                </div>
+                                <div class="rt_doc" data-bind="css: { activation: EnableGroupSize() }">
+                                    <div class="input_book">
+                                        <input type="text" placeholder="2" class="grop_size" data-bind="value: MinGroupSize">&nbsp;to
+                                        <input type="text" placeholder="5" class="grop_size" data-bind="value: MaxGroupSize">
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="lf_doc">
+                                    <div class="check_box_grn con_p">
+                                        <input type="checkbox" data-bind="checked: EnableTimeExpiration">
+                                        <label class="checkmark"></label>
+                                    </div>
+                                    <div class="txt_lf_bk">
+                                        <p class="policy_p_con">Time Expiration</p>
+                                        <p class="policy_pp_con">Allow time expiration for each reservation</p>
+                                    </div>
+                                </div>
+                                <div class="rt_doc" data-bind="css: { activation: EnableTimeExpiration() }">
+                                    <div class="select_am_pm select_opt min-opt bok-pref-con">
+                                        <div class="select_am_pm_wrap">
+                                            <select class="form-control selectpicker" id="select_day_to" data-bind="value: TimeExpiration">
+                                                <option value="5">5 Min</option>
+                                                <option value="10">10 Min</option>
+                                                <option value="15">15 Min</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="account_form content-body_prf">
+            <form>
+                <div class="form_ac">
+                    <div class="form-group document_form-slide">
+                        <p class="heading_doc_profile_con">EXTRAS</p>
+                        <ul>
+                            <li>
+                                <div class="lf_doc">
+                                    <div class="check_box_grn con_p">
+                                        <input type="checkbox" data-bind="checked: IsDLScanEnabled">
+                                        <label class="checkmark"></label>
+                                    </div>
+                                    <div class="txt_lf_bk">
+                                        <p class="policy_p_con">Drivers License</p>
+                                        <p class="policy_pp_con">Add drivers License during signup</p>
+                                    </div>
+                                </div>
+                                <div class="rt_doc"></div>
+                            </li>
+                            <li>
+                                <div class="lf_doc">
+                                    <div class="check_box_grn con_p">
+                                        <input type="checkbox" data-bind="checked: IsChargeEnabled">
+                                        <label class="checkmark"></label>
+                                    </div>
+                                    <div class="txt_lf_bk">
+                                        <p class="policy_p_con">Tickets &amp; Payments</p>
+                                        <p class="policy_pp_con">Setup ticket pricing and payment options</p>
+                                    </div>
+                                </div>
+                                <div class="rt_doc"> </div>
+                            </li>
+                            <li>
+                                <div class="lf_doc">
+                                    <div class="check_box_grn con_p">
+                                        <input type="checkbox" data-bind="checked: IsSeatmapEnabled">
+                                        <label class="checkmark"></label>
+                                    </div>
+                                    <div class="txt_lf_bk">
+                                        <p class="policy_p_con">Use Seating Methods</p>
+                                        <p class="policy_pp_con">Setup seating methods and maps</p>
+                                    </div>
+                                </div>
+                                <div class="rt_doc"> </div>
+                            </li>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+
+</div>
+<script src="~/Scripts/app/concert/preference.js"></script>
